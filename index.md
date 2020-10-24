@@ -4,10 +4,14 @@ title: "Home"
 permalink: /
 ---
 
+<div class="creation-header"> 
+	<div class="infos"> 
+		<h1> Home for {{ site.title }} </h1> 
+	</div> 
+</div> 
 <div class="row margeur-30">
 	<div class="col-12"> 
 		<div class="creation-content fr-view white-container">
-			<h2>Home</h2>
 			<p>
 				Welcome on Gamebuino META backup website !
 			</p>
