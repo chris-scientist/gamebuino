@@ -14,7 +14,7 @@ permalink: /contact/
 		<div class="creation-content fr-view white-container">
 			<h2>Private Request</h2>
 			<p>
-				For all requests, join me on Discord : chris-scientist#3276.
+				For all requests, join me on <a href="https://discord.com/login" >Discord</a> : chris-scientist#3276.
 			</p>
 			<h2>Discord Server of Gamebuino Community</h2>
 			<p>
