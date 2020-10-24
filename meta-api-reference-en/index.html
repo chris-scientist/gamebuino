@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>References - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/meta-api-reference-en/"> Home of API Reference</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="creation-header"> 
+     <div class="infos"> 
+      <h1> Référence </h1> 
+     </div> 
+    </div> 
+    <div class="row margeur-30"> 
+     <!-- <div class=" col-12 "> --> 
+     <div class="col-12"> 
+      <div class="creation-content fr-view white-container"> 
+       <h2>FRIENDLY REMINDER</h2> 
+       <p>This is the Reference of the Gamebuino Meta. If you have an older Gamebuino, head to the <span>Legacy Reference</span>.</p> 
+       <h2>Core</h2> 
+       <ul> 
+        <li><a href="/meta-api-reference-en/gb-begin.html">gb.begin</a></li> 
+        <li><a href="/meta-api-reference-en/gb-waitforupdate.html">gb.waitForUpdate</a></li> 
+        <li><a href="/meta-api-reference-en/gb-getcpuload.html">gb.getCpuLoad</a></li> 
+        <li><a href="/meta-api-reference-en/gb-getfreeram.html">gb.getFreeRam</a></li> 
+        <li><a href="/meta-api-reference-en/gb-getdefaultname.html">gb.getDefaultName</a></li> 
+        <li><a href="/meta-api-reference-en/gb-createcolor.html">gb.createColor</a></li> 
+        <li><a href="/meta-api-reference-en/gb-setscreenrotation.html">gb.setScreenRotation</a></li> 
+        <li><a href="/meta-api-reference-en/gb-getscreenrotation.html">gb.getScreenRotation</a></li> 
+        <li>gb.frameCount</li> 
+        <li>gb.pickRandomSeed</li> 
+       </ul> 
+       <h2>Graphics</h2> 
+       <p>See <a href="/meta-api-reference-en/images.html">Graphics Reference</a></p> 
+       <h2>Buttons</h2> 
+       <ul> 
+        <li><a href="/meta-api-reference-en/gb-buttons-pressed.html">gb.buttons.pressed</a></li> 
+        <li><a href="/meta-api-reference-en/gb-buttons-released.html">gb.buttons.released</a></li> 
+        <li><a href="/meta-api-reference-en/gb-buttons-held.html">gb.buttons.held</a></li> 
+        <li><a href="/meta-api-reference-en/gb-buttons-repeat.html">gb.buttons.repeat</a></li> 
+        <li><a href="/meta-api-reference-en/gb-buttons-timeheld.html">gb.buttons.timeHeld</a></li> 
+       </ul> 
+       <p>Buttons names:</p> 
+       <pre>BUTTON_A
+BUTTON_B
+BUTTON_MENU (used to be BUTTON_C)
+BUTTON_UP
+BUTTON_RIGHT
+BUTTON_DOWN
+BUTTON_LEFT</pre> 
+       <h2>Sound</h2> 
+       <ul> 
+        <li><a href="/meta-api-reference-en/gb-sound-play.html">gb.sound.play</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-tone.html">gb.sound.tone</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-playok.html">gb.sound.playOK</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-playcancel.html">gb.sound.playCancel</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-playtick.html">gb.sound.playTick</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-isplaying.html">gb.sound.isPlaying</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-stop.html">gb.sound.stop</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-getpos.html">gb.sound.getPos</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-fx.html">gb.sound.fx</a></li> 
+       </ul> 
+       <h2>Save</h2> 
+       <ul> 
+        <li><a href="/meta-api-reference-en/gb-save-config.html">gb.save.config</a></li> 
+        <li><a href="/meta-api-reference-en/gb-save-get.html">gb.save.get</a></li> 
+        <li><a href="/meta-api-reference-en/gb-save-set.html">gb.save.set</a></li> 
+        <li><a href="/meta-api-reference-en/gb-save-del.html">gb.save.del</a></li> 
+       </ul> 
+       <h2>GUI</h2> 
+       <ul> 
+        <li><a href="/meta-api-reference-en/gb-gui-keyboard.html">gb.gui.keyboard</a></li> 
+        <li><a href="/meta-api-reference-en/gb-gui-menu.html">gb.gui.menu</a></li> 
+        <li><a href="/meta-api-reference-en/gb-gui-popup.html">gb.gui.popup</a></li> 
+       </ul> 
+       <h2>Language</h2> 
+       <ul> 
+        <li><a href="/meta-api-reference-en/gb-language-get.html">gb.language.get</a></li> 
+       </ul> 
+       <h2>Collide</h2> 
+       <ul> 
+        <li><a href="/meta-api-reference-en/gb-collide-rectrect.html">gb.collide.rectRect</a></li> 
+        <li><a href="/meta-api-reference-en/gb-collide-pointrect.html">gb.collide.pointRect</a></li> 
+        <li><a href="/meta-api-reference-en/gb-collide-circlecircle.html">gb.collide.circleCircle</a></li> 
+        <li><a href="/meta-api-reference-en/gb-collide-pointcircle.html">gb.collide.pointCircle</a></li> 
+       </ul> 
+       <h2>DANGER ZONE</h2> 
+       <p>All these function should not be used as they are internal and might change with no backward compatibility. Use at your own risk.</p> 
+       <ul> 
+        <li>gb.collideRectRect (depricated)</li> 
+        <li>gb.collidePointRect (depricated)</li> 
+        <li>gb.collideBitmapBitmap</li> 
+        <li>gb.menu</li> 
+        <li>gb.popup</li> 
+        <li><a href="/meta-api-reference-en/gb-update.html">gb.update</a></li> 
+        <li><a href="/meta-api-reference-en/gb-gettimeperframe.html">gb.getTimePerFrame</a></li> 
+        <li><a href="/meta-api-reference-en/gb-checkhomemenu.html">gb.checkHomeMenu</a></li> 
+        <li><a href="/meta-api-reference-en/gb-homemenu.html">gb.homeMenu</a></li> 
+        <li><a href="/meta-api-reference-en/gb-changegame.html">gb.changeGame</a></li> 
+        <li><a href="/meta-api-reference-en/gb-titlescreen.html">gb.titleScreen</a></li> 
+        <li><a href="/meta-api-reference-en/gb-updatedisplay.html">gb.updateDisplay</a></li> 
+        <li><a href="/meta-api-reference-en/gb-buttons-begin.html">gb.buttons.begin</a></li> 
+        <li><a href="/meta-api-reference-en/gb-buttons-update.html">gb.buttons.update</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-startefxonly.html">gb.sound.startEfxOnly</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-stopefxonly.html">gb.sound.stopEfxOnly</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-begin.html">gb.sound.begin</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-update.html">gb.sound.update</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-mute.html">gb.sound.mute</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-unmute.html">gb.sound.unmute</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-ismute.html">gb.sound.isMute</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-setvolume.html">gb.sound.setVolume</a></li> 
+        <li><a href="/meta-api-reference-en/gb-sound-getvolume.html">gb.sound.getVolume</a></li> 
+        <li><a href="/meta-api-reference-en/gb-language-setcurrentlang.html">gb.language.setCurrentLang</a></li> 
+        <li><a href="/meta-api-reference-en/gb-language-getcurrentlang.html">gb.language.getCurrentLang</a></li> 
+        <li><a href="/meta-api-reference-en/gb-language-get-1.html">gb.language._get</a></li> 
+        <li><a href="/meta-api-reference-en/gb-bootloader-version.html">gb.bootloader.version</a></li> 
+        <li><a href="/meta-api-reference-en/gb-bootloader-game.html">gb.bootloader.game</a></li> 
+        <li><a href="/meta-api-reference-en/gb-bootloader-loader.html">gb.bootloader.loader</a></li> 
+        <li><a href="/meta-api-reference-en/gb-bootloader-enter.html">gb.bootloader.enter</a></li> 
+        <li><a href="/meta-api-reference-en/gb-bootloader-error.html">gb.bootloader.error</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-initb.html">gb.tft.initB</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-initr.html">gb.tft.initR</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-setaddrwindow.html">gb.tft.setAddrWindow</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-pushcolor.html">gb.tft.pushColor</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-drawbuffer.html">gb.tft.drawBuffer</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-sendbuffer.html">gb.tft.sendBuffer</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-datamode.html">gb.tft.dataMode</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-commandmode.html">gb.tft.commandMode</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-idlemode.html">gb.tft.idleMode</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-setrotation.html">gb.tft.setRotation</a></li> 
+        <li><a href="/meta-api-reference-en/gb-tft-invertdisplay.html">gb.tft.invertDisplay</a></li> 
+       </ul> 
+       <div class="clearer"></div> 
+      </div> 
+      <!--  --> 
+     </div> 
+     <!--  --> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Documentation saved on September 26, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="{{ site.url }}/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="{{ site.url }}/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>
