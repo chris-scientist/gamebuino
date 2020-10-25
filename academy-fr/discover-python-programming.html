@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="row align-items-stretch"> 
+      <div class="col-md-7 col-lg-8 d-flex flex-column justify-content-between"> 
+       <h1>Premiers pas (Python)</h1> 
+       <p> </p> 
+       <p>Vous avez une Gamebuino, mais vous n'avez aucune idée de ce qu'est la programmation ? Ne vous inquiétez pas, ici on vous apprend les bases. Vous êtes au bon endroit !</p> 
+       <p></p> 
+       <div class="d-flex align-item-center"> 
+        <div class="mr-3 language-tag language-2">
+          Python 
+        </div> 
+        <p class="mb-0"> <i class="fal fa-list-ol fa-fw"></i> 7 Étapes</p> 
+        <p class="ml-3 mb-0"> <i class="fal fa-tachometer-slowest fa-fw difficulty-1"></i> Débutant</p> 
+       </div> 
+      </div> 
+      <div class="col-md-5 col-lg-4 mt-3 mt-md-0 d-flex align-items-center"> 
+       <div class="image" style="background-image:url(https://s3.eu-west-3.amazonaws.com/gamebuino/upload/images/workshops/e0844268ea16ce94042c2cd5baa080a8.BMP)"> 
+        <div class="progression d-flex flex-column align-items-center justify-content-center"> <span class="message">On démarre ?</span> <a href="/gamebuino/academy-fr/installation-and-prerequisites.html" class="btn btn-secondary mt-3"> Commencer</a> 
+        </div> 
+        <div class="progression-bg" style="width:0%"></div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie</span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div><a href="/gamebuino/academy-fr/discover-python-programming.html"> Premiers pas (Python)</a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div><span> Sommaire</span> 
+     </div> 
+    </div> 
+    <div class="lessons"> 
+     <div class="lesson  d-flex align-items-center justify-content-start"> <a href="/gamebuino/academy-fr/installation-and-prerequisites.html" class="circle d-flex align-items-center justify-content-center"> <span class="number"> 1 </span> <span class="check"> <i class="fal fa-check"></i> </span> </a> 
+      <div class="description"> 
+       <h3> <a href="/gamebuino/academy-fr/installation-and-prerequisites.html"> Installation et pré-requis </a> </h3> 
+       <div> 
+        <p> </p> 
+        <p>Pour commencer à apprendre le Python sur Gamebuino, vous n’avez pas besoin de grand-chose : une Gamebuino avec CircuitPython installé, ainsi que l’éditeur de code Mu !</p> 
+        <p></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="lesson  d-flex align-items-center justify-content-start"> <a href="/gamebuino/academy-fr/run-your-first-program.html" class="circle d-flex align-items-center justify-content-center"> <span class="number"> 2 </span> <span class="check"> <i class="fal fa-check"></i> </span> </a> 
+      <div class="description"> 
+       <h3> <a href="/gamebuino/academy-fr/run-your-first-program.html"> Exécutez votre premier programme </a> </h3> 
+       <div> 
+        <p> </p> 
+        <p>Avant de se plonger dans le code, apprenons tout d'abord à lancer notre premier programme sur la Gamebuino !</p> 
+        <p></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="lesson  d-flex align-items-center justify-content-start"> <a href="/gamebuino/academy-fr/display-text-on-the-screen.html" class="circle d-flex align-items-center justify-content-center"> <span class="number"> 3 </span> <span class="check"> <i class="fal fa-check"></i> </span> </a> 
+      <div class="description"> 
+       <h3> <a href="/gamebuino/academy-fr/display-text-on-the-screen.html"> Affichez du texte à l'écran </a> </h3> 
+       <div> 
+        <p> </p> 
+        <p>Maintenant que vous avez lancé votre premier programme, il est temps de mettre un peu les mains dans le cambouis !</p> 
+        <p></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="lesson  d-flex align-items-center justify-content-start"> <a href="/gamebuino/academy-fr/a-little-bit-of-colour.html" class="circle d-flex align-items-center justify-content-center"> <span class="number"> 4 </span> <span class="check"> <i class="fal fa-check"></i> </span> </a> 
+      <div class="description"> 
+       <h3> <a href="/gamebuino/academy-fr/a-little-bit-of-colour.html"> Un peu de couleur </a> </h3> 
+       <div> 
+        <p> </p> 
+        <p>Égayons notre texte avec des couleurs !</p> 
+        <p></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="lesson  d-flex align-items-center justify-content-start"> <a href="/gamebuino/academy-fr/variables-what-are-they.html" class="circle d-flex align-items-center justify-content-center"> <span class="number"> 5 </span> <span class="check"> <i class="fal fa-check"></i> </span> </a> 
+      <div class="description"> 
+       <h3> <a href="/gamebuino/academy-fr/variables-what-are-they.html"> Des variables, qu'est ce que c'est ? </a> </h3> 
+       <div> 
+        <p> </p> 
+        <p>Nous avons appris à écrire des chaînes de caractères. Mais, pour réaliser un jeu, il va y avoir une notion importante à connaitre : les variables.</p> 
+        <p></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="lesson  d-flex align-items-center justify-content-start"> <a href="/gamebuino/academy-fr/program-a-pong.html" class="circle d-flex align-items-center justify-content-center"> <span class="number"> 6 </span> <span class="check"> <i class="fal fa-check"></i> </span> </a> 
+      <div class="description"> 
+       <h3> <a href="/gamebuino/academy-fr/program-a-pong.html"> Programmez un Pong ! </a> </h3> 
+       <div> 
+        <p> </p> 
+        <p>Vous avez appris quelques principes de base de la programmation lors de l’étape précédente, il est temps de s’amuser un peu !</p> 
+        <p></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="lesson  d-flex align-items-center justify-content-start"> <a href="/gamebuino/academy-fr/change-graphics-and-difficulty.html" class="circle d-flex align-items-center justify-content-center"> <span class="number"> 7 </span> <span class="check"> <i class="fal fa-check"></i> </span> </a> 
+      <div class="description"> 
+       <h3> <a href="/gamebuino/academy-fr/change-graphics-and-difficulty.html"> Modifiez les graphismes et la difficulté </a> </h3> 
+       <div> 
+        <p> </p> 
+        <p>Nous avons mis en application ce que nous avons appris sur les variables. Jouons un peu avec les graphismes et les mécaniques de jeu !</p> 
+        <p></p> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

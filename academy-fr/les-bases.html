@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/sokoban-vs-poo.html"> Apprenez la programmation orientée objet avec Sokoban </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Les bases </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Les bases </h1> 
+        <h5> Étape 1 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Cette étape vous permettra d'appréhender les bases de la Progammation Orientée Objet et du modèle d'architecture Modèle Vue Contrôleur.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h2>Sokoban contre POO ?</h2> 
+        <p>Non... POO n'est pas un ennemi !</p> 
+        <p>Vous voici dans un workshop pour réaliser le jeu SOKOBAN en <strong>Programmation Orientée Objet</strong> c'est-à-dire POO. Dans ce workshop il paraît même que nous parlerons du modèle d'architecture <strong>Modèle Vue Contrôleur</strong> c'est-à-dire MVC. Le programme est ambitieux mais ne vous faites aucune crainte, nous avancerons pas à pas et je vais essayer d'être clair.</p> 
+        <p>Voici pour la présentation du workshop.</p> 
+        <h2>Théorie</h2> 
+        <p>Nous allons, avant de passer à la pratique, nous écarter un peu du jeu SOKOBAN dans ce passage théorique. En effet, je vais vous présenter les concepts :</p> 
+        <ul> 
+         <li>de la Programmation Orientée Objet ;</li> 
+         <li>et du modèle d'architecture Modèle Vue Contrôleur.</li> 
+        </ul> 
+        <h3>Version procédurale</h3> 
+        <p>Imaginons un petit jeu où l'on doit déplacer un personnage (ceci ressemble un peu à SOKOBAN...). Mais il se déplacera sur une petite carte (20 colonnes et 10 lignes) ainsi pas besoins de gérer de caméra puisqu'il s'agit de la taille de l'écran.</p> 
+        <p>Ce personnage doit :</p> 
+        <ul> 
+         <li>connaître sa position ;</li> 
+         <li>savoir se déplacer (vers le haut, à droite, vers le bas et à gauche) ;</li> 
+         <li>savoir ses limites (il ne peut pas aller en dehors de l'écran).</li> 
+        </ul> 
+        <p>Le personnage sera représenté par un "x".</p> 
+        <p>Voici le code de la version procédurale de ce petit programme (<span>téléchargeable ici</span>).</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// position du personnage
+int xCharacter;
+int yCharacter;
+
+void setup() {
+  // initialiser la gambuino
+  gb.begin();
+
+  // initialisation de la position du personnage
+  xCharacter = 10;
+  yCharacter = 5;
+}
+
+void loop() {
+  // boucle d'attente
+  while(!gb.update());
+
+  // effacer l'écran
+  gb.display.clear();
+
+  manageMove();
+  paint();
+}
+
+// Gérer les déplacement
+void manageMove() {
+  // Note :
+  // * Le test : (yCharacter &gt; 0) permet de ne pas sortir du haut de l'écran.
+  // * Le test : (xCharacter &lt; 19) permet de ne pas sortir de la droite de l'écran.
+  // * Le test : (yCharacter &lt; 9) permet de ne pas sortir du bas de l'écran.
+  // * Le test : (xCharacter &gt; 0) permet de ne pas sortir de la gauche de l'écran.
+  // Ainsi on définit les limites du personnage.
+  if(gb.buttons.pressed(BUTTON_UP)) {
+    if(yCharacter &gt; 0) {
+      yCharacter--;
+    }
+  } else if(gb.buttons.pressed(BUTTON_RIGHT)) {
+    if(xCharacter &lt; 19) {
+      xCharacter++;
+    }
+  } else if(gb.buttons.pressed(BUTTON_DOWN)) {
+    if(yCharacter &lt; 9) {
+      yCharacter++;
+    }
+ } else if(gb.buttons.pressed(BUTTON_LEFT)) {
+   if(xCharacter &gt; 0) {
+     xCharacter--;
+   }
+ }
+}
+
+// Gérer l'affichage
+void paint() {
+  for(int y=0 ; y&lt;=yCharacter ; y++) {
+    for(int x=0; x&lt;20 || x&lt;xCharacter ; x++) {
+      if(x == xCharacter &amp;&amp; y == yCharacter) {
+        gb.display.print("x"); // afficher le personnage
+      } else {
+        gb.display.print(" "); // afficher une colonne vide
+      }
+    }
+    gb.display.println(); // passage à la ligne suivante
+  }
+}
+</code></pre> 
+        <h3>Version orientée objet en MVC</h3> 
+        <p>Le MVC est un modèle d'architecture, cela sert à décrire comment le code doit être découpé. Le MVC implique qu'il y ai 3 couches :</p> 
+        <ul> 
+         <li>le modèle : qui gère les données ;</li> 
+         <li>la vue : qui gère l'affichage ;</li> 
+         <li>et le contrôleur : qui fait l'interface entre la vue et le modèle.</li> 
+        </ul> 
+        <p>Dans votre programme principal vous devez avoir uniquement des interactions avec le/les contrôleur(s).</p> 
+        <p>De plus, imaginez que vous souhaitez faire un portage de votre programme vers un autre terminal (sur ordinateur, par exemple) et bien dans ce cas vous n'avez que la couche vue à modifier, voilà un intérêt du MVC.</p> 
+        <p>Encore un avantage du MVC, la résolution de bugs :</p> 
+        <ul> 
+         <li>si vous rencontrez un bug de comportement de vos données alors inspectez la couche modèle.</li> 
+         <li>si vous rencontrez un bug d'affichage alors inspectez la couche vue.</li> 
+         <li>si vous rencontrez un bug d'interactions alors inspectez la couche contrôleur.</li> 
+        </ul> 
+        <p>Pour un petit programme le découpage peut-être lourd mais voyez les avantages que cela apporte.</p> 
+        <p>Un concept important dans la POO est la classe. Une classe est une structure de donnée qui a :</p> 
+        <ul> 
+         <li>des attributs : les variables de la classe ;</li> 
+         <li>des méthodes : les fonctions de la classe.</li> 
+        </ul> 
+        <hr> 
+        <p><em>Faisons un point sur les classes.</em></p> 
+        <p>Voici un exemple de classe C++ :</p> 
+        <pre><code>// 1) Déclaration
+class Plan {
+  private:
+    int nbPieces;
+  public:
+    Plan(int unNbPieces);
+    void dessiner();
+};
+	
+// 2) Définition
+Plan::Plan(int unNbPieces) : nbPieces(unNbPieces) {
+	
+}
+	
+void Plan::dessiner() {
+  for(int i=1 ; i&lt;=nbPieces ; i++) {
+    // dessiner la pièce...
+  }
+}
+	
+// 3) Instanciation et utilisation
+// Création d'un objet de type *Plan*
+Plan *maMaison = new Plan(2);
+// Utilisation de l'objet
+maMaison-&gt;dessiner();
+</code></pre> 
+        <p>On remarque plusieurs parties dans le code ci-dessus.</p> 
+        <ol> 
+         <li>La déclaration</li> 
+        </ol> 
+        <p>Elle définit notre classes : ses attribut et le prototype de ses méthodes. Le mot "class" est important c'est lui qui dit au compilateur que ce que l'on écrit est une classe.</p> 
+        <p>Ici nous avons un attribut : <em>nbPieces</em> c'est un entier qui contient le nombre de pièces du plan (c'est pas une surprise, enfin j'espère !).</p> 
+        <p>Ensuite, nous avons deux méthodes :</p> 
+        <ul> 
+         <li> <em>Plan</em> qui est une méthode particulière puisqu'il s'agit d'un constructeur (on en reparle un peu plus loin).</li> 
+         <li> <em>dessiner</em> qui nous permettra de dessiner le plan.</li> 
+        </ul> 
+        <p>Remarque : Faites attention au point-virgule à la fin des classes, sans ce point-virgule l'IDE Arduino donnera l'erreur <em>new types may not be defined in a return type</em> à la compilation.</p> 
+        <p>De plus, une chose très importante : les attributs doivent être privés. Il s'agit de l'encapsulation, un concept de la POO, qui veut que l'on interdit l'accès aux attributs de classes depuis l'extérieur. Les méthodes sont en revanche publiques ce qui permet de les utiliser dans le programme principal par exemple.</p> 
+        <p>Enfin, la déclaration se place dans un fichier <em>.h</em> (pour header, Plan.h).</p> 
+        <p><strong>Le constructeur</strong></p> 
+        <p>Plusieurs choses doivent être dites à son sujet :</p> 
+        <ul> 
+         <li>Le/les constructeur(s), il peut en effet y en avoir plusieurs, ils doivent avoir le même nom que la classe (sans quoi ça ne serait qu'une méthode).</li> 
+         <li>On s'en sert pour initialiser les attributs de notre classe.</li> 
+        </ul> 
+        <ol start="2"> 
+         <li>La définition</li> 
+        </ol> 
+        <p>La définition du constructeur est particulière, en effet dans beaucoup de langage (ce qui reste possible en C++) il aurait fallu écrire ceci :</p> 
+        <pre><code>Plan::Plan(int unNbPieces) {
+  nbPieces = unNbPieces;
+}
+</code></pre> 
+        <p>Le C++ a un petit sucre syntaxique qui permet de faire la même chose de la manière suivante :</p> 
+        <pre><code>Plan::Plan(int unNbPieces) : nbPieces(unNbPieces) {
+	    
+}
+</code></pre> 
+        <p>Remarque : toutes méthodes, dont le constructeur, doivent être préfixées par le nom de la classe, ici : <em>Plan::</em>.</p> 
+        <p>La méthode <em>dessiner</em> est composée d'une boucle qui itère sur le nombre de pièces et le reste du code je le laisse pour votre imagination.</p> 
+        <p>La définition se place dans un fichier <em>.cpp</em> (Plan.cpp pour notre exemple).</p> 
+        <ol start="3"> 
+         <li>Instanciation et utilisation</li> 
+        </ol> 
+        <p>Lorsque qu'on crée un objet à partir d'une classe on dit qu'on <em>instancie</em> un objet. Cet objet est une instance, autrement dit, c'est une maison alors que la classe est un plan. On crée ici un pointeur de Plan, en effet le type est "Plan *". Ainsi pour instancier l'objet il faut faire appel au mot-clé C++ "new". Le "2" passé au constructeur c'est le nombre de pièces de notre maison.</p> 
+        <p>Enfin pour appeler une méthode (sur un pointeur) il faut utiliser le symbole suivant : "-&gt;" (ici : maMaison-&gt;dessiner()).</p> 
+        <ol start="4"> 
+         <li>Bonus</li> 
+        </ol> 
+        <p>Une représentation UML via un diagramme de classes est possible est le voici :</p> 
+        <p><img src="../assets/diagramme_classes_plan.png" alt="Diagramme de classes de Plan" style="max-width:100%"></p> 
+        <p>Remarques :</p> 
+        <ul> 
+         <li>Le <em>moins</em> avant l'attribut signifie qu'il est privé.</li> 
+         <li>Le <em>plus</em> avant les méthodes signifie qu'elles sont publiques.</li> 
+         <li>La modélisation n'est pas complète, il manque effectivement le paramètre du constructeur.</li> 
+        </ul> 
+        <hr> 
+        <p><em>Revenons à notre jeu.</em></p> 
+        <p>Maintenant que vous savez créer des classes voyons de quoi nous avons besoins pour que notre petit programme respecte le MVC. Il faut :</p> 
+        <ul> 
+         <li>CharacterModel : le modèle c'est-à-dire le personnage.</li> 
+         <li>CharacterView : la vue qui gère l'affichage du personnage.</li> 
+         <li>CharacterController : le contrôleur qui permet d'interagir avec le personnage.</li> 
+        </ul> 
+        <p>Comme vous le voyez par convention :</p> 
+        <ul> 
+         <li>Le modèle est suffixé par <em>Model</em>.</li> 
+         <li>La vue est suffixée par <em>View</em>.</li> 
+         <li>Le contrôleur est suffixé par <em>Controller</em>.</li> 
+        </ul> 
+        <p>Comme vous savez créer des classes, avant de passer à la réalisation du SOKOBAN, vous pouvez essayer de réaliser une version orientée objet qui respecte le MVC de notre exemple, ne réinventez pas tout vous pouvez en effet vous inspirer de la version procédurale.</p> 
+        <p>Pour vous guider voici un diagramme de classes (fait en UML) qui représente notre petit programme avec toutes les classes et méthodes nécessaires :</p> 
+        <p><img src="../assets/diagramme_classes_exemple_v0.0.2.png" alt="Astuce : diagramme de classes" style="max-width:100%"></p> 
+        <p>Si vous n'y arrivez pas, n'ayez crainte vous pouvez télécharger la <span>version orientée objet</span> que j'ai fait.</p> 
+        <p>Remarques :</p> 
+        <ul> 
+         <li>La vue n'a pas de constructeur du moins nous n'en n'avons pas déclaré. Nous utilisons le constructeur par défaut.</li> 
+         <li>Il s'agit ici d'un petit exemple avec peu de classes, imaginez que vous ayez un <span>Rubik's cube</span> à développer : l'intérêt du MVC est alors non négligeable.</li> 
+        </ul> 
+        <p>Enfin des améliorations sont possibles, effectivement il devrait être interdit d'instancier plusieurs personnages (imaginez le désordre que ça engendrerait !). <em>Ne lisez la suite que si vous voulez avoir mal de tête</em> ;). Pour faire cela nous pourrions utiliser le design pattern Singleton, mais ce n'est pas l'objectif de ce cours.</p> 
+        <h2>PRATIQUE</h2> 
+        <p>La pratique vous permettra de créer l'ensemble des classes et méthodes utiles au jeu SOKOBAN. Pour les méthodes nous ferrons juste la description, en effet, nous verrons la définition (le contenu) de chacune d'elle au fur et à mesure des étapes qui composent ce workshop.</p> 
+        <p>Si vous ne vous sentez pas encore prêt à franchir le cap de la POO, il existe une version procédurale du jeu SOKOBAN (cf. <span>partie 1 par jicehel</span>).</p> 
+        <p>Je vous invite à télécharger le code source qui vous servira de base au programme, vous le trouverez <span>ici</span>.</p> 
+        <p>Voici le diagramme de classes du code que vous devez écrire : <img src="../assets/diagramme_classes_sokoban_v0.0.1.png" alt="Diagramme de classes Sokoban" style="max-width:100%"></p> 
+        <p>Remarques :</p> 
+        <ul> 
+         <li>Les membres (attributs et méthodes), qui sont soulignés, représentent des membres de classe, autrement dit statique (on en reparle plus loin).</li> 
+         <li>Je donne par la suite la description (type de retour et paramètres) des méthodes (je ne l'ai pas mis sur le diagramme afin de ne pas le surcharger).</li> 
+         <li>Comme le montre le diagramme ci-dessus, vous pouvez adapter le MVC, par exemple pour une classe vous n'avez pas l'obligation d'écrire les 3 couches (c'est pourquoi il n'y a que le modèle de caméra).</li> 
+        </ul> 
+        <p><strong>Membre statique (ou membre de classe)</strong></p> 
+        <p>On définit par membre statique un membre appartenant à la classe. Par exemple, un attribut statique aura la même valeur pour chacune des instances de la classes. Si pour une classe donnée vous avez du code commun à toutes les instances vous pouvez alors l'écrire dans une méthode statique.</p> 
+        <h3>Définition des méthodes</h3> 
+        <p>Remarques :</p> 
+        <ul> 
+         <li>Si le type de retour n'est pas précisé c'est que la méthode ne retourne rien.</li> 
+         <li>S'il on ne précise aucun attribut c'est que la méthode n'en a pas.</li> 
+         <li>Pour les paramètres je fournis les noms.</li> 
+        </ul> 
+        <ol> 
+         <li>CameraModel</li> 
+        </ol> 
+        <ul> 
+         <li>getNbSpritesInWidth : retourne un entier qu'on ne doit pas modifier.</li> 
+         <li>getNbSpritesInHeight : retourne un entier qu'on ne doit pas modifier.</li> 
+         <li>getCameraPositions : retourne un tableau d'entier, et prend deux entiers qu'on ne doit pas modifier (aX et aY).</li> 
+        </ul> 
+        <ol start="2"> 
+         <li>CharacterController</li> 
+        </ol> 
+        <ul> 
+         <li>moveBox : retourne un caractère qu'on ne doit pas modifier, et prend un caractère qu'on ne doit pas modifier (aReplacedSprites), ainsi que 4 entiers qu'on ne doit pas modifier (aX1, aY1, aX2 et aY2).</li> 
+         <li>getPlayerSprites : retourne un caractère, et prend un caractère qu'on ne doit pas modifier (aReplacedSprites), de plus cette méthode ne doit pas modifier l'objet.</li> 
+         <li>isWall : retourne un booléen qu'on ne doit pas modifier, et prend un caractère qu'on ne doit pas modifier (aReplacedSprites), de plus cette méthode ne doit pas modifier l'objet.</li> 
+         <li>isBox : retourne un booléen qu'on ne doit pas modifier, et prend un caractère qu'on ne doit pas modifier (aReplacedSprites), de plus cette méthode ne doit pas modifier l'objet.</li> 
+         <li>CharacterController : prend deux paramètres un CharacterModel et un MapModel.</li> 
+         <li>getX : retourne un entier qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+         <li>getY : retourne un entier qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+        </ul> 
+        <ol start="3"> 
+         <li>CharacterModel</li> 
+        </ol> 
+        <ul> 
+         <li>CharacterModel : prend un tableau d'entier qu'on ne doit pas modifier (initPlayerPos).</li> 
+         <li>getX : retourne un entier qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+         <li>getY : retourne un entier qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+         <li>getNextPos : retourne un tableau d'entier qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+         <li>getOldTypeOfSprites : retourne un caractère qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+         <li>setOldTypeOfSprites : prend un caractère qu'on ne doit pas modifier.</li> 
+        </ul> 
+        <ol start="4"> 
+         <li>MainController</li> 
+        </ol> 
+        <ul> 
+         <li>MainController : prend un pointeur de MapController, un pointeur de CameraModel et un pointeur de CharacterController en paramètre (respectivement aMapController, aCameraModel et aCharacterController).</li> 
+        </ul> 
+        <ol start="5"> 
+         <li>MapController</li> 
+        </ol> 
+        <ul> 
+         <li>MapController : prend un pointeur de MapModel et un pointeur de MapView en paramètre (respectivement aMapModel et aMapView).</li> 
+         <li>getPlayerPositions : retourne un tableau d'entier qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+         <li>paint : prend un tableau d'entier qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+         <li>isEndOfGame : retourne un booléen, et cette méthode ne doit pas modifier l'objet.</li> 
+        </ul> 
+        <ol start="6"> 
+         <li>MapModel</li> 
+        </ol> 
+        <ul> 
+         <li>getPlayerPositions : retourne un tableau d'entier qu'on ne doit pas modifier, et cette méthode ne doit pas modifier l'objet.</li> 
+         <li>getTypeOfSprites : retourne un caractère qu'on ne doit pas modifier, et prend 2 entiers qu'on ne doit pas modifier (aXSprites et aYSprites).</li> 
+         <li>setTypeOfSprites : prend 2 entiers qu'on ne doit pas modifier (aXSprites et aYSprites), et un caractère qu'on ne doit pas modifier (aTypeOfSprites).</li> 
+         <li>isFinish : retourne un booléen, et cette méthode ne doit pas modifier l'objet.</li> 
+        </ul> 
+        <ol start="7"> 
+         <li>MapView</li> 
+        </ol> 
+        <ul> 
+         <li>getSprites : retourne une référence d'Image, prend un caractère qu'on ne doit pas modifier (typeOfSprites), de plus cette méthode ne doit pas modifier l'objet.</li> 
+         <li>MapView : prend un pointeur de MapModel en paramètre (aMapModel).</li> 
+         <li>paint : prend un tableau d'entier, et cette méthode ne doit pas modifier l'objet.</li> 
+        </ul> 
+        <ol start="8"> 
+         <li>SpritesManager</li> 
+        </ol> 
+        <ul> 
+         <li>getArea : retourne une référence d'Image.</li> 
+         <li>getBox : retourne une référence d'Image.</li> 
+         <li>getBoxOnArea : retourne une référence d'Image.</li> 
+         <li>getCharacter : retourne une référence d'Image.</li> 
+         <li>getCharacterOnArea : retourne une référence d'Image.</li> 
+         <li>getFloorImg : retourne une référence d'Image.</li> 
+         <li>getWall : retourne une référence d'Image.</li> 
+        </ul> 
+        <hr> 
+        <p><strong>Astuces</strong></p> 
+        <ol> 
+         <li>Méthode ne devant pas modifier l'objet</li> 
+        </ol> 
+        <p>On telle méthode s'écrit suivi par le mot-clé "const", comme dans l'exemple suivant :</p> 
+        <pre><code>class Voiture {
+  public:
+    void reviser() const;
+};
+	
+void Voiture::reviser() const {
+	
+}
+</code></pre> 
+        <p>Effectivement, il paraît absurde de modifier la voiture lorsqu'on la révise, en effet on n'a pas à modifier l'état de la voiture.</p> 
+        <ol start="2"> 
+         <li>Pointeur</li> 
+        </ol> 
+        <p>Voici un exemple d'une fonction qui prend en paramètre un pointeur de notre classe Voiture :</p> 
+        <pre><code>void detruire(Voiture * unPointeur) {
+	
+}
+</code></pre> 
+        <p>On dit que notre type est un pointeur grâce au mot-clé "*". Ainsi unPointeur est un pointeur de Voiture.</p> 
+        <ol start="3"> 
+         <li>Référence</li> 
+        </ol> 
+        <p>Voici un exemple de fonction qui retourne une référence de Voiture :</p> 
+        <pre><code>Voiture&amp; construire() {
+	
+}
+</code></pre> 
+        <p>Le "&amp;" signifie qu'on a une référence.</p> 
+        <ol start="4"> 
+         <li>Membres statiques</li> 
+        </ol> 
+        <p>Voici un exemple d'attribut statique et de méthode statique :</p> 
+        <pre><code>class Voiture {
+  private:
+    static int nbInstances;
+  public:
+    static int getNbInstances();
+};
+	
+int Voiture::getNbInstances() {
+  return Voiture::nbInstances;
+}
+</code></pre> 
+        <p>Plusieurs remarques :</p> 
+        <ul> 
+         <li>Le mot-clé "static" permet de définir un membre statique (attribut ou méthode).</li> 
+         <li>Lors de la définition d'une méthode de classe on ne reprécise pas qu'il s'agit d'un membre statique, vous l'avez en effet remarqué le mot-clé "static" n'est pas écrit (et ce n'est pas une faute).</li> 
+         <li>Pour accéder à un attribut statique de MaClasse, il faut le préfixer par "MaClasse::".</li> 
+        </ul> 
+        <hr> 
+        <p>Vous avez désormais toutes les cartes en main pour écrire les bases du Sokoban en orienté objet.</p> 
+        <p>Si vous avez terminé ou si vous rencontrez des problèmes vous pouvez télécharger la solution <span>ici</span>.</p> 
+        <p>Dans la prochaine étape, c'est-à-dire la deuxième, nous réaliserons la gestion de la caméra.</p> 
+        <p>N'hésitez pas à me faire un retour : les améliorations que vous apporteriez (un regard extérieur est toujours bienvenu), les fautes, etc.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/les-bases.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Les bases 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/la-camera.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           La caméra 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/l-affichage.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           L'affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/le-personnage.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Le personnage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/la-physique-et-la-partie.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           La physique et la partie 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/les-bases.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Les bases 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/la-camera.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          La caméra 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/l-affichage.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          L'affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/le-personnage.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Le personnage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/la-physique-et-la-partie.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          La physique et la partie 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

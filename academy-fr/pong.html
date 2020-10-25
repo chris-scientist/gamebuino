@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/make-your-very-first-games-with-pong.html"> Pong (C++ 2/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Pong </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Pong </h1> 
+        <h5> Étape 3 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Le célèbre jeux où vous tapez dans la balle avec une raquette. Dans cette tape nous allons aborder:</p> 
+        <ul> 
+         <li> <p>Les collisions avancées</p> </li> 
+         <li> <p>Une révision de tout ce que vous venez d'apprendre pour pogrammer un Pong à 2 joueurs.</p> </li> 
+        </ul> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Défiez vos amis avec un jeu 2 joueurs. Vous allez construire avec tout ce qu'on a vu jusqu'à présent, et approfondir vos connaissances sur les conditions if.</p> 
+        <h1>Pong, un grand classique du jeu vidéo</h1> 
+        <p><strong>Durée</strong> 30-40 minutes (et plus si affinité)</p> 
+        <p><strong>Prérequis</strong></p> 
+        <ul> 
+         <li>Avoir une <span>Gamebuino META</span> </li> 
+         <li>Avoir effectué l' <span>Installation de la Gamebuino META</span> </li> 
+         <li>Avoir fait les premières étapes de cet atelier <span>hello, world</span>, <span>compteur d'invités</span> et <span>balle rebondissante</span> </li> 
+        </ul> 
+        <p>Pong était un des premiers jeux vidéo d'arcade en 1972, et a connu un énorme succès. Ce classique du jeu vidéo reste à la fois amusant et suffisamment simple pour apprendre à coder.</p> 
+        <p>Dans cette étape, nous allons recréer ce classique nous aussi. Pour y parvenir, on va devoir utiliser ce que l'on a vu avec la balle dans l'atelier <span>balle rebondissante</span> et se baser sur ce qu'on a fait dans le<span>compteur d'invités</span> pour faire bouger les raquettes. Mais commençons d'abord avec une analyse plus détaillée du jeu.</p> 
+        <h2>La décomposition du jeu</h2> 
+        <p>J'ai décomposé le jeu en plusieurs parties. Cela nous permettra de nous concentrer sur une seule tâche à la fois. De plus, essayer de comprendre comment un jeu est programmé en regardant son ensemble peut-être intimidant. En le décomposant, on voit qu'en réalité le jeu est composé de plusieurs parties simples.</p> 
+        <ul> 
+         <li>Créer la balle et la raquette</li> 
+         <li>Afficher la balle et la raquette</li> 
+         <li>Mettre à jour la position de la raquette</li> 
+         <li>Mettre à jour la position de la balle</li> 
+         <li>Vérifier les collisions entre la balle et les murs</li> 
+         <li>Vérifier les collisions entre la balle et la raquette</li> 
+         <li>Vérifier si la partie n'est pas perdue</li> 
+         <li>Ajouter un second joueur</li> 
+         <li>Compter et afficher les scores</li> 
+        </ul> 
+        <p>On commencera donc par créer un Pong à un joueur. Une fois que ce sera fonctionnel, ajouter un autre joueur sera très simple.</p> 
+        <h2>Implémenter la balle et la raquette</h2> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+
+
+// Caractéristiques de la balle
+int balle_posX = 20;
+int balle_posY = 20;
+int balle_speedX = 1;
+int balle_speedY = 1;
+int balle_taille = 4;
+
+
+// Caractéristiques de la raquette
+int raquette1_posX = 10;
+int raquette1_posY = 30;
+
+
+// Dimensions de la raquette
+int raquette_hauteur = 12;
+int raquette_largeur = 3;
+
+
+void setup() {
+  gb.begin();
+}
+
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+}
+
+</code></pre> 
+        <p>Ici on a créé nos deux objets : la balle et la première raquette. La balle a une position horizontale (X) et une position verticale (Y). Pour chaque axe on a aussi une vitesse qui détermine la direction de la balle. La raquette a elle aussi une position X et Y. Cependant elle n'a pas de vitesse car on la contrôlera avec les flèches. La raquette a une hauteur et une largeur (<code>raquette_hauteur</code> et <code>raquette_largeur</code>). On a pareil pour la balle, sauf que la balle est un carré, donc on se contentera de <code>balle_taille</code> pour définir sa largeur et hauteur.</p> 
+        <pre><code>void loop() {
+  while (gb.update());
+  gb.display.clear();
+
+  // Afficher la balle
+  gb.display.fillRect(balle_posX, balle_posY, balle_taille, balle_taille);
+  // Afficher la raquette
+  gb.display.fillRect(raquette1_posX, raquette1_posY, raquette_largeur, raquette_hauteur);
+}
+</code></pre> 
+        <p>Maintenant, on affiche notre balle et notre raquette. Rien de trop nouveau ici, on rappelle juste la syntaxe de <code>fillRect</code>:</p> 
+        <p><code>gb.display.fillRect( coordonnée x du rectangle , coordonnée y du rectangle , largeur , hauteur );</code></p> 
+        <h2>Contrôler la raquette</h2> 
+        <pre><code>void loop() {
+
+
+  while (gb.update());
+  gb.display.clear();
+
+
+  // Contrôles de la raquette1
+  if (gb.buttons.repeat(BUTTON_UP, 0)) {
+    raquette1_posY = raquette1_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_DOWN, 0)) {
+    raquette1_posY = raquette1_posY + 1;
+  }
+
+
+  // Afficher la balle et la raquette //
+}
+</code></pre> 
+        <p>Ce code nous permet de contrôler la raquette. Dans les étapes précédentes, nous avons utilisé <code>gb.buttons.pressed(BUTTON_A)</code> pour vérifier quand l'utilisateur appuyait sur le bouton A mais ici, on veut déplacer la raquette non pas QUAND le bouton est enfoncé, mais TANT QUE le bouton est enfoncé. Heureusement, la bibliothèque Gamebuino nous offre 5 fonctions différentes liées aux boutons :</p> 
+        <pre><code>* gb.buttons.pressed()
+* gb.buttons.released()
+* gb.buttons.held()
+* gb.buttons.repeat()
+gb.buttons.timeHeld()
+</code></pre> 
+        <p>Nous connaissons déjà <code>gb.buttons.pressed()</code> et nous allons nous intéresser à <code>gb.buttons.repeat()</code>. Pour savoir à quoi servent les autres fonctions, faites un tour dans les <span>références</span></p> 
+        <p><code>gb.buttons.repeat(BUTTON_UP, 3)</code> est vrai toutes les 3 images lorsque la flèche haute est maintenue. En mettant un 0 à la place du 3, cette fonction est vraie pour toutes les images où la flèche est maintenue.</p> 
+        <h2>Collisions</h2> 
+        <pre><code>void setup() {
+  // setup
+}
+
+
+
+void loop() {
+  // Contrôles de la raquette
+
+
+  balle_posX = balle_posX + balle_speedX;
+  balle_posY = balle_posY + balle_speedY;
+
+
+  if (balle_posY &lt; 0) {  // Rebond en haut
+    balle_speedY = 1;
+  }
+
+
+  if (balle_posY &gt; gb.display.height() - balle_taille) {  // Rebond en bas
+    balle_speedY = -1;
+  }
+
+
+  if (balle_posX &gt; gb.display.width() - balle_taille) {  // Rebond à droite
+    balle_speedX = -1;
+  }
+
+
+  // Afficher la balle et la raquette
+}
+</code></pre> 
+        <p>Ici, on applique ce qu'on a vu précédemment. On met à jour la position de la balle. Ensuite on vérifie les rebonds avec les murs. La différence avec la dernière fois est qu'on n'a plus que 3 murs : en haut, en bas et à droite. Le côté gauche doit être "défendu" par la raquette. Plus tard, quand on aura mis le second joueur, on enlèvera aussi le mur droit.</p> 
+        <p>Si vous jouez au jeu tel quel, la balle se déplace, la raquette aussi. Mais la balle passe tout droit à travers la raquette ! Pas très amusant, non ? Alors regardons comment gérer les rebonds sur la raquette.</p> 
+        <p><img src="../assets/e33e90711f63cebffd919183a311375b61abd98d.png" alt="" style="max-width:100%"></p> 
+        <p>Contrairement aux collisions avec les bords de l'écran, la raquette se déplace. On doit donc vérifier plusieurs conditions pour pouvoir dire si la balle va rebondir. Pour ça, on va s'aider du schéma, vous pouvez voir la raquette en noir et 3 positions possibles pour la balle. Dans les 3 cas, on veut que la balle rebondisse. On va en déduire 3 conditions nécessaires.</p> 
+        <p>Tout d'abord, vous remarquez surement qu'un rebond ne se passe que si les balles touchent la raquette. Plus précisément, si le côté gauche de la balle touche le côté droit de la raquette.</p> 
+        <p>Ensuite, pour que la balle rebondisse, il faut qu'elle touche au moins partiellement la raquette. On voit sur le schéma qu'il faut que <strong>le côté bas de la balle</strong> soit en DESSOUS du <strong>côté haut de la raquette</strong>. De la même manière, en regardant la troisième balle, il faut aussi que le <strong>haut de la balle</strong> soit au-DESSUS du <strong>bas de la raquette</strong>.</p> 
+        <ul> 
+         <li>Si le côté gauche de la balle est sur le côté droit de la raquette</li> 
+         <li>Si le côté bas de la balle est plus bas que le haut de la raquette</li> 
+         <li>Si le côté haut de la balle est plus haut le bas de la raquette</li> 
+        </ul> 
+        <p>*Des conditions complexes comme celles-ci son presque impossibles à déduire sans l'aide d'un schéma comme le diagramme ci-dessus. J'ai fait ce diagramme sur un bout de papier avec un crayon (puis, je l'ai converti en .PNG pour ce tutoriel :P ). Lorsque vous programmez un jeu, c'est crucial d'avoir une feuille et un crayon pas loin. Ça vous évitera des maux de tête. *</p> 
+        <p>Si ces 3 conditions sont valides, alors on change la direction de la balle. Pour l'implémenter, on pourrait écrire des <strong>if</strong> imbriqués :</p> 
+        <pre><code>if (balle_posX == raquette1_posX + raquette_largeur) {  // Si le côté gauche de la balle est sur le côté droit de la raquette
+  if (balle_posY + balle_taille &gt;= raquette1_posY) {  // Si le côté bas de la balle est plus bas que le haut de la raquette
+    if (balle_posY &lt;= raquette1_posY + raquette_hauteur) {  // Si le côté haut de la balle est plus haut que le bas de la raquette
+       // Rebond
+    }
+  }
+}
+</code></pre> 
+        <p>Placer une série de <strong>if</strong> l'un dans l'autre crée beaucoup d'accolades, et c'est assez lourd visuellement. En C/C++ on peut simplifier ce genre de "cascade" de <strong>if</strong> avec les opérateurs <strong>ET</strong> et <strong>OU</strong>. L'opérateur <strong>ET</strong> s'écrit <code>&amp;&amp;</code> et l'opérateur <strong>OU</strong> s'écrit <code>||</code> (Pour le caractère | il faut faire AltGr+6 sur un clavier Windows, option + maj + L pour un clavier Mac). Voici un petit exemple :</p> 
+        <pre><code>// Si a vaut 3 ET b est négatif
+if ((a == 3) &amp;&amp; (b &lt; 0)) {
+}
+
+// Si a est supérieur ou égale à 3 OU si b est égale à 0
+if ((a &gt;= 3) || (b == 0)) {
+}
+</code></pre> 
+        <p><em>Il faut toujours une paire de parenthèses <code>( )</code> autour de l'ensemble des conditions.</em></p> 
+        <p>Dans notre cas, on teste 3 conditions. Mais que ça soit pour 2, 3, ou 12 conditions, avec les opérateurs <code>&amp;&amp;</code> et <code>||</code>, on peut toutes les mettre ensemble. Mais si vous mettez les conditions sur la même ligne, on se retrouve avec une ligne très longue! Heureusement pour nous, on peut retourner à la ligne entre 2 conditions :</p> 
+        <pre><code>// Les trois conditions sur la même ligne
+if ( (balle_posX == raquette1_posX + raquette_largeur) &amp;&amp; (balle_posY + balle_taille &gt;= raquette1_posY) &amp;&amp; (balle_posY &lt;= raquette1_posY + raquette_hauteur) ) {
+    // Rebond
+}
+
+// Les mêmes conditions avec des retours à la ligne
+if ( (balle_posX == raquette1_posX + raquette_largeur) 
+  &amp;&amp; (balle_posY + balle_taille &gt;= raquette1_posY)
+  &amp;&amp; (balle_posY &lt;= raquette1_posY + raquette_hauteur) ) {
+  // Rebond
+}
+</code></pre> 
+        <p>Nous avons maintenant une manière d'interagir avec la balle. Quand le joueur rate la balle et qu'elle sort de l'écran, il a perdu. Il faut replacer la balle pour commencer une nouvelle manche.</p> 
+        <pre><code>void loop() {
+  // Contrôles de la raquette //
+  // Mise à jour de la balle + collisions //
+
+  if (balle_posX &lt; 0) {
+    // Remettre la balle au milieu de l'écran
+    int balle_posX = 20;
+    int balle_posY = 20;
+    int balle_speedX = 1;
+    int balle_speedY = 1;
+  }
+
+  // Afficher la balle et la raquette //
+}
+</code></pre> 
+        <p>Voilà, maintenant quand la balle sort par le côté gauche, on la replace dans l'écran et on la fait partir par la droite pour ne pas surprendre le joueur ;) Je vous remets tout le code que nous avons fait jusqu'à présent :</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Caractéristiques de la balle
+int balle_posX = 20;
+int balle_posY = 20;
+int balle_speedX = 1;
+int balle_speedY = 1;
+int balle_taille = 4;
+
+// Caractéristiques de la raquette1
+int raquette1_posX = 10;
+int raquette1_posY = 30;
+
+// Dimensions des deux raquettes
+int raquette_hauteur = 10;
+int raquette_largeur = 3;
+
+void setup() {
+  gb.begin();
+}
+
+void loop() {
+  while(!gb.update());
+  gb.display.clear();
+
+  // MAJ raquette1
+  if (gb.buttons.repeat(BUTTON_UP, 0)) {
+    raquette1_posY = raquette1_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_DOWN, 0)) {
+    raquette1_posY = raquette1_posY + 1;
+  }
+
+  // MAJ balle
+  balle_posX = balle_posX + balle_speedX;
+  balle_posY = balle_posY + balle_speedY;
+
+  // Collisions avec les trois murs
+  if (balle_posY &lt; 0) {
+    balle_speedY = 1;
+  }
+  if (balle_posY &gt; gb.display.height() - balle_taille) {
+    balle_speedY = -1;
+  }
+  if (balle_posX &gt; gb.display.width() - balle_taille) {
+    balle_speedX = -1;
+  }
+
+  // Collision balle/raquette
+  if ( (balle_posX == raquette1_posX + raquette_largeur)
+    &amp;&amp; (balle_posY + balle_taille &gt;= raquette1_posY) 
+    &amp;&amp; (balle_posY &lt;= raquette1_posY + raquette_hauteur) ) {
+    balle_speedX = 1;
+  }
+
+  // Vérifier si la balle est sortie de l'écran
+  if (balle_posX &lt; 0) {
+    // Replacer la balle sur l'écran
+    balle_posX = 20;
+    balle_posY = 20;
+    balle_speedX = 1;
+    balle_speedY = 1;
+  }
+
+  // Afficher la balle
+  gb.display.fillRect(balle_posX, balle_posY, balle_taille, balle_taille);
+  // Afficher la raquette1
+  gb.display.fillRect(raquette1_posX, raquette1_posY, raquette_largeur, raquette_hauteur);
+}
+</code></pre> 
+        <p><img src="../assets/ae40a9cbe30fdb9ed406c259ae7dea3eba4d09bc.gif" alt="" style="max-width:100%"></p> 
+        <h2>À vous de jouer!</h2> 
+        <p>Nous avons fait la décomposition du jeu vidéo Pong, puis nous avons recréé le cœur du jeu. Une balle se déplace sur l'écran, et le joueur déplace une raquette. S'il laisse passer la balle derrière lui, la partie est perdue, et la balle se replace sur l'écran. Je vous laisse compléter les éléments du jeu suivants :</p> 
+        <ul> 
+         <li>Ajouter une deuxième raquette</li> 
+         <li>Utiliser les boutons A et B pour la contrôler</li> 
+         <li>Détecter quand la balle sort de l'écran par la droite</li> 
+         <li>Compter le score</li> 
+         <li>Afficher le score</li> 
+        </ul> 
+        <p><strong>Astuce:</strong> Pour compter et afficher le score, rafraichissez-vous la mémoire avec l'atelier du <span>compteur d'invités</span>.</p> 
+        <p><strong>Partagez votre jeu sur les réseaux sociaux avec #gamebuino #pong , on vous suit de près ;)</strong></p> 
+        <h2>Exemple de solution</h2> 
+        <p>Si vous êtes en panne d'inspiration, voilà ce que l'on a fait de notre côté :) <img src="../assets/350157c30a88b7629b696433ea18b6ee07dc55b0.gif" alt="" style="max-width:100%"></p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Caractéristiques de la balle
+int balle_posX = 20;
+int balle_posY = 20;
+int balle_speedX = 1;
+int balle_speedY = 1;
+int balle_taille = 3;
+
+// Caractéristiques de la raquette
+int raquette1_posX = 10;
+int raquette1_posY = 30;
+int raquette2_posX = gb.display.width() - 13;
+int raquette2_posY = 30;
+
+// Dimensions des deux raquettes
+int raquette_hauteur = 10;
+int raquette_largeur = 3;
+
+// Scores
+int score1;  // Score du joueur 1
+int score2;  // Score du joueur 2
+
+void setup() {
+  gb.begin();
+}
+
+void loop() {
+  while(!gb.update());
+  gb.display.clear();
+
+  // MAJ raquette1
+  if (gb.buttons.repeat(BUTTON_UP, 0)) {
+    raquette1_posY = raquette1_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_DOWN, 0)) {
+    raquette1_posY = raquette1_posY + 1;
+  }
+  // MAJ raquette2
+  if (gb.buttons.repeat(BUTTON_B, 0)) {
+    raquette2_posY = raquette2_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_A, 0)) {
+    raquette2_posY = raquette2_posY + 1;
+  }
+
+  // MAJ balle
+  balle_posX = balle_posX + balle_speedX;
+  balle_posY = balle_posY + balle_speedY;
+
+  // Collisions avec les murs (haut et bas)
+  if (balle_posY &lt; 0) {
+    balle_speedY = 1;
+  }
+  if (balle_posY &gt; gb.display.height() - balle_taille) {
+    balle_speedY = -1;
+  }
+
+  // Collision balle/raquette1
+  if ( (balle_posX == raquette1_posX + raquette_largeur)
+    &amp;&amp; (balle_posY + balle_taille &gt;= raquette1_posY) 
+    &amp;&amp; (balle_posY &lt;= raquette1_posY + raquette_hauteur) ) {
+    balle_speedX = 1;
+  }
+  // Collision balle/raquette2
+  if ( (balle_posX + balle_taille == raquette2_posX)
+    &amp;&amp; (balle_posY + balle_taille &gt;= raquette2_posY) 
+    &amp;&amp; (balle_posY &lt;= raquette2_posY + raquette_hauteur) ) {
+    balle_speedX = -1;
+  }
+
+  // Vérifier si la balle est sortie de l'écran
+  if (balle_posX &lt; 0) {
+    // Replacer la balle sur l'écran
+    balle_posX = 20;
+    balle_posY = 20;
+    balle_speedX = 1;
+    balle_speedY = 1;
+    // Incrémenter le score du joueur 2
+    score2 = score2 + 1;
+  }
+  if (balle_posX &gt; gb.display.width()) {
+    // Replacer la balle sur l'écran
+    balle_posX = 20;
+    balle_posY = 20;
+    balle_speedX = 1;
+    balle_speedY = 1;
+    // Incrémenter le score du joueur 1
+    score1 = score1 + 1;
+  }
+
+  // Afficher la balle
+  gb.display.fillRect(balle_posX, balle_posY, balle_taille, balle_taille);
+  // Afficher la raquette1
+  gb.display.fillRect(raquette1_posX, raquette1_posY, raquette_largeur, raquette_hauteur);
+  // Afficher la raquette2
+  gb.display.fillRect(raquette2_posX, raquette2_posY, raquette_largeur, raquette_hauteur);
+
+  // Afficher les scores
+  gb.display.setCursor(35, 5);
+  gb.display.print(score1);
+  gb.display.setCursor(42, 5);
+  gb.display.print(score2);
+}
+</code></pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/hello-world.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Hello, world 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/tally-counter.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Compteur d'invités 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/bouncing-ball.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Balle rebondissante 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/pong.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Pong 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/artificial-intelligence.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Intelligence artificielle 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/hello-world.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Hello, world 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/tally-counter.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Compteur d'invités 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/bouncing-ball.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Balle rebondissante 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/pong.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Pong 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/artificial-intelligence.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Intelligence artificielle 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

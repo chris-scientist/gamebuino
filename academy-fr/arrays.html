@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/tap-tap-toc.html"> Tap Tap (C++ 3/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Les tableaux </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Les tableaux </h1> 
+        <h5> Étape 3 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Notre petite démo du jeu n'est pas très amusante pour l'instant: on ne voit qu'une seule brique à la fois. Impossible de jouer rapidement, nous allons donc devoir ajouter quelques briques pour améliorer tout ça !</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Le joueur devra frapper du côté ou se trouve la brique qui est tout en bas comme dans notre démo mais il pourra mieux réagir car il verra les briques suivantes !</p> 
+        <p>Intuitivement, vous vous dites sûrement qu'il suffit de rajouter les variables <code>brique1</code>, <code>brique2</code>, <code>brique3</code>, <code>brique4</code>, et <code>brique5</code> pour y parvenir et en effet, c'est une solution possible, mais ça n'est pas une <em>bonne</em> solution.</p> 
+        <p>Comment allons-nous faire pour programmer ces briques ? Eh bien nous allons créer <strong>un tableau</strong>. En C++, un tableau est une sorte de liste qui contient un nombre précis de variables. Si nous imaginons que les variables sont des boites, alors un tableau est une série de boites liées.</p> 
+        <p><img src="../assets/0a4a7bcf54c0823124ece1f4eeca34f40f2db8d9.png" alt="" style="max-width:100%"></p> 
+        <p>Au lieu d'avoir un nom par boite, on a un nom pour toutes les boites: <code>briques</code>. Les tableaux sont très puissants en programmation car ils peuvent contenir n'importe quel type de variable (mais tous les éléments au sein d'un tableau doivent être du même type). Ici, on veut un tableau d'entiers. Pour accéder à un des éléments on écrit <code>nomDuTableau[indice_de_l_element]</code>, mais attention: ** les indices commencent avec 0** donc :</p> 
+        <pre><code>Premier élément :    nomDuTableau[0]
+Deuxième élément :    nomDuTableau[1]
+Troisième élément :    nomDuTableau[2]
+...
+N-ème élément :        nomDuTableau[N - 1]
+...
+Dernier élément :    nomDuTableau[NBR_D_ELEMENTS - 1]
+</code></pre> 
+        <p>Okay, mais ça c'est pour interagir avec les valeurs dans le tableau. Comment fait-on pour créer un tableau ? On utilise la syntaxe:</p> 
+        <p><code>int monTableau[NBR_D_ELEMENTS];</code></p> 
+        <p>Pour déclarer un <strong>tableau d'entiers</strong>, c'est presque comme déclarer une variable de type entier. On met d'abord le <strong>type des éléments</strong> du tableau (ici <code>int</code>), son <code>nom</code> (ici <code>monTableau</code>), et enfin <strong>la taille du tableau entre crochets</strong> <code>[ ]</code>.</p> 
+        <p><code>int gamebuinoTeamAges[3] = {26, 23, 19};</code></p> 
+        <p>Optionnellement, nous pouvons remplir le tableau de valeurs une première fois avec une paire d'accolades { }. On parle alors d'initialisation du tableau. Attention, on ne peut faire ceci <strong>que lors de la déclaration</strong>. Si, après la déclaration, vous écrivez <code>gamebuinoTeamAges = {34, 24, 12};</code>, vous aurez des erreurs lorsque vous chercherez à compiler votre code !</p> 
+        <p>Pour en revenir à notre jeu 'TapTap', il faut que nous déclarions un <strong>tableau</strong> d'entiers <code>briques</code>. Pour commencer, il n'y aura que quatre briques et nous utiliserons une constante pour savoir combien de briques nous utiliserons. On considérera que la brique d'indice 0 est celle tout en bas: celle que le joueur doit frapper.</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Constantes
+// ...
+const int NBR_DE_BRIQUES = 4;
+
+int briques[NBR_DE_BRIQUES];  // Position des briques. Soit GAUCHE, soit DROITE
+int fleche = SANS_DIRECTION;  // Correspond à la flèche appuyée par l'utilisateur. Soit GAUCHE, soit DROITE, soit SANS_DIRECTION
+int score = 0;
+
+void setup() {
+    gb.begin();
+
+    // Créons des briques aléatoires
+    briques[0] = random(GAUCHE, DROITE + 1);  // +1 parce-que le deuxième paramètre n'est pas dans l'intervalle : random(1, 3) =&gt; 1 ou 2 (pas 3)
+    briques[1] = random(GAUCHE, DROITE + 1);
+    briques[2] = random(GAUCHE, DROITE + 1);
+    briques[3] = random(GAUCHE, DROITE + 1);
+
+    fleche = SANS_DIRECTION;
+}
+
+void loop() {
+    while(!gb.update());
+
+    // ENTREES //
+    // ...
+
+    // MISE A JOUR //
+    if (score &gt; 0) {
+        score -= 1;
+    }
+    if (fleche != SANS_DIRECTION) {
+        if (briques[0] == fleche) {  // Bonne flèche
+            score += 15;
+
+            // Décaler les briques vers le bas (donc la [0] devient la [1], etc...)
+            briques[0] = briques[1];
+            briques[1] = briques[2];
+            briques[2] = briques[3];
+            briques[3] = random(GAUCHE, DROITE + 1);  // Nouvelle brique
+        }
+        else {
+            // Perdu :(
+            score = 0;
+        }
+
+        fleche = SANS_DIRECTION;  // L'entrée utilisateur a été prise en compte
+    }
+
+    // AFFICHAGE //
+    gb.display.clear();
+
+    if (briques[0] == GAUCHE) {
+        gb.display.fillRect(20, 40, 20, 10);
+    } 
+    else {  // DROITE
+        gb.display.fillRect(40, 40, 20, 10);
+    }
+    if (briques[1] == GAUCHE) {
+        gb.display.fillRect(20, 30, 20, 10);
+    } 
+    else {  // DROITE
+        gb.display.fillRect(40, 30, 20, 10);
+    }
+    if (briques[2] == GAUCHE) {
+        gb.display.fillRect(20, 30, 20, 10);
+    } 
+    else {  // DROITE
+        gb.display.fillRect(40, 30, 20, 10);
+    }
+    if (briques[3] == GAUCHE) {
+        gb.display.fillRect(20, 20, 20, 10);
+    } 
+    else {  // DROITE
+        gb.display.fillRect(40, 20, 20, 10);
+    }
+
+
+    // Score
+    gb.display.print(score);
+}
+</code></pre> 
+        <p>Maintenant nous avons donc un tableau d'entiers <code>briques</code> de taille 4. Dans <code>setup()</code>, on donne des valeurs aléatoires pour chacune des briques. Au niveau des entrées, rien à changer, mais pour la logique et l'affichage, notre code doit être adapté. Dans la partie de mise à jour, nous avons fait en sorte que les briques "descendent". Chaque brique prend la valeur de celle du dessus, en commençant par la brique <code>[0]</code>. La dernière brique (<code>[3]</code>) prend une direction aléatoire. Dans la section d'affichage, il faut afficher toutes les briques. Donc nous avons presque fait un copié-collé pour chaque brique, avec seulement la position en hauteur de la brique à afficher qui change. Ce n'est pas très joli comme code et ça prend de la place mais dans l'atelier qui suit, nous verrons une méthode puissante et simple qui permettra de réduire les "presque copié-collé" !</p> 
+        <p>Essayez un peu tout ça et vous serrez prêt à passer à la dernière étape de cet atelier.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/tap-tap-how-fast-can-you-tap.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Tap Tap, à quelle vitesse peux-tu taper ? 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/inputs-update-draw.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Les 3 parties de la boucle principales: Entrées, Mise à jour, Affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/constants.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Les constantes 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/arrays.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Les tableaux 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/it-s-your-turn.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           À vous de jouer ! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/tap-tap-how-fast-can-you-tap.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Tap Tap, à quelle vitesse peux-tu taper ? 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/inputs-update-draw.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Les 3 parties de la boucle principales: Entrées, Mise à jour, Affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/constants.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Les constantes 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/arrays.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Les tableaux 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/it-s-your-turn.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          À vous de jouer ! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

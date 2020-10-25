@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/make-your-very-first-games-with-pong.html"> Pong (C++ 2/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Hello, world </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Hello, world </h1> 
+        <h5> Étape 0 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Votre tout premier programme :</p> 
+        <ul> 
+         <li>Comment compiler et lancer un programme</li> 
+         <li>Structure d'un programme et syntaxe</li> 
+         <li>Afficher du texte à l'écran</li> 
+         <li>Changer le style du texte</li> 
+        </ul> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Aujourd'hui, on va regarder comment ce programme fonctionne et le personnaliser !</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+void setup() {
+  gb.begin();
+}
+
+void loop() {
+  while(!gb.update());
+  gb.display.clear();
+
+  // C'est ici que le plus gros du programme se déroule
+  gb.display.print("hello, world");
+}
+</code></pre> 
+        <p>Comme vous avez pu vous en rendre compte, ce programme permet simplement d'afficher le texte <em>hello, world</em> sur votre Gamebuino (cf. image ci-dessous). Si tout s'est bien passé à lors de l'installation, vous obtenez quelque chose comme ceci :</p> 
+        <p><img src="../assets/13f998640674dcbdaa5b919320bbd96dd6942e31.png" alt="" style="max-width:100%"></p> 
+        <p>Eh oui ! Afficher du texte sur l'écran est la première étape vers votre tout premier jeu ! ;)</p> 
+        <p>Passons aux choses sérieuses ! On va décortiquer ce programme pour comprendre ce qui se passe.</p> 
+        <h2>La structure d'un jeu</h2> 
+        <p>Voici le squelette d'un programme pour la Gamebuino:</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+void setup() {
+
+}
+
+void loop() {
+
+}   
+</code></pre> 
+        <p>La structure générale du jeu est composée en 3 parties.</p> 
+        <p>Sur la première ligne, on trouve <code>#include &lt;Gamebuino-Meta.h&gt;</code>. Cette ligne nous permet d'inclure la bibliothèque de Gamebuino (l'affichage, les boutons, etc.) nécessaire afin de gérer la console. Sans elle, le jeu ne pourra pas être exécuté.</p> 
+        <p>La commande <code>#include</code> permet de réutiliser le code d'autres programmes externes. On la trouve au début des programmes. Dans notre premier programme, seule la bibliothèque Gamebuino est nécessaire.</p> 
+        <p>Les deux autres éléments essentiels à un jeu Gamebuino sont les 2 <strong>fonctions</strong> <code>setup</code> et <code>loop</code>. Toutes les instructions situées entre les <strong>accolades</strong> <code>{ }</code> seront exécutées quand la fonction sera appelée.</p> 
+        <h3>setup()</h3> 
+        <pre><code>void setup() {
+  gb.begin();
+}
+</code></pre> 
+        <p>La <strong>fonction</strong> <code>setup</code> se situe donc entre les lignes 3 et 5. Elle est appelée automatiquement une fois au démarrage du jeu, puis <code>loop</code> s'exécute en boucle, indéfiniment... d'où son nom ;) Vous voyez que notre fonction <code>setup</code> ne contient qu'une <strong>instruction</strong>: <code>gb.begin()</code>. Cette instruction sert à initialiser la Gamebuino. C'est pour ça qu'il est nécessaire de l'exécuter une et une seule fois, au démarrage. Vous remarquerez que chaque <strong>instruction</strong> du programme est suivie d'un <strong>point-virgule</strong> ("<strong>;</strong>") sans quoi vous auriez une erreur en essayant de compiler le programme.</p> 
+        <h3>loop()</h3> 
+        <pre><code>void loop() {
+  while(!gb.update());
+  gb.display.clear();
+
+
+
+  // C'est ici que le plus gros du programme se déroule
+  gb.display.print("hello, world");
+}
+</code></pre> 
+        <p>Les instructions situées dans <code>loop</code> sont exécutées en boucle.</p> 
+        <p><code>while(!gb.update());</code></p> 
+        <p>Cette instruction est également nécessaire dans tout programme Gamebuino. Elle va s'occuper de tout ce qui se passe en arrière-plan comme mettre à jour l'écran, regarder si les boutons ont été appuyés ou encore jouer les sons. De plus, elle s'occupe de limiter la vitesse à laquelle <code>loop</code> va s'exécuter afin de maintenir une vitesse de jeu constante. Par défaut, les jeux tournent à 25 images par seconde, ce qui signifie que la fonction <code>loop</code> est exécutée toutes les 0,04 seconde. C'est rapide, et c'est un bon compromis pour avoir des animations fluides sans demander trop de puissance de calcul.</p> 
+        <p>Pour l'instant, je ne vous demande pas de vous casser la tête avec chaque mot mais de pouvoir reconnaître cette instruction pour que vous sachiez ce qu'elle fait. Encore une fois, <strong>c'est une instruction nécessaire pour faire un jeu Gamebuino :)</strong></p> 
+        <p><code>gb.display.clear();</code></p> 
+        <p>Comme nous exécutons <code>loop</code> 25 fois par seconde, il faut effacer le contenu de l'écran avant de commencer à tracer l'image suivante, sinon, ça serait un joli bazar à l'écran ! C'est justement ce que fait <code>gb.display.clear</code></p> 
+        <p><code>gb.display.print("hello, world");</code></p> 
+        <p>Nous avons fait le tour du squelette nécessaire pour faire un programme Gamebuino et nous allons donc pouvoir passer aux choses sérieuses ! Ici, <code>gb</code> indique qu'il s'agit d'une fonction qui concerne la Gamebuino (elle est apportée par la bibliothèque de la Gamebuino que nous avons ajouté en début de programme), et <code>gb.display</code> indique qu'on s'adresse plus particulièrement à l'écran. <code>gb.display.print</code> est une fonction qui sert à écrire une <strong>chaîne de caractères</strong> sur l'écran de la gamebuino. <strong>Les chaînes de caractères</strong> sont délimitées par des guillemets <code>" "</code>.</p> 
+        <h3>Les commentaires</h3> 
+        <p>Vous avez peut-être remarqué qu'on a sauté une ligne dans la fonction <code>loop</code>. C'est parce que c'est un <strong>commentaire</strong>.</p> 
+        <p><code>// C'est ici que le plus gros du programme se déroule</code></p> 
+        <p>Parfois on a besoin d'expliquer ce que fait une partie du programme en utilisant des <strong>commentaires</strong>. Les commentaires sont des lignes qui commencent par <code>//</code>. Ils sont ignorés par l'ordinateur lors de l'exécution du programme mais permettent d'ajouter des notes personnelles en langage parlé.</p> 
+        <p>Les <strong>commentaires</strong> sont pratiques pour comprendre rapidement comment fonctionne un programme. Pensez au temps que vous gagnerez quand vous vous relirez dans un mois ;)</p> 
+        <h3>Remarques sur le C/C++ : les erreurs</h3> 
+        <p>Le langage C/C++ que vous êtes en train d'utiliser est <strong>sensible à la casse</strong> (rien à voir avec le fait de faire tomber votre programme par terre). Les majuscules et minuscules ont une importance : <code>print</code> n'est pas la même chose que <code>Print</code>. Si vous faites la faute, vous aurez une erreur au moment de compiler le programme !</p> 
+        <p>Et n'oubliez pas les points-virgules à la fin de chaque instruction !</p> 
+        <h3>À vous de jouer!</h3> 
+        <p>Maintenant, vous pouvez écrire ce que vous voulez sur la Gamebuino. Et si vous nous composiez un petit poème ?</p> 
+        <p><strong>Partagez le résultat avec #gamebuino #helloworld pour célébrer votre tout premier programme ! :)</strong></p> 
+        <p><strong>Astuce #1</strong> Vous pouvez utiliser <code>\n</code> pour insérer des retours à la ligne dans votre texte.</p> 
+        <p><strong>Astuce #2</strong> Vous pouvez changer la couleur du texte avec <code>gb.display.setColor</code>. Allez voir <span>Graphics::setColor</span> dans la <strong>Référence</strong> pour connaître la bonne syntaxe !</p> 
+        <p><strong>Astuce #3</strong> Pour changer l'échelle du texte, il y a la fonction <span>Graphics::setFontSize</span>. Essayez maintenant de créer votre propre programme en suivant les astuces. Aidez-vous de la capture d'écran et du code ci-dessous.</p> 
+        <p>En cas de doute, n'hésitez pas à relire le tutoriel pour mieux comprendre.</p> 
+        <h3>Exemple de solution</h3> 
+        <p><img src="../assets/f9cd6c73b65b9fbc30d8e7ed98e681a725e99f58.PNG" alt="" style="max-width:100%"></p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+
+
+void setup() {
+  gb.begin();
+}
+
+
+void loop() {
+  while(!gb.update());
+  gb.display.clear();
+
+
+  //Affichage du message à l'écran
+  gb.display.print("'hello, world'\nest une tradition\ninstauree en\n\n");
+  //Texte à l'échelle 2
+  gb.display.setFontSize(2);
+  gb.display.print("1978");
+  //Retour à l'échelle 1 et changement de couleur
+  gb.display.setFontSize(1);
+  gb.display.setColor(BROWN);
+  gb.display.print("\n\n\n       - GAMEBUINO");
+}
+</code></pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/hello-world.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Hello, world 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/tally-counter.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Compteur d'invités 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/bouncing-ball.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Balle rebondissante 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/pong.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Pong 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/artificial-intelligence.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Intelligence artificielle 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/hello-world.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Hello, world 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/tally-counter.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Compteur d'invités 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/bouncing-ball.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Balle rebondissante 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/pong.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Pong 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/artificial-intelligence.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Intelligence artificielle 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

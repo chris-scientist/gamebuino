@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/learn-to-code-a-snake-game-with-python.html"> Snake (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Finitions </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Finitions </h1> 
+        <h5> Étape 7 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Gestion de la fin de la partie.<br> Gestion du temps et clignotement.<br> Accès au code complet du jeu.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h3>Gérer la fin de la partie</h3> 
+        <p>Voilà une petite démo qui représente comment afficher les choses en fin de partie&nbsp;:</p> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/8-demo-end-640x512.gif" alt="Démo" style="max-width:100%"> 
+        </div> 
+        <p>Grosso modo, on change la couleur des murs et du fond, et on fait clignoter le serpent jusqu'à ce que le joueur presse le bouton <code>A</code> pour relancer une nouvelle partie.</p> 
+        <h4>Changement de couleurs</h4> 
+        <p>Commençons par gérer le changement des couleurs. On va définir deux nouvelles variables globales pour caractériser les nouvelles couleurs&nbsp;: une couleur de fond <code>COLOR_LOST_BG</code> et une couleur pour les tracés <code>COLOR_LOST_FG</code>. Pour détecter que la partie est perdue, on va également devoir définir une nouvelle phase de jeu <code>MODE_LOST</code>&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+COLOR_LOST_BG = 0x8800 # background
+COLOR_LOST_FG = 0xffff # foreground
+MODE_START    = 0
+MODE_READY    = 1
+MODE_PLAY     = 2
+MODE_LOST     = 3
+</code></pre> 
+        <p>Ensuite, on va modifier l'ordonnanceur pour qu'il prenne en compte cette nouvelle phase de jeu&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if not game['refresh']:
+        clearSnakeTail()
+    
+    if game['mode'] == MODE_START:
+        resetSnake()
+        spawnApple()
+        game['mode'] = MODE_READY
+        game['score'] = 0
+    elif game['mode'] == MODE_READY:
+        game['refresh'] = False
+        handleButtons()
+        moveSnake()
+        if snakeHasMoved():
+            game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if game['refresh']:
+            game['refresh'] = False
+        if didSnakeEatApple():
+            game['score'] += 1
+            game['refresh'] = True
+            extendSnakeTail()
+            spawnApple()
+        if didSnakeBiteItsTail() or didSnakeHitTheWall():
+            game['mode'] = MODE_LOST
+            game['refresh'] = True
+    else:
+        handleButtons()
+
+    draw()
+</code></pre> 
+        <p>Cette fois, lorsque le serpent se mord la queue ou heurte un mur, on bascule dans la phase <code>MODE_LOST</code>&nbsp;:</p> 
+        <pre><code class="language-python">if didSnakeBiteItsTail() or didSnakeHitTheWall():
+    game['mode'] = MODE_LOST
+    game['refresh'] = True
+</code></pre> 
+        <p>Puis on rajoute un test ultime qui sera validé si la phase courante du jeu correspond à <code>MODE_LOST</code>, puisque ni <code>MODE_START</code>, ni <code>MODE_READY</code>, ni <code>MODE_PLAY</code> n'auront validé les tests précédents&nbsp;:</p> 
+        <pre><code class="language-python">else:
+    handleButtons()
+</code></pre> 
+        <p>Ceci permet de donner la main au joueur en lui laissant la possiblité de relancer la partie en appuyant sur un bouton. On va donc ajouter la prise en compte de cette situation dans notre contrôleur&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def handleButtons():
+    if buttons.pressed(buttons.LEFT):
+        dirSnake(-1, 0)
+    elif buttons.pressed(buttons.RIGHT):
+        dirSnake(1, 0)
+    elif buttons.pressed(buttons.UP):
+        dirSnake(0, -1)
+    elif buttons.pressed(buttons.DOWN):
+        dirSnake(0, 1)
+    elif game['mode'] == MODE_LOST and buttons.pressed(buttons.A):
+        game['mode'] = MODE_START
+</code></pre> 
+        <p>Si le joueur appuie sur le bouton <code>A</code> alors que le jeu est en phase <code>MODE_LOST</code>, la partie est automatiquement relancée en repassant simplement en phase <code>MODE_START</code>.</p> 
+        <p>Il ne nous reste plus qu'à modifier les fonctions d'affichage de la scène de jeu pour appliquer le changement de couleurs. Il suffit pour cela de modifier les fonctions <code>clearScreen()</code> et <code>drawWalls()</code>&nbsp;pour qu'elles adaptent les couleurs à la phase de jeu&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def clearScreen():
+    color = COLOR_LOST_BG if game['mode'] == MODE_LOST else COLOR_BG
+    display.clear(color)
+
+def drawWalls():
+    color = COLOR_LOST_FG if game['mode'] == MODE_LOST else COLOR_WALL
+    display.setColor(color)
+    display.drawRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+</code></pre> 
+        <p>À ce stade, la fin de partie est marquée par le changement de couleurs de la scène de jeu... mais il nous reste à faire clignoter le serpent.</p> 
+        <h4>Clignotement du serpent</h4> 
+        <p>Le clignotement du serpent s'effectue en appliquant un changement de couleurs également, mais de manière alternative, avec une fréquence spécifique. Et si on veut pouvoir contrôler la fréquence des clignotements, il nous faut une sorte d'horloge interne.</p> 
+        <p>Donc, on va ajouter une nouvelle propriété <code>time</code> au moteur de jeu pour prendre en compte le temps qui s'écoule&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Initialization
+# ----------------------------------------------------------
+
+game  = {
+    'mode':    MODE_START,
+    'score':   0,
+    'time':    0,
+    'refresh': True
+}
+</code></pre> 
+        <p>Cette variable temporelle sera incrémentée d'une unité à chaque passage dans l'ordonnanceur et initialisée lors de la phase <code>MODE_START</code>&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if not game['refresh']:
+        clearSnakeTail()
+    
+    if game['mode'] == MODE_START:
+        resetSnake()
+        spawnApple()
+        game['mode'] = MODE_READY
+        game['score'] = 0
+        game['time'] = 0
+    elif game['mode'] == MODE_READY:
+        game['refresh'] = False
+        handleButtons()
+        moveSnake()
+        if snakeHasMoved():
+            game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if game['refresh']:
+            game['refresh'] = False
+        if didSnakeEatApple():
+            game['score'] += 1
+            game['refresh'] = True
+            extendSnakeTail()
+            spawnApple()
+        if didSnakeBiteItsTail() or didSnakeHitTheWall():
+            game['mode'] = MODE_LOST
+            game['refresh'] = True
+    else:
+        handleButtons()
+
+    draw()
+    game['time'] += 1
+</code></pre> 
+        <p>L'initialisation se fait pendant la phase <code>MODE_START</code>&nbsp;:</p> 
+        <pre><code class="language-python">if game['mode'] == MODE_START:
+    resetSnake()
+    spawnApple()
+    game['mode'] = MODE_READY
+    game['score'] = 0
+    game['time']  = 0
+</code></pre> 
+        <p>Et l'incrémentation intervient juste avant la fin du cycle de l'ordonnanceur&nbsp;:</p> 
+        <pre><code class="language-python">draw()
+game['time'] += 1
+</code></pre> 
+        <p>Maintenant que cette variable temporelle est en place, il n'y a plus qu'à modifier la fonction de tracé du serpent&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def drawSnake():
+    isTimeToBlink = game['time'] % 4 &lt; 2
+    color = COLOR_LOST_FG if game['mode'] == MODE_LOST and isTimeToBlink else COLOR_SNAKE
+    n = snake['len']
+    for i in range(n):
+        drawDot(snake['x'][i], snake['y'][i], color)
+</code></pre> 
+        <p>La variable <code>isTimeToBlink</code> permet de mettre en œuvre le clignotement&nbsp;:</p> 
+        <pre><code class="language-python">isTimeToBlink = game['time'] % 4 &lt; 2
+</code></pre> 
+        <p>Voilà un tableau de quelques valeurs obtenues par ce calcul&nbsp;:</p> 
+        <table> 
+         <thead> 
+          <tr> 
+           <th style="text-align: center">game['time']</th> 
+           <th style="text-align: center">game['time'] % 4</th> 
+           <th style="text-align: center">isTimeToBlink</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td style="text-align: center">0</td> 
+           <td style="text-align: center">0</td> 
+           <td style="text-align: center"><code>True</code></td> 
+          </tr> 
+          <tr> 
+           <td style="text-align: center">1</td> 
+           <td style="text-align: center">1</td> 
+           <td style="text-align: center"><code>True</code></td> 
+          </tr> 
+          <tr> 
+           <td style="text-align: center">2</td> 
+           <td style="text-align: center">2</td> 
+           <td style="text-align: center"><code>False</code></td> 
+          </tr> 
+          <tr> 
+           <td style="text-align: center">3</td> 
+           <td style="text-align: center">3</td> 
+           <td style="text-align: center"><code>False</code></td> 
+          </tr> 
+          <tr> 
+           <td style="text-align: center">4</td> 
+           <td style="text-align: center">0</td> 
+           <td style="text-align: center"><code>True</code></td> 
+          </tr> 
+          <tr> 
+           <td style="text-align: center">5</td> 
+           <td style="text-align: center">1</td> 
+           <td style="text-align: center"><code>True</code></td> 
+          </tr> 
+          <tr> 
+           <td style="text-align: center">6</td> 
+           <td style="text-align: center">2</td> 
+           <td style="text-align: center"><code>False</code></td> 
+          </tr> 
+          <tr> 
+           <td style="text-align: center">7</td> 
+           <td style="text-align: center">3</td> 
+           <td style="text-align: center"><code>False</code></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <p>Inutile d'aller plus loin, puisque le résultat est cyclique de période <code>4</code> (c'est l'effet obtenu en appliquant l'opérateur modulo <code>%</code>).</p> 
+        <p>On observe finalement que la variable <code>isTimeToBlink</code> change de valeur tous les 2 cycles... et par conséquent, le clignotement du serpent aussi.</p> 
+        <p>Et voilà&nbsp;! <strong>Nous sommes arrivés au terme de cet atelier</strong>. Tu sais maintenant comment programmer un Snake en Python. Tu constates qu'il y a finalement pas mal de choses à mettre en place et de notions importantes à maîtriser. Mais le résultat obtenu est plutôt sympa, nan&nbsp;?</p> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/8-demo-640x512.gif" alt="Démo" style="max-width:100%"> 
+        </div> 
+        <p>J'espère que ça t'a plu et que ça te donnera envie de programmer d'autres petits jeux par toi-même. N'hésite pas à poser des questions ou à laisser un commentaire <span>sur la page consacrée aux discussions liées à cet atelier</span>&nbsp;!</p> 
+        <p>Tu peux récupérer le code complet directement <span>sur mon GitHub</span>&nbsp;:</p> 
+        <script src="https://gist.github.com/m1cr0lab/690f22fe8506ab7a2739dd6b40377b94.js"></script> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Mise en place 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Modélisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Contrôle et affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Imposer des règles 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Marquer des points 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Optimisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           8 
+         </div> 
+         <div class="title ml-3">
+           Finitions 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Mise en place 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Modélisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Contrôle et affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Imposer des règles 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Marquer des points 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Optimisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          8 
+        </div> 
+        <div class="title ml-3">
+          Finitions 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

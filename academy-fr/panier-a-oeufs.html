@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/attrap-oeuf.html"> Attrap'œuf (C++ 4/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Panier à œufs </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Panier à œufs </h1> 
+        <h5> Étape 2 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Dans cette étape nous allons mettre en place la structure de notre jeu</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Comme d'habitude, avant de remplir notre IDE de lignes de code, prenons une petite pause pour placer nos différentes parties. Nous allons appliquer la méthode <strong>entrées / mise à jour / affichage</strong>.</p> 
+        <pre><code>&lt;Gamebuino-Meta.h&gt;
+
+void setup() {
+    gb.begin();
+}
+
+void loop() {
+    while(!gb.update());
+    // ENTRÉES
+    // MISE À JOUR
+    // AFFICHAGE
+}
+</code></pre> 
+        <p>Commençons par programmer le panier. Il est très similaire aux raquettes que nous avons vu lors du workshop <span>Pong</span>, à la différence près que le panier est à l'horizontal.</p> 
+        <p>Avant de s'attaquer aux parties <strong>entrées / mise à jour / affichage</strong>, débutons le programme par identifier les constantes et les variables du panier, sans oublier <code>#include &lt;Gamebuino-Meta.h&gt;</code> en première ligne de code !</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Panier
+int panierX = 20;  // Le panier peut bouger horizontalement, donc ce n'est pas une constante
+const int PANIER_Y = gb.display.height() - 4;  // Constante car le panier est fixe selon l'axe Y
+int panierLargeur = 0;  // Pas cosntant car la taille dépend de la nourriture restante
+const int PANIER_HAUTEUR = 3;  // Constante
+</code></pre> 
+        <p>Pour compter les points et relever le défi de battre le record nous devons aussi identifier le <em>score</em> et le <em>highscore</em>. Nous en profiterons pour déclarer la variable nourriture, elle servira pour la largeur du panier...</p> 
+        <pre><code>int score = 0;
+int highscore = 0;
+int nourriture;  // Plus de nourriture est mieux. 0 nourriture = game over
+</code></pre> 
+        <p>On ne va pas démarrer avec 0 de nourriture, c'est pourquoi nous allons débuter avec 300 en le précisant dans <code>void setup()</code></p> 
+        <pre><code>void setup() { 
+	gb.begin();
+	nourriture = 300; 
+}
+</code></pre> 
+        <p>Nous allons attaquer <strong>entrées / mise à jour / affichage</strong>, c'est pas trop tôt ! Ça ne fera pas de mal de rappeler que ces parties sont dans la fonction <code>void loop()</code>, après <code>while(!gb.update())</code> :</p> 
+        <pre><code>void loop() {
+    while(!gb.update());
+    // ENTRÉES
+    // MISE À JOUR
+    // AFFICHAGE
+
+}
+</code></pre> 
+        <h5>ENTRÉES</h5> 
+        <p><em>"En <strong>entrée</strong> je vous propose une petite terrine de légumes avec un peu de <code>if</code> et de <code>else if</code>."</em></p> 
+        <p>C'est dans cette partie que nos actions avec les boutons vont être précisées. Pour cela nous pouvons utiliser les conditions <code>if</code> et <code>else if</code> : <em>Si bouton gauche enfoncé alors aller à gauche sinon si bouton droit enfoncé alors aller à droite</em></p> 
+        <pre><code>    // ENTRÉES
+    if (gb.buttons.repeat(BUTTON_LEFT, 0) &amp;&amp; panierX &gt; 0) {
+        panierX -= 2;
+    }
+    else if (gb.buttons.repeat(BUTTON_RIGHT, 0) &amp;&amp; panierX &lt; gb.display.width() - panierLargeur) {
+        panierX += 2;
+    }
+</code></pre> 
+        <p>Tiens, dans notre proposition de code nous avons un nouveau : <strong>&amp;&amp;</strong>. C'est un opérateur logique booléen qui signifie <strong>ET</strong>, il peut être utilisé à l'intérieur de la condition d'une instruction <em><code>if</code></em> pour associer plusieurs conditions. Avec ce <strong>ET LOGIQUE</strong>, les deux conditions doivent être vraies. Et ces conditions permettent au panier de ne pas sortir de l'écran...</p> 
+        <p><em>Idées : Pourquoi pas jeter un œil à votre Pong et s'amuser à tester cela sur les deux raquettes... ;)</em></p> 
+        <h5>MISE À JOUR</h5> 
+        <p>À chaque frame le score baisse et fait baisser la largeur du panier. On peut utiliser l'opérateur composé <strong><code>--</code></strong> qui décrémente de 1 la variable <code>nourriture</code> à chaque frame ce qui nous donne <code>nourriture--;</code></p> 
+        <p>Pour influencer la largeur du panier on peut indiquer que la variable <code>panierLargeur</code> sera égale à <code>nourriture / 20</code>. On divise simplement par 20 pour obtenir une largeur cohérente.</p> 
+        <p>Que se passe-t-il quand le panier disparait ? La partie est finie et on en recommence une. Pour ce faire on peut utiliser une condition que l'on peut résumer : <em>"Si la nourriture est inférieure ou égale à 0 alors score égal 0 et nourriture égal 300"</em>. Ça veut dire qu'une fois le panier complètement disparu, on <em>reset</em> le score à 0 et on commence de nouveau avec 300 de nourriture.</p> 
+        <pre><code>    // MISE À JOUR
+    // La nourriture fait doucement baisser notre nourriture dans le panier
+    nourriture--;
+    panierLargeur = nourriture / 20;
+
+    // Sommes-nous mort par manque de nourriture??
+    if (nourriture &lt;= 0) {
+        score = 0;  // Recommencer le jeu
+        nourriture = 300;  // Reset nourriture
+    }
+</code></pre> 
+        <h5>AFFICHAGE</h5> 
+        <p><em>"Il est temp d'utiliser des pixels !"</em></p> 
+        <p>Pour commencer, <code>gb.display.clear()</code> sera indispensable pour rafraîchir l'écran à chaque <em>frame</em>. Ensuite nous intégrons le panier en lui définissant une couleur puis en appelant la fonction <em>fillRect</em>, pour dessiner un rectangle. Concernant le score, il faut définir la couleur, la position du texte et appeler la variable pour l'afficher. Nous ferons la même chose pour highscore.</p> 
+        <pre><code>    // AFFICHAGE
+    gb.display.clear();
+
+    // Panier
+    gb.display.setColor(WHITE);
+    gb.display.fillRect(panierX, PANIER_Y, panierLargeur, PANIER_HAUTEUR);
+
+    // Score
+    gb.display.setColor(WHITE);
+    gb.display.setCursor(gb.display.width() - 8, 0);
+    gb.display.print(score);
+
+    gb.display.setColor(RED);
+    gb.display.setCursor(gb.display.width() - 8, 8);
+    gb.display.print(highscore);
+}
+</code></pre> 
+        <h4>Code final de cette étape</h4> 
+        <p>Si nous mettons bout à bout tout ce que nous venons de voir, le code de base prend cette forme :</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Panier
+int panierX = 20;  // Le panier peut bouger horizontalement, donc ce n'est pas une constante
+const int PANIER_Y = gb.display.height() - 4;  // Constante car le panier est fixe selon l'axe Y
+int panierLargeur = 0;  // Pas cosntant car la taille dépend de la nourriture restante
+const int PANIER_HAUTEUR = 3;  // Constante
+
+int score = 0;
+int highscore = 0;
+int nourriture;  // Plus de nourriture est mieux. 0 nourriture = game over
+
+
+void setup() {
+  gb.begin();
+
+  nourriture = 300;
+}
+
+void loop() {
+    while(!gb.update());
+    // ENTRÉES
+    if (gb.buttons.repeat(BUTTON_LEFT, 0) &amp;&amp; panierX &gt; 0) {
+        panierX -= 2;
+    }
+    else if (gb.buttons.repeat(BUTTON_RIGHT, 0) &amp;&amp; panierX &lt; gb.display.width() - panierLargeur) {
+        panierX += 2;
+    }
+
+    // MISE À JOUR
+    // La nourriture baisse dans le panier et diminue sa largeur
+    nourriture--;
+    panierLargeur = nourriture / 20;
+
+    // Somme-nous mort par manque de nourriture??
+    if (nourriture &lt;= 0) {
+        score = 0;  // Recommencer le jeu
+        nourriture = 300;  // Reset nourriture
+    }
+
+    // AFFICHAGE
+    gb.display.clear();
+
+    // Panier
+    gb.display.setColor(WHITE);
+    gb.display.fillRect(panierX, PANIER_Y, panierLargeur, PANIER_HAUTEUR);
+
+    // Score
+    gb.display.setColor(WHITE);
+    gb.display.setCursor(gb.display.width() - 8, 0);
+    gb.display.print(score);
+
+    gb.display.setColor(RED);
+    gb.display.setCursor(gb.display.width() - 8, 8);
+    gb.display.print(highscore);
+}
+</code></pre> 
+        <p>Désormais le joueur peut déplacer le panier avec les flèches gauche et droite mais on l'empêche de sortir de l'écran.</p> 
+        <p>On en a aussi profité pour commencer à implémenter le système de nourriture : comme nous avons dit précédemment, le joueur doit remplir son panier d'œufs. Chaque œuf augmente sa quantité de <code>nourriture</code> mais à chaque image de jeu (chaque <em>frame</em>), cette quantité diminue un peu.</p> 
+        <p>Pour pouvoir visualiser <code>nourriture</code>, la largeur du panier est directement liée à sa valeur. Si jamais elle atteint 0, la partie est perdue.</p> 
+        <h5>Rendez-vous à l'étape suivante !</h5> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/introduction.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/panier-a-oeufs.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Panier à œufs 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/fonctions.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Fonctions 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/les-boucles-for.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Les boucles For 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/a-vous-de-jouer-1.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           A vous de jouer! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/introduction.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/panier-a-oeufs.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Panier à œufs 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/fonctions.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Fonctions 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/les-boucles-for.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Les boucles For 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/a-vous-de-jouer-1.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          A vous de jouer! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

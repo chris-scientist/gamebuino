@@ -23,7 +23,7 @@ permalink: /
 				<li>Academy / Académie</li>
 				<ul>
 					<li><a href="{{ site.url }}/academy-en/" >English Version</a></li>
-					<li>Version Française - Bientôt disponible !</li>
+					<li><a href="{{ site.url }}/academy-fr/" >Version Française</a></li>
 				</ul>
 				<li>Externals Tools / Outils Externes</li>
 				<ul>

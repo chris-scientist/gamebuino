@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/attrap-oeuf.html"> Attrap'œuf (C++ 4/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Introduction </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Introduction </h1> 
+        <h5> Étape 1 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Présentation de ce qui vous attend dans cet atelier</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h3>Des œufs, des carottes et un panier...</h3> 
+        <p>Bienvenue dans le workshop Attrap'œuf :-), mais avant de commencer on vous recommande d'avoir suivi les workshops <a href="/gamebuino/academy-fr/make-your-very-first-games-with-pong.html">Pong</a> et <a href="/gamebuino/academy-fr/tap-tap-toc.html">TapTap</a>.</p> 
+        <p>Cette étape présente l'un des objectifs : apprendre à réduire les lignes de code redondantes. Dans le workshop Taptap, vous avez probablement remarqué que de nombreuses lignes ressemblaient énormément à d'autres et bien souvent juxtaposées.</p> 
+        <p>Voici quelques extraits du workshop précédent :</p> 
+        <pre><code>  // Mélanger les briques
+  briques[0] = random(GAUCHE, DROITE + 1);
+  briques[1] = random(GAUCHE, DROITE + 1);
+  briques[2] = random(GAUCHE, DROITE + 1);
+  briques[3] = random(GAUCHE, DROITE + 1);
+  briques[4] = random(GAUCHE, DROITE + 1);
+  // Décaler tout vers le bas
+
+
+  briques[0] = briques[1];
+  briques[1] = briques[2];
+  briques[2] = briques[3];
+  briques[3] = briques[4];
+  briques[4] = random(GAUCHE, DROITE + 1);  // Nouvelle brique
+
+
+  if (briques[1] == GAUCHE) {
+    gb.display.drawRect(25, 30, 20, 10);
+  } else {
+    gb.display.drawRect(35, 30, 20, 10);
+  }
+  if (briques[2] == GAUCHE) {
+    gb.display.drawRect(25, 20, 20, 10);
+  } else {
+    gb.display.drawRect(35, 20, 20, 10);
+  }
+  if (briques[3] == GAUCHE) {
+    gb.display.drawRect(25, 10, 20, 10);
+  } else {
+    gb.display.drawRect(35, 10, 20, 10);
+  }
+  if (briques[4] == GAUCHE) {
+    gb.display.drawRect(25, 0, 20, 10);
+  } else {
+    gb.display.drawRect(35, 0, 20, 10);
+  }
+</code></pre> 
+        <p>Notre objectif dans ce workshop sera de réduire notre code en taille et aussi de le rendre bien plus flexible. Dans TapTap nous n'avions que cinq briques, mais si vous en aviez 300, avec la méthode vu dans l'exemple ci-dessus ça aurait fait 300 copié-collés ! Et maintenant imaginez que vous changez d'avis sur un détail (comme afficher des cercles à la place des rectangles)... Ce serait 300 modifications à faire à la main... L'horreur !</p> 
+        <p>Pour programmer Attrap'œuf, nous allons voir les <strong>fonctions</strong> et la <strong>boucle for</strong>. Ce sont des notions qui s'intègrent très bien avec la structure "entrées / mise à jour / affichage" que nous avons vu précédemment, ainsi que la création l'utilisation des <strong>tableaux</strong>.</p> 
+        <h4>À tout de suite dans la prochaine étape !</h4> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/introduction.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/panier-a-oeufs.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Panier à œufs 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/fonctions.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Fonctions 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/les-boucles-for.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Les boucles For 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/a-vous-de-jouer-1.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           A vous de jouer! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/introduction.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/panier-a-oeufs.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Panier à œufs 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/fonctions.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Fonctions 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/les-boucles-for.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Les boucles For 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/a-vous-de-jouer-1.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          A vous de jouer! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

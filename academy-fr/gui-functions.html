@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="row align-items-stretch"> 
+      <div class="col-md-7 col-lg-8 d-flex flex-column justify-content-between"> 
+       <h1>Les fonctions GUI</h1> 
+       <p> </p> 
+       <p>Ce tutoriel explique comment utiliser les fonctions GUI (<strong>Graphical User Interface</strong>) de la bibliothèque.</p> 
+       <p></p> 
+       <div class="d-flex align-item-center"> 
+        <div class="mr-3 language-tag language-0"> 
+        </div> 
+        <p class="ml-3 mb-0"> <i class="fal fa-tachometer-average fa-fw difficulty-2"></i> Intermédiaire</p> 
+        <p class="ml-3 mb-0"> <i class="fal fa-clock fa-fw"></i> 1h</p> 
+       </div> 
+      </div> 
+      <div class="col-md-5 col-lg-4 mt-3 mt-md-0 d-flex align-items-center"> 
+       <div class="image" style="background-image:url(https://s3.eu-west-3.amazonaws.com/gamebuino/upload/images/workshops/047604a93d16244e8fbb18d7badff50d.gif)"> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie</span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div><span> Les fonctions GUI</span> 
+     </div> 
+    </div> 
+    <div class="d-flex justify-content-end"> 
+     <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Tuto terminé ? </span> 
+     </div> 
+    </div> 
+    <div class="mt-5"> 
+     <div class="lesson-content"> 
+      <p>Les fonctions GUI :</p> 
+      <ul> 
+       <li> <span>Clavier</span> </li> 
+       <li> <span>Menu</span> </li> 
+       <li> <span>Popup</span> </li> 
+      </ul> 
+      <h4>Clavier</h4> 
+      <p><img src="../assets/991b8378a1ccd0f0524cd7541ad5599b75f737d9.gif" alt="" style="max-width:100%"></p> 
+      <p>Le clavier d’origine permet aux utilisateurs d’entrer du texte avec une jolie interface graphique, comme par exemple pour enregistrer leur nom lors d'un nouveau score. Il s'utilise avec <code>gb.gui.keyboard</code>. Comme la <span>page de référence</span> le montre, cette fonction prend généralement deux paramètres : un pour le titre et un autre pour le texte par défaut / sortie du texte.</p> 
+      <p>Donc, pour demander à un utilisateur son animal préféré, il suffit simplement de faire ça :</p> 
+      <pre><code>char text[12] = "Foxies";
+gb.gui.keyboard("Favorite Animal?", text);
+</code></pre> 
+      <p>La réponse qu’ils entrent est dans la variable <code>text</code>. Comme nous avons défini <code>text</code> avec la valeur de <code>Foxies</code> au début, ce sera le texte par défaut. Si vous voulez un texte vide par défaut, il faut s’assurer que la première valeur de la chaine de caractères est '\0':</p> 
+      <pre><code>char text[12];
+text[0] = '\0'; // Assurons-nous d'avoir un texte par défaut vide
+gb.gui.keyboard("Favorite Animal?", text);
+</code></pre> 
+      <p>Pourquoi ça? Parce que <code>char text[12];</code> déclaré <strong>sans</strong> est initialisé. Donc, sans notre ligne <code>text[0] = '\0'</code>, le texte resterait non-initialisé, ce qui revient à dire que c'est une chaine de caractères aléatoire.</p> 
+      <p>Veuillez noter que si vous utilisez ça pour demander le nom du joueur pour une liste de score, il est très fortement recommandé d’utiliser <span>gb.getDefaultName</span> comme nom par défaut, exemple :</p> 
+      <pre><code>char playerName[13];
+gb.getDefaultName(playerName);
+gb.gui.keyboard("New Highscore!", playerName);
+</code></pre> 
+      <p>Disons maintenant que vous voulez ajouter d'autres langues pour votre jeu, comme ça il pourra être joué dans plus d'un pays. On peut évidement utiliser l'API de langage.</p> 
+      <pre><code>const MultiLang title[] = {
+    { LANG_EN, "Favorite Animal?" },
+    { LANG_FR, "Animal Préféré?" },
+};
+char text[12];
+text[0] = '\0';
+gb.gui.keyboard(title, text);
+</code></pre> 
+      <p>Et nous voilà prêt pour l'international ! Bien évidement, si la taille de <code>text</code> ou <code>title</code> ne peuvent pas être auto-déterminé (par exemple dans le cas d'inclusion externes), vous pouvez simplement les ajouter manuellement:</p> 
+      <pre><code>const MultiLang title[] = {
+    { LANG_EN, "Favorite Animal?" },
+    { LANG_FR, "Animal Préféré?" },
+};
+char text[12];
+text[0] = '\0';
+gb.gui.keyboard(title, text, 11, 2);
+</code></pre> 
+      <p>Comme vous pouvez le voir, on donne d'abord la longueur de notre résultat <strong>en nombre de caractères</strong>, et après on précise le nombre d'entrées pour l'API de langage</p> 
+      <h4>Menu</h4> 
+      <p><img src="../assets/a58d8d240df18061b79b383efc600a1ec731a10a.gif" alt="" style="max-width:100%"></p> 
+      <p>Le menu fournit est facile d'utilisation. Vous créez des choix, puis vous faites des choses en fonction de chaque choix sélectionné. Il s'utilise avec <code>gb.gui.menu</code>. <span>La référence</span> explique les paramètres basiques : le titre à afficher et un tableau de toutes les entrées. Voici un exemple simple:</p> 
+      <pre><code>const char* entries[] = {
+    "Pizza",
+    "Spaghetti",
+    "Noodles",
+    "Ice Cream",
+};
+uint8_t entry = gb.gui.menu("Best food?", entries);
+</code></pre> 
+      <p>Ce menu simple vous demandera "Best food?" et une quantité limité de réponses. La réponse sélectionnée par l'utilisateur sera mise dans <code>entry</code>, avec 0 correspondant à "Pizza", 1 à "Spaghetti", etc.</p> 
+      <p>Tout comme avec le clavier, l'API de localisation fonctionne ici. Cependant, il faut vérifier que la quantité de traduction est la même pour chaque option (et le titre):</p> 
+      <pre><code>// Le titre
+const MultiLang title[] = {
+    { LANG_EN, "Best food?" },
+    { LANG_DE, "Lieblingsessen?" },
+};
+
+// Toutes les options
+const MultiLang entryPizza[] = {
+    { LANG_EN, "Pizza" },
+    { LANG_DE, "Pizza" },
+};
+const MultiLang entrySpaghetti[] = {
+    { LANG_EN, "Spaghetti" },
+    { LANG_DE, "Spaghetti" },
+};
+const MultiLang entryNoodles[] = {
+    { LANG_EN, "Noodles" },
+    { LANG_DE, "Nudeln" },
+};
+const MultiLang entryIceCream[] = {
+    { LANG_EN, "Ice Cream" },
+    { LANG_DE, "Eis" },
+};
+
+// Le tableau d'options
+const MultiLang* entries[] = {
+    entryPizza,
+    entrySpaghetti,
+    entryNoodles,
+    entryIceCream,
+};
+
+// Le menu multi-langue
+uint8_t entry = gb.gui.menu(title, entries);
+</code></pre> 
+      <p>Comme vous pouvez le voir, c'est un peu plus compliqué de construire un tableau d'options. C'est dû au fait qu'une définition inline ne fonctionne pas ici.</p> 
+      <p>Si le nombre d'options dans <code>entries</code> ne peut pas être auto-déterminé, vous pouvez entrer sa valeur par paramètre:</p> 
+      <pre><code>// Même titre et options qu'au dessus
+uint8_t entry = gb.gui.menu(title, entries, 4, 2);
+</code></pre> 
+      <p>Ici, on entre d'abord le nombre d'options, puis le nombre de langages.</p> 
+      <h4>Popup</h4> 
+      <p><img src="../assets/162caaf45d0da802ddef57e795e27cf51423ad3b.gif" alt="" style="max-width:100%"></p> 
+      <p>Il est facile d’utiliser des pop-ups temporaires dans vos jeux. Les pop-ups restent à l'écran pendant une durée donnée. Comme dit dans <span>la référence</span>, il a deux paramètres simples : une chaine de caractères à afficher et un entier correspondant à la durée d’affichage. La durée d’affichage est en nombre d'images (25 images = 1 seconde par defaut). Les transitions sont exclues de cette durée:</p> 
+      <pre><code>gb.gui.popup("Hello World", 50);
+</code></pre> 
+      <p>Ce pop-up serait affiché 2 secondes (<code>25*2 = 50</code>).</p> 
+      <p>Vous pouvez évidement utilisez l'API de langues pour les pop-ups</p> 
+      <pre><code>const MultiLang popupText[] = {
+    { LANG_EN, "Hello World" },
+    { LANG_DE, "Hallo Welt" },
+};
+gb.gui.popup(popupText, 50);
+</code></pre> 
+      <p>C'est assez simple. Et encore un fois, si le nombre de langues ne peut être auto-déterminé, il faut les passer par paramètre:</p> 
+      <pre><code>const MultiLang popupText[] = {
+    { LANG_EN, "Hello World" },
+    { LANG_DE, "Hallo Welt" },
+};
+gb.gui.popup(popupText, 50, 2);
+</code></pre> 
+      <p>Et voilà, le tutoriel sur les fonctions GUI est terminé! Si vous avez des questions/suggestions, n'hésitez pas à partager vos pensés avec un commentaire!</p> 
+     </div> 
+    </div> 
+    <div class="workshop-author"> 
+     <div class="container"> 
+      <h4>L'auteur</h4> 
+      <div class="mt-4 d-flex"> 
+       <img src="../assets/d32a280d9a16037b7c2f4771e674dadb.png" width="150" height="150" style="max-width:100%"> 
+       <div class="ml-3"> 
+        <h5>Sorunome</h5> 
+        <p> I'm a derp. I do stuff, including, but not limited to:<br> - programming the META bootloader<br> - a good chunk of the META library<br> - games<br> - losing THE GAME<br> - knex stuff</p> 
+        <p> <span class="bold"> Voir son profil</span></p> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

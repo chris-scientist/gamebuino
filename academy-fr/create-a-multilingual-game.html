@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="row align-items-stretch"> 
+      <div class="col-md-7 col-lg-8 d-flex flex-column justify-content-between"> 
+       <h1>Créez un jeu multilingue</h1> 
+       <p> </p> 
+       <p>Ce tutoriel explique comment utiliser l'API de langage de la Gamebuino META.</p> 
+       <p></p> 
+       <div class="d-flex align-item-center"> 
+        <div class="mr-3 language-tag language-0"> 
+        </div> 
+        <p class="ml-3 mb-0"> <i class="fal fa-tachometer-average fa-fw difficulty-2"></i> Intermédiaire</p> 
+        <p class="ml-3 mb-0"> <i class="fal fa-clock fa-fw"></i> 1h</p> 
+       </div> 
+      </div> 
+      <div class="col-md-5 col-lg-4 mt-3 mt-md-0 d-flex align-items-center"> 
+       <div class="image" style="background-image:url(https://s3.eu-west-3.amazonaws.com/gamebuino/upload/images/workshops/bf9bfb64aac5f49033772c1bcb7a7e13.gif)"> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie</span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div><span> Créez un jeu multilingue</span> 
+     </div> 
+    </div> 
+    <div class="d-flex justify-content-end"> 
+     <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Tuto terminé ? </span> 
+     </div> 
+    </div> 
+    <div class="mt-5"> 
+     <div class="lesson-content"> 
+      <h4>Idée générale</h4> 
+      <p>l'API de langage fournit un type de variable qui remplace une simple chaîne de caractères que vous pouvez passer en paramètre à la plupart des fonctions d'affichage de la bibliothèque. C'est <code>const MultiLang[]</code>. Voici un exemple simple qui affichera "Bonjour" en fonction du langage de la console :</p> 
+      <pre><code>const MultiLang hello[] = {
+    { LANG_EN, "Hello" },
+    { LANG_FR, "Bonjour" },
+    { LANG_DE, "Hallo" },
+};
+
+gb.display.print(helloWorld);
+</code></pre> 
+      <p>Comme vous pouvez le voir, d'abord on définit la variable <code>hello</code> de type <code>const Multilang[]</code>. Ce tableau est rempli de toutes les traductions que l'on souhaite pour notre jeu. Ici on a l'anglais (EN), le français (FR), et l'allemand (DE).</p> 
+      <p>Mais quelle langue sera affichée ? La langue de la console (définie par le joueur) est toujours sélectionnée si possible. Donc si le joueur a mis sa Gamebuino en allemand, tous les jeux seront en allemand. Si un jeu n'offre pas le langage du joueur, la traduction anglaise est choisie par défaut.</p> 
+      <h4>Autres utilisations</h4> 
+      <p>Ce type de variable (<code>Multilang</code>) peut être utilisé avec à peu près toutes les fonctions possibles. Notamment quand on affiche du texte sur l'écran et quand on utilise <span>l'interface</span> graphique. Dans le cas où vous avez besoin d'une chaîne de caractères traduite, vous pouvez toujours utiliser la fonction <span>gb.language.get</span> comme ceci :</p> 
+      <pre><code>const MultiLang lang_fox[] = {
+    { LANG_EN, "Fox" },
+    { LANG_FR, "Renard" },
+    { LANG_DE, "Fuchs" },
+};
+const char* fox = gb.language.get(lang_fox);
+</code></pre> 
+      <p>Et voilà, <code>fox</code> peut être utilisé en tant que chaine de caractères partout où vous voulez la bonne traduction de "renard".</p> 
+      <h4>Utilisation avancée</h4> 
+      <p>Il existe des caractères spéciaux comme <code>ö</code>, <code>à</code>, <code>â</code> etc. La plupart de ces caractères sont disponibles. Nous utilisons le <span>charset ISO 8859-1</span>. Cependant cela veut aussi dire que le fichier responsable de la mémorisation des définitions MultiLang, avec les caractères à accents, doit être sauvegardé dans le charset ISO-8859-1 (ou équivalent comme le Windows-1252). Sinon vous devez obligatoirement entrer le code hexadécimal du caractère. Par exemple, <code>ö</code> devient <code>\xF6</code>.</p> 
+      <p>Nous vous recommandons d'avoir toutes vos définitions de variables de langage dans un fichier source (.cpp) à part avec un <code>#include</code> qui inclut un fichier d'entête qui liste toutes les variables de langue. Cette méthode est utilisée pour le <span>loader</span> avec les fichiers <span>language.cpp</span> et <span>language.h</span>.</p> 
+      <p>En mettant les définitions de langage dans un fichier externe, vous aurez surement des erreurs de compilation, étant donné que le compilateur n'est pas capable de savoir combien de langues vous utilisez par variable <code>MultiLang[]</code>. Pour cela, vous pouvez simplement déclarer le nombre de langues dans le paramètre <code>LANGUAGE_DEFAULT_SIZE</code> dans <code>config-gamebuino.h</code> (<span>en savoir plus ici</span>).</p> 
+      <pre><code>#define LANGUAGE_DEFAULT_SIZE 3
+</code></pre> 
+      <p>Une autre option est de manuellement passer le nombre de langues dans <code>gb.language.get</code> :</p> 
+      <pre><code>const char* string = gb.language.get(lang_string, 3);
+</code></pre> 
+      <h4>Utilisation très avancée</h4> 
+      <p>Pour aller plus loin vous aurez peut-être besoin de savoir quelle langue est actuellement utilisée par la console. Pour, par exemple, charger la bonne version d'un sprite qui a du texte ou avoir un bout de texte compressé etc. Pour vous aider, utilisez <span>gb.language.getCurrentLang</span>:</p> 
+      <pre><code>Gamebuino_Meta::LangCode langCode = gb.language.getCurrentLang();
+if (langCode == LANG_EN) {
+    // notre code si la console est en anglais
+} else if (langCode == LANG_DE) {
+    // notre code si la console est en français
+}
+</code></pre> 
+      <p>Remarque : cette méthode devrait être utilisée le moins souvent possible, vu que <code>gb.language.get</code> a une option de repli automatique. Si vous utilisez <code>gb.language.getCurrentLang</code>, il est fortement conseillé d'avoir une option de repli.</p> 
+      <p>Mais quelles langues sont présentes? Et bien quasiment toutes ! Cependant, les seules que l'on peut choisir dans le loader sont :</p> 
+      <ul> 
+       <li>Anglais <code>LANG_EN</code> </li> 
+       <li>Français <code>LANG_FR</code> </li> 
+       <li>Allemand <code>LANG_DE</code> </li> 
+       <li>Espagnol <code>LANG_ES</code> </li> 
+       <li>Néerlandais <code>LANG_NL</code> </li> 
+      </ul> 
+      <p>Une questions / un commentaires / une suggestions ? Laissez-nous un commentaire plus bas :-)</p> 
+     </div> 
+    </div> 
+    <div class="workshop-author"> 
+     <div class="container"> 
+      <h4>L'auteur</h4> 
+      <div class="mt-4 d-flex"> 
+       <img src="../assets/d32a280d9a16037b7c2f4771e674dadb.png" width="150" height="150" style="max-width:100%"> 
+       <div class="ml-3"> 
+        <h5>Sorunome</h5> 
+        <p> I'm a derp. I do stuff, including, but not limited to:<br> - programming the META bootloader<br> - a good chunk of the META library<br> - games<br> - losing THE GAME<br> - knex stuff</p> 
+        <p> <span class="bold"> Voir son profil</span></p> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

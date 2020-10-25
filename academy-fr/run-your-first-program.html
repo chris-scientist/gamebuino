@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/discover-python-programming.html"> Premiers pas (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Exécutez votre premier programme </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Exécutez votre premier programme </h1> 
+        <h5> Étape 1 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Avant de se plonger dans le code, apprenons tout d'abord à lancer notre premier programme sur la Gamebuino !</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h2>Connectez votre Gamebuino</h2> 
+        <ol> 
+         <li>Branchez la Gamebuino sur votre ordinateur à l'aide du câble USB</li> 
+        </ol> 
+        <p><img src="../assets/20190321_145301.jpg" alt="" style="max-width:100%"></p> 
+        <ol start="2"> 
+         <li>Allumez votre Gamebuino</li> 
+        </ol> 
+        <p><img src="../assets/20190321_145328.jpg" alt="" style="max-width:100%"></p> 
+        <ol start="3"> 
+         <li>Lancez le programme <em>CircuitPython</em> depuis l’écran d’accueil. Pour le lancer, sélectionnez l'icône avec une image de serpent à l'aide des flèches de votre Gamebuino (voir image ci-dessous : vous ne pouvez pas la rater !), puis appuyez sur le bouton A. Appuyez une seconde fois sur le bouton A lorsque le serpent s'affiche en plein écran. Une fois <em>CircuitPython</em> lancé sur votre Gamebuino, il est possible qu'une fenêtre s'ouvre sur votre ordinateur. Nous vous en préocupez pas, vous pouvez même la fermer si vous le souhaitez !</li> 
+        </ol> 
+        <p><img src="../assets/20190321_145346.jpg" alt="" style="max-width:100%"></p> 
+        <ol start="4"> 
+         <li>Si tout s’est bien passé, vous devriez voir apparaitre l'écran ci-dessous sur votre Gamebuino avec le message "<em>Please add a python file...</em>". Parfait ! Cela signifie que votre Gamebuino est prête à recevoir du code Python. Vous pouvez maintenant appuyer sur "Start" sur votre Gamebuino. Si ce n’est pas le cas, éteignez votre Gamebuino, et recommencez les étapes ci-dessus, dans l’ordre.</li> 
+        </ol> 
+        <p><img src="../assets/20190321_145412.jpg" alt="" style="max-width:100%"></p> 
+        <ol start="5"> 
+         <li>Du côté de l'ordinateur, la Gamebuino avec CircuitPython en route a dû etre détectée et un volume CIRCUITPY doit maintenant être accessible. C'est ici qu'ira notre code !</li> 
+        </ol> 
+        <h2>Executez votre premier programme</h2> 
+        <ol> 
+         <li> <p>Lancez le logiciel Mu. Il s'agit d'un éditeur de texte dans lequel vous aller écrire vos programmes. Si vous êtes en atelier avec nous, il est possible que nous l'ayons déjà lancé pour vous. Cliquez simplement sur son icône dans la barre des tâches pour l'ouvrir !</p> </li> 
+         <li> <p>Une fenêtre vide apparait (voir image ci-dessous) : c’est ici que vous allez écrire votre premier programme ! Si la fenêtre n’apparait pas, ou si un message d’erreur est affiché, fermez tout, et recommencez depuis le début : vous avez peut-être sauté une étape !</p> </li> 
+         <li> <p>Cliquez sur l'onglet "Mode" en haut à gauche de l'écran et sélectionnez : Adafruit Circuit Python. Puis, validez en cliquant sur OK. <img src="../assets/mu-editor-config.gif" alt="" style="max-width:100%"></p> </li> 
+         <li> <p>Copiez le code ci-dessous, et collez-le dans la fenêtre Mu. Ne cherchez pas à comprendre ce que cela signifie, ne vous inquiétez pas nous le verrons ensemble plus tard !</p> </li> 
+        </ol> 
+        <pre><code>from gamebuino_meta import begin, waitForUpdate, display, buttons, color
+
+while True:
+    waitForUpdate()
+    display.clear()
+
+    display.print("Hello world")
+</code></pre> 
+        <ol start="5"> 
+         <li>Cliquez sur le bouton <em>Enregistrer</em> en haut de la fenêtre.</li> 
+         <li>Dans la fenêtre qui s’ouvre, allez chercher le dossier « CIRCUITPY », et enregistrez le fichier sous le nom « code.py ». Attention, l’emplacement et le nom sont importants, ne vous trompez pas !</li> 
+        </ol> 
+        <p><img src="../assets/screen01.png" alt="" style="max-width:100%"></p> 
+        <ol start="7"> 
+         <li>Regardez votre Gamebuino : l’écran s’est rechargé et votre programme est lancé !</li> 
+        </ol> 
+        <p><img src="../assets/20190325_104441.jpg" alt="" style="max-width:100%"></p> 
+        <h3>Note (<em>Important !</em>)</h3> 
+        <p>Vous avez remarqué que dans le petit morceau de code que vous avez copié au dessus, les lignes peuvent être plus ou moins décalées vers la droite. Cela s'appelle <em>l'indentation</em>, et dans le langage Python il est indispensable qu'elle soit bien respectée, sinon le code ne marchera pas ! Bien souvent si il y a un soucis dans l'exécution de votre code, l'erreur peut venir de là.</p> 
+        <p>Pour décaler une ligne on doit utiliser le caractère <em>tabulation</em> (les deux flèches sur la gauche de votre clavier). Une ligne de code "appartient" au bloc d'instructions défini par la première ligne au dessus d'elle avec un cran d'indentation de moins.</p> 
+        <p>Voilà une phrase bien moche mais pas de panique vous avez tout le temps de comprendre tout ça ! Vous y familiariserez rapidement, c'est en réalité très simple.</p> 
+        <h2>Bravo !</h2> 
+        <p>Vous venez de lancer votre tout premier programme en Python, dont le résultat est d’afficher la phrase « Hello, world » à l’écran. C’est une sorte de tradition dans le monde de l’informatique : on crée ce premier programme afin d’être sûr que tout fonctionne comme il faut. C’est donc une bonne nouvelle ! Si vous voyez cette phrase sur l’écran de votre Gamebuino, c’est que nous pouvons passer aux choses sérieuses.</p> 
+        <p>Si rien ne s’affiche, essayez de recommencer depuis le début. Dans la programmation, il est normal de faire des erreurs, et tout ne fonctionne pas nécessairement du premier coup, même pour les programmeurs les plus expérimentés !</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/installation-and-prerequisites.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Installation et pré-requis 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/run-your-first-program.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Exécutez votre premier programme 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/display-text-on-the-screen.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Affichez du texte à l'écran 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/a-little-bit-of-colour.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Un peu de couleur 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/variables-what-are-they.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Des variables, qu'est ce que c'est ? 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/program-a-pong.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Programmez un Pong ! 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/change-graphics-and-difficulty.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Modifiez les graphismes et la difficulté 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/installation-and-prerequisites.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Installation et pré-requis 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/run-your-first-program.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Exécutez votre premier programme 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/display-text-on-the-screen.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Affichez du texte à l'écran 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/a-little-bit-of-colour.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Un peu de couleur 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/variables-what-are-they.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Des variables, qu'est ce que c'est ? 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/program-a-pong.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Programmez un Pong ! 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/change-graphics-and-difficulty.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Modifiez les graphismes et la difficulté 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>
