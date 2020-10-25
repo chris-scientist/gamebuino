@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/attrap-oeuf.html"> Egg catcher (C++ 4/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Fonctions </span> 
+     </div> 
+    </div> 
+    <div class="alert alert-warning mb-3">
+      This content is not fully available in your language 😕 You want to contribute? Send us an e-mail at hello@gamebuino.com. 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Fonctions </h1> 
+        <h5> Step 3 </h5> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Découvrons les fonctions et leur usage</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Avant de commencer à implémenter les œufs et les carottes, regardons ce qu'est une <strong>fonction</strong>.</p> 
+        <p>Les <strong>fonctions</strong> sont un aspect très important du C++, elles vous permettent de découper votre code en blocs réutilisables. Les <strong>fonctions</strong> sont très pratiques car elles nous laissent répartir notre code sur plusieurs fichiers (nous y viendrons dans un instant) et de <strong>s'organiser</strong>. setup() et loop() sont des fonctions par exemple. Vous avez créé ces fonctions et Arduino les appelle automatiquement.</p> 
+        <p>Mais vous pouvez créer et appeler vos propres <strong>fonctions</strong>.</p> 
+        <p>Ce que nous allons faire, c'est de créer nos 3 parties (entrées / mise à jour / affichage) sous forme de 3 fonctions. Ainsi notre boucle loop() ressemblera à ça :</p> 
+        <pre><code>void loop() {
+    while(!gb.update());
+    entrees();
+    miseAJour();
+    affichage();
+}
+</code></pre> 
+        <p><em>En quoi c'est utile ?</em> Bonne question car en fin de compte, avec ou sans fonctions, cela revient à la même chose non ? Et c'est bien vrai, à chaque fois que vous appelez une fonction, cela revient exactement à copier-coller le code de la fonction là où vous l'avez appelé. Mais le but des fonctions est <strong>d'organiser</strong> le code (vous avez peut-être remarqué que ce chapitre se focalise beaucoup la-dessus). Les fonctions permettent aussi <strong>d'exécuter la même suite d'instructions à plusieurs endroits dans le programme.</strong> En réalité, vous utilisez des fonctions depuis <span>le tout premier atelier</span> ! Toutes les fonctions dans la page <span>référence</span> sont... des <strong>fonctions</strong>, notamment :</p> 
+        <ul> 
+         <li> <span>gb.update()</span> </li> 
+         <li> <span>gb.display.print()</span> </li> 
+         <li> <span>gb.display.drawRect()</span> </li> 
+         <li> <span>gb.buttons.pressed()</span> </li> 
+         <li> <span>gb.buttons.released()</span> </li> 
+         <li> <span>gb.display.width()</span> </li> 
+         <li>Et bien d'autres encore...</li> 
+        </ul> 
+        <p>Si à chaque fois que vous avez à utiliser une de ces fonctions vous aviez tapé tout le code qui se cache derrière... Vous en seriez encore au début de la première étape ! En plus, si nous trouvons un bug dans une des fonctions, il suffit juste de corriger la fonction et vous n'avez pas besoins d'intervenir. Bref, les fonctions sont nos amies.</p> 
+        <p>Mais comment en créer une ?</p> 
+        <pre><code>type nomDeFonction() {
+    // Code de la fonction ici
+}
+</code></pre> 
+        <p>Pour définir une fonction, il suffit de faire comme ci-dessus. Là où vous trouvez <code>type</code>, on doit y mettre <strong>le type de retour</strong> de la fonction. En effet les fonctions peuvent "retourner" une valeur avec le mot clé <code>return</code>. Par exemple :</p> 
+        <pre><code>// Ici on définit la fonction //
+int aireDuPanier() {
+    return panierLargeur * PANIER_HAUTEUR;  // retourner l'aire du panier
+}
+
+// Autre part dans notre code //
+    int aire = aireDuPanier();
+</code></pre> 
+        <p><strong>Attention, le mot "return" termine la fonction. C'est-à-dire que tout ce que vous mettez après <code>return</code> ne sera même pas exécuté.</strong></p> 
+        <p>Mais maintenant, vous allez me dire: Mais les fonctions <code>setup()</code> et <code>loop()</code> ont <code>void</code> comme type de retour. Qu'est-ce que c'est que ce<code>void</code>? C'est vrai que <code>void</code> n'est pas un type. C'est justement l'absence de type. Dire qu'une fonction retourne <code>void</code> signifie qu'elle ne retourne rien. Comme vous pouvez le voir, <code>setup()</code> et <code>loop()</code> n'utilisent jamais le mot <code>return</code>.</p> 
+        <p>Nous allons mettre nos trois fonctions dans trois autres fichiers. C'est mieux pour nous d'avoir plusieurs fichiers de taille modérée, qu'un seul fichier gigantesque. De cette manière, nous pourrons retrouver notre code bien plus rapidement. Pour créer un fichier, il suffit de cliquer sur la petite flèche en haut à droite de l'IDE, puis sur "Nouvel onglet"</p> 
+        <p><img src="/gamebuino/academy-en/assets/4cb0cadd3e28a181c39899152ded7ecc346bcc2f.png" alt="" style="max-width:100%"></p> 
+        <p>Il faut savoir que Arduino lira tous les fichiers dans un certain ordre. Mais il commencera <strong>toujours</strong> par le fichier ayant les fonctions <code>setup()</code> et <code>loop()</code> ("Attrapoeuf.ino" dans mon cas). Il faut donc déclarer toutes les variables globales dans ce fichier-là, comme ça, toutes les fonctions y auront accès.</p> 
+        <p>C'est parti pour découper notre programme en plusieurs fichiers !</p> 
+        <h5>Premier : <code>Attrapoeuf.ino</code></h5> 
+        <p>Pas la peine de le créer, il existe déjà !</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Panier
+int panierX = 20;  // Le panier peut bouger horizontalement, donc ce n'est pas une constante
+const int PANIER_Y = gb.display.height() - 4;  // Constante car le panier est fixe selon l'axe Y
+int panierLargeur = 0;  // Pas constant car la taille dépend de la nourriture restante
+const int PANIER_HAUTEUR = 3;  // Constante
+
+int score = 0;
+int highscore = 0;
+int nourriture;  // Plus de nourriture est mieux. 0 nourriture = game over
+
+
+void setup() {
+  gb.begin();
+
+  nourriture = 300;
+}
+
+void loop() {
+    while(!gb.update());
+    entrees();
+    miseAJour();
+    affichage();
+}
+</code></pre> 
+        <h5>Second : <code>entrees.ino</code></h5> 
+        <pre><code>// entrees.ino //
+void entrees() {
+    if (gb.buttons.repeat(BUTTON_LEFT, 0) &amp;&amp; panierX &gt; 0) {
+        panierX -= 2;
+    }
+    else if (gb.buttons.repeat(BUTTON_RIGHT, 0) &amp;&amp; panierX &lt; gb.display.width() - panierLargeur) {
+        panierX += 2;
+    }
+}
+</code></pre> 
+        <h5>Troisième : <code>miseAJour.ino</code></h5> 
+        <pre><code>void miseAJour() {
+    // La nourriture fait doucement baisser notre nourriture dans la panier
+    nourriture--;
+    panierLargeur = nourriture / 20;
+
+
+
+    // Somme nous mort par manque de nourriture??
+    if (nourriture &lt;= 0) {
+        score = 0;  // Recommencer le jeu
+        nourriture = 300;  // Reset nourriture
+    }
+}
+</code></pre> 
+        <h5>Quatrième : <code>affichage</code></h5> 
+        <pre><code>// affichage.ino //
+void affichage() {
+    gb.display.clear();
+
+    // Panier
+    gb.display.setColor(WHITE);
+    gb.display.fillRect(panierX, PANIER_Y, panierLargeur, PANIER_HAUTEUR);
+
+    // Score
+    gb.display.setColor(WHITE);
+    gb.display.setCursor(gb.display.width() - 8, 0);
+    gb.display.print(score);
+
+    gb.display.setColor(RED);
+    gb.display.setCursor(gb.display.width() - 8, 8);
+    gb.display.print(highscore);
+}
+</code></pre> 
+        <p>En une étape nous avons vu comment créer des fonctions et comment découper notre programme. Nous avons créé des fonctions pour chaque partie</p> 
+        <ul> 
+         <li> <code>entrees()</code> </li> 
+         <li> <code>miseAJour()</code> </li> 
+         <li> <code>affichage()</code> </li> 
+        </ul> 
+        <p>Chacune d'elles est consignée dans un fichier : c'est plus clair, plus aéré et pas besoin de défiler des kilomètres pour chercher !</p> 
+        <h3>Allons voir du côté des boucles for...</h3> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/introduction.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/panier-a-oeufs.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Panier à œufs 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/fonctions.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Fonctions 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/les-boucles-for.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Les boucles For 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/a-vous-de-jouer-1.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           A vous de jouer! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/introduction.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/panier-a-oeufs.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Panier à œufs 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/fonctions.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Fonctions 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/les-boucles-for.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Les boucles For 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/a-vous-de-jouer-1.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          A vous de jouer! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/make-your-very-first-games-with-pong.html"> Pong (C++ 2/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Tally counter </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Tally counter </h1> 
+        <h5> Step 1 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Step completed? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>A small game to count things, from guests to sheeps!</p> 
+        <ul> 
+         <li>What is a variable</li> 
+         <li>"If" conditions</li> 
+         <li>How to use buttons</li> 
+         <li>Draw rectangles</li> 
+        </ul> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Discover <strong>variables</strong>, the conditional structure <strong>if</strong> and draw <strong>rectangles</strong>.</p> 
+        <h2>Build a program to count guests, stock, or sheep</h2> 
+        <p><strong>Length</strong> 20 minutes</p> 
+        <p>**Level **Complete beginner</p> 
+        <p><strong>Prerequisites</strong></p> 
+        <ul> 
+         <li>Access to a <span>Gamebuino META</span> </li> 
+         <li>Completed the <span>Gamebuino META setup</span> workshop</li> 
+         <li>Completed the <span>Hello World</span> workshop</li> 
+        </ul> 
+        <p>Our objective now is to build a small guest counter, that increments whenever the use presses the UP arrow, and decrements whenever the Down arrow is pressed. This counter is often found at the entrance of stadiums or events to count people. But the logic we will use can be applied in many areas of a video game, such as scores or death count. Throughout the program, we will learn how to store values in memory with <strong>variables</strong> and use <strong>conditions</strong> to handle <strong>buttons</strong>.</p> 
+        <h2>Variables</h2> 
+        <p>Let's begin with the body of our last program, "Hello, world" and making a small variation: (don't hesitate to follow along on you IDE ;) )</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+int counter = 0;  // New line
+
+void setup() {
+  gb.begin();
+
+}
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+
+  gb.display.print(counter);  // Something changed here :)
+}
+</code></pre> 
+        <p>Let's take a deeper look at the changes we made.</p> 
+        <p><code>int counter = 0;</code></p> 
+        <p>This line <strong>declares</strong> and <strong>initializes</strong> a variable that we display later in<code>loop</code></p> 
+        <p><code>counter</code> is a <strong>variable</strong> that keeps track of how many guests we have. A <strong>variable</strong> is used to store information in memory. It could be a score, an image, some text, or even a whole map for a platformer. Sadly, when you power off you console, all variables are lost :( Note for the curious: there is actually a way to store variables in the SD card as to not lose them! (we will learn more about this in a later workshop)</p> 
+        <p>Here, we give our variable an <strong>initial value</strong> of <strong>0</strong>with the equal operator <code>=</code>.</p> 
+        <p>A variable has a <strong>name</strong>, here we chose <code>counter.</code> Choosing a descriptive name is <strong>very</strong> important, our programs can be understood more clearly by the reader and ourselves. Avoid using names like <code>a</code>, <code>b</code> or <code>var</code>, unless you want headaches.</p> 
+        <p>A variable also has a <strong>data type</strong>. The type of variable is set at declaration, just before naming it. Here <code>counter</code> is an <code>int</code>. "Int" is short for <strong>integer</strong>, also known as <strong>whole</strong> <strong>numbers.</strong> So <code>counter</code> can store any integer, such as 0, 1, 5, or -34.</p> 
+        <p>Here, this instruction <strong>is not</strong> placed inside of a <strong>function</strong> (functions are bounded by <strong>curly brackets</strong> {}). In C/C++, we can place instructions outside of functions, but these will only be executed once, from top to bottom. Note this does not apply to functions (<strong>instructions</strong> end in a <strong>semicolon</strong> but functions do not).</p> 
+        <p><code>gb.display.print(counter);</code> We already saw how to use the <code>gb.display.print</code> function in the Hello world workshop. We used it with a <strong>string</strong> as its parameter. But you can also pass an ** int** as a parameter, like we have done here. This will of course print the <strong>value</strong> of <code>counter</code>.</p> 
+        <h2>if - The Conditional Structure</h2> 
+        <p><img src="/gamebuino/academy-en/assets/caee18db3df44cf82772269480c653325b9d1af7.png" alt="" style="max-width:100%"></p> 
+        <p>If you run the code we wrote up to this point, you will see a screen displaying a 0. There is no movement, no interaction. Boring right? Let's fix this right now. Before we start coding, you must understand that a <strong>variable</strong> can change value, hence the name. Also, it is good practice to write down an <strong>algorithm</strong> before we program. So I came up with this algorithm to create the guest counter:</p> 
+        <pre><code>If we press UP
+Then add 1 to "counter"
+
+If we press DOWN
+Then subtract 1 to "counter"
+
+If we press MENU
+Then Reset "counter" to 0
+</code></pre> 
+        <p>This algorithm simply states that we control the value of <code>counter</code> with the UP and DOWN arrows. We can also reset its value with the MENU button. See nothing complicated right? Now we have to write the same thing, but in C++. The <code>If ... Then ...</code> in our algorithm translate to:</p> 
+        <pre><code>if (condition) {
+  // ...
+}
+</code></pre> 
+        <p>Rather straight forward. <strong>If</strong> the condition is true, <strong>Then</strong> execute everything located within those two curly brackets <code>{ }</code>. Applying this to the first part of the algorithm (UP arrow), we get the following:</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+int counter = 0;
+
+void setup() {
+  gb.begin();
+
+}
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+
+  if (gb.buttons.pressed(BUTTON_UP)) {  // If we press UP
+    counter = counter + 1;    // Add 1 to "counter"
+    gb.sound.playTick();    // Play a ticking sound
+  }  // End of IF
+
+  gb.display.print(counter);
+  gb.display.fillRect(counter, 8, 2, 4);  // Draw the rectangle
+}
+</code></pre> 
+        <p><span></span></p> 
+        <p>The new instructions are explained below. Since we only give you one part of the algorithm, then...</p> 
+        <h2>It's your turn!</h2> 
+        <p>It is now up to you to complete the code we started so that the two other buttons DOWN and MENU work. Do not hesitate to read over the algorithm and help yourself with the code for the UP arrow. If you ever need help with syntax, go to the <span>Reference page</span> (I recommend that you bookmark that page). This time I'll be nice this time and provide most of the elements you will need:</p> 
+        <pre><code>BUTTON_DOWN
+BUTTON_MENU
+</code></pre> 
+        <p>These are the names of the two other buttons you will need.</p> 
+        <p>Once that works, here is an extra little challenge: personalize your counter. Here are the functions you can use (and that are used in the given code above):</p> 
+        <p><code>gb.sound.playTick();</code></p> 
+        <p>This plays an predefined "tick" sound. Could be useful to make the counter feel more responsive when the player presses a button.</p> 
+        <p><code>gb.display.fillRect(x, y, w, h);</code></p> 
+        <p>This function draws a rectangle. It takes multiple <strong>parameters</strong>, separated by comas ,. The number and order of parameters in a function is important. If you want to read more about this function, check out its <span>reference</span>, but here is a quick summary:</p> 
+        <ul> 
+         <li> <code>x</code> is the horizontal coordinate of the rectangle, with the left edge of the screen being 0. In the example above, ve used <code>counter</code>.</li> 
+         <li> <code>y</code> is the vertical coordinate of the rectangle, with the top edge of the screen being 0. Here it is <code>8</code>, or 8 pixels.</li> 
+         <li> <code>w</code> is the width of the rectangle in pixels, here <code>2</code> </li> 
+         <li> <code>h</code> is the height of the rectangle in pixels, here 4</li> 
+        </ul> 
+        <p>How you use these functions is up to you! Go crazy! Try messing with the position and size of the rectangle, or how about it color? What if instead of counting guests 1 by 1, you multiplied by 2 every time.</p> 
+        <p><strong>Share your inventions on social networks with #gamebuino #tallycounter, we go through them all the time ;)</strong></p> 
+        <h2>Remarks about C/C++</h2> 
+        <p>A computer (like your Gamebuino) can execute a huge number of instructions very quickly, but a computer is not very bright. It we do exactly as it is told, literally. So the <strong>syntax</strong> and logic of each line is rather strict. There are two types of errors: <strong>syntax</strong> <strong>errors</strong> and <strong>logic errors</strong>. Syntax errors are detected by the compiler (when you compile), who will not let you compile until it is happy. Then we have the logic errors, those get past the compiler, but things don't behave like they are supposed to when you run your game.</p> 
+        <p>To fix <strong>syntax errors</strong>, reading the red text given by the compiler is crucial. Here are the most "popular" errors:</p> 
+        <p><strong>Curly brackets { }</strong> <img src="/gamebuino/academy-en/assets/b900a13663ed53d26327690b3a97eb8941c40d40.PNG" alt="" style="max-width:100%"> This is an error that a lot of beginners make. It is important to know that curly brackets come in pairs. Sometimes, you may forget to put one or type an extra one by accident. Either way, the compiler will not be happy because there will be a lonely bracket without a partner somewhere :( Here is a great feature of this IDE: if you place your cursor on an opening bracket, the matching closing brackt will be highlighted (and vice-versa). <strong>Note:</strong> all **if ** statements and <strong>functions</strong> must have brackets.</p> 
+        <p><strong>The semicolon ;</strong> <img src="/gamebuino/academy-en/assets/cf3a6833651c511974f93957e326da05b50c9b8a.PNG" alt="" style="max-width:100%"> Every instruction must end with a semicolon. This error is as easy to fix, as it is to make :P Just read over your code, and look for missing semicolons.</p> 
+        <p><strong>If you ever get stuck with an error that you cannot seam to fix, come by our <span>discord</span> channel for help. Even if you don't have problems, you can join the community's chat ;)</strong></p> 
+        <h2>Solution Example</h2> 
+        <p>Here's what we came up with: (code below) <img src="/gamebuino/academy-en/assets/ca029c72d017364a2f4c5aa3a3b03c15a1e7a2a8.gif" alt="" style="max-width:100%"></p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+int counter = 0;
+
+
+void setup() {
+  gb.begin();
+}
+
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+
+
+  if(gb.buttons.pressed(BUTTON_UP)){
+    counter = counter + 1;
+    gb.sound.playOK();
+  }
+
+
+  if(gb.buttons.pressed(BUTTON_DOWN)){
+    counter = counter - 1;
+    gb.sound.playCancel();
+  }
+
+
+  if(gb.buttons.pressed(BUTTON_MENU)){
+    counter = 0;
+    gb.sound.playTick();
+  }
+
+
+  gb.display.setColor(BROWN);
+  gb.display.fillRect(0, 0, counter, gb.display.height());
+
+
+  gb.display.setColor(WHITE);
+  gb.display.setFontSize(4);
+  gb.display.setCursor(8,8);
+  gb.display.print(counter); 
+}
+</code></pre> 
+        <p>Head to the next workshop to start you Pong game!</p> 
+        <p><em>By Aurélien Rodot, modified by Julien Giovinazzo</em></p> 
+        <p><strong>Any questions / comments / suggestions, be sure to drop a comment down below!</strong></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/hello-world.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           hello, world 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/tally-counter.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Tally counter 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/bouncing-ball.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Bouncing ball 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/pong.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Pong 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/artificial-intelligence.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Artificial Intelligence 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/hello-world.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          hello, world 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/tally-counter.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Tally counter 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/bouncing-ball.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Bouncing ball 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/pong.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Pong 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/artificial-intelligence.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Artificial Intelligence 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

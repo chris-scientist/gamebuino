@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/make-your-very-first-games-with-pong.html"> Pong (C++ 2/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Artificial Intelligence </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Artificial Intelligence </h1> 
+        <h5> Step 4 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Step completed? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Playing against humans is cool, but adding an AI is much cooler</p> 
+        <ul> 
+         <li>Simple artificial intelligence</li> 
+         <li>Add Randomness</li> 
+        </ul> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>So you just finished your first game, let's improve on it with Artificial Intelligence.</p> 
+        <h2>Our first AI</h2> 
+        <p><strong>Length</strong> 30 minutes</p> 
+        <p><strong>Level</strong> Beginner</p> 
+        <p><strong>Prerequisites</strong></p> 
+        <ul> 
+         <li>Access to a <span>Gamebuino META</span> </li> 
+         <li>Completed the <span>Gamebuino META setup</span> workshop</li> 
+         <li>Completed the <span>Hello, world</span>, <span>Tally counter</span>, <span>Bouncing ball</span> and <span>Pong (2 players)</span> </li> 
+        </ul> 
+        <p>In the previous workshop, Pong, you built a functional two-player game. We used the arrows to move the left paddle, and the A and B buttons to move the right paddle. With what we saw in the<span> tally counter</span> workshop, you also implemented a way to track and display the scores. Finally, you used <strong>if</strong> statements with multiple conditions to make the ball bounce. Well, a 2-player tennis game is nice, but what if we wanted to play alone? Turns out, a small <strong>Artificial Intelligence</strong> can go a long way ;)</p> 
+        <p>But, what is an artificial intelligence? <strong>Artificial Intelligence</strong>, also called ** AI**, boils down to giving the computer the power to decide things by itself. It is just like bringing the computer to life!</p> 
+        <p>An AI can be very powerful. It has been hot topic for quite some time now, and it can come in many shapes and forms, including some very complex ones. There are even university degrees specialized in AI. But for this workshop, we will go back to the roots of AI. Our AI will control one of the paddles in our Pong game.</p> 
+        <p>First we will see the simplest way to program an AI, by using <strong>if</strong> statements. Then, in a second part, with the help of <strong>randomness</strong>, we will make the computer less predictable and way more fun.</p> 
+        <h2>Our first computer controlled enemy</h2> 
+        <p>Let's start by taking a look at how the computer might play. The computer will control the right paddle (called <code>paddle2</code> in the previous workshop). Our AI's goal is to prevent the ball to reach the right side of the screen. In other words, the computer must follow the ball with its paddle.</p> 
+        <h2>The logic behind the scenes</h2> 
+        <p>Such an algorithm would look like this:</p> 
+        <pre><code>If the ball is above the center of the paddle
+    Then, move the paddle up
+Else, if the ball is below the center of the paddle
+    Then, move the paddle down
+</code></pre> 
+        <p>Here, we always want to do one of two things: go up or go down. Generally speaking, we want to center the paddle on the ball. To do so, we check if the ball is below the <strong>center</strong> of the paddle. Since the <strong>variable</strong> <code>paddle2_posY</code> keeps track of the <strong>top</strong> of the paddle, then we have to add half the paddle's height to get it's center's Y position. So this give us: <code>paddle2_center = paddle2_posY + paddle_height / 2</code>.</p> 
+        <p>The algorithm introduces a new concept for us: the <strong>else</strong>. Sometimes you might want to express "<strong>If</strong> A is true, then do thing 1, <strong>else</strong> do thing 2". In C/C++, this is translated by :</p> 
+        <pre><code>if (A) {
+  // Do thing 1
+}
+else {
+  // Do thing 2
+}
+</code></pre> 
+        <p>Another awesome aspect of C++ is the <code>else if {...}</code>. Whenever an else is directly followed by an if, then we can write <code>else if () {...}</code> instead of <code>else { if () {...} }</code>. This improves readability quite a bit, but more importantly, we can put as many <strong>else ifs</strong> as we want in a row (whereas we can only put <strong>at most one else</strong> per if statement. For example, this is allowed:</p> 
+        <pre><code>if (A) {
+  // Do a thing
+}
+else if (B) {
+  // Do another thing
+}
+else if (C) {
+  // Do something else
+}
+else {  // A, B, and C are false
+  // Do yet again another thing
+} 
+</code></pre> 
+        <p>So, to go back to our algorithm, we have an <strong>if</strong> and an <strong>else if</strong>. By simply using what we have just learned, it should be easy enough to translate the algorithm. So now...</p> 
+        <h2>Coding the AI</h2> 
+        <p>You now have all the necessary tools to start making you first <strong>artificial intelligence</strong>. Start by going over the algorithm, then modify the previous' workshop code (<span>Pong - two players</span>) to match the algorithm. If you have an idea but you are not sure about it, try it out! You have the code, you have the console, it is easy to test something. There is no better way to know if it works than by testing it :)</p> 
+        <p><strong>Small help:</strong> to find the center of the paddle, go back to the beginning of this tutorial.</p> 
+        <p>I have put the solution for this right below, so if you still have not searched on you own, this is you last chance ;) Once again, the best way to progress is to do (and not just read about) the thing you want to learn!</p> 
+        <p>Ok, so it is done, your own <strong>artificial intelligence</strong>! You can now play against your Gamebuino at Pong. But... as you play, you might heve noticed that the opposing paddle follows the exact movement of the ball and rarely makes any mistakes. Let's fix that right away.</p> 
+        <p><strong>Solution</strong></p> 
+        <p>This code is our implementation of the <strong>AI</strong>, you should have something similar:</p> 
+        <p><img src="/gamebuino/academy-en/assets/5792bc759b7f5344e6f71abcb1ec69d9faa3b9c3.gif" alt="" style="max-width:100%"></p> 
+        <pre><code>void loop() {
+  //// Update paddle1 (player's paddle)
+
+  // Update paddle2 (AI)
+  if (ball_posY &gt; paddle2_posY + paddle_height / 2) {  // If the ball is below the center of the paddle
+    paddle2_posY = paddle2_posY + 1;                      // Move downwards
+  } 
+  else if (ball_posY &lt; paddle2_posY + paddle_height / 2) {  // If the ball is above the center of the paddle
+    paddle2_posY = paddle2_posY - 1;                           // Move upwards
+  }
+
+  //// Update ball movement and collisions
+  //// Draw the ball, the paddles, and the score
+}
+</code></pre> 
+        <h2>Making our AI less predictable</h2> 
+        <p>You have just built a working <strong>AI</strong>. The computer is capable of following the ball and not losing. It plays correctly, however its behavior is very predictable. '<em>If the ball is below me, I go down. If the ball is above me, I go up</em>'. This behavior in not very natural looking. The game would be a lot more fun if the AI moved in a more "human" way, and missed the ball from time to time.</p> 
+        <h2>Random()</h2> 
+        <p>So how do we go about making an unpredictable movement? Well, there is a legend about a function that returns <strong>random</strong> numbers! And guess what? It's called<code>random()</code>:</p> 
+        <p><code>random(int min, int max)</code> <strong><span>random()</span></strong> is a function that spits out a random <strong>integer</strong>. This integer is always between min and max-1. So, the instruction <code>a = random(0, 4);</code> means that <code>a</code> could be 0, 1, 2, or 3 (but not 4!). Before starting to work on our advanced AI, let's put <code>random()</code> to the test.</p> 
+        <p>When you built your Pong game, the ball always spawned in the same position whenever a point was scored. Here is the code we wrote:</p> 
+        <pre><code>// Check if the ball exited the screen
+if (ball_posX &lt; 0) {
+  // Reset ball
+  ball_posX = 20;
+  ball_posY = 20;
+  ball_speedX = 1;
+  ball_speedY = 1;
+  // Increment player 2's score
+  score2 = score2 + 1;
+}
+if (ball_posX &gt; gb.display.width()) {
+  // Reset ball
+  ball_posX = 20;
+  ball_posY = 20;
+  ball_speedX = 1;
+  ball_speedY = 1;
+  // Increment player 1's score
+  score1 = score1 + 1;
+}
+</code></pre> 
+        <p>By doing so, ALL games started out the same way: the ball spawns in (20, 20) and moved down and to the right. This is a bit repetitive no? <code>random()</code> can save us!</p> 
+        <pre><code>// Check if the ball exited the screen
+if (ball_posX &lt; 0) {
+  // Reset the ball
+  ball_posX = 20;
+  ball_posY = random(20, gb.display.height() - 20);  // Random position along the Y axis
+  ball_speedX = 1;
+
+  if (random(0, 2) == 1) {  // 50% of the time, this is true
+    ball_speedY = 1;
+  } 
+  else {  // Other 50% of the time
+    ball_speedY = -1;
+  }
+
+  // Increment player 2's score
+  score2 = score2 + 1;
+}
+
+if (ball_posX &gt; gb.display.width()) {
+  // Reset ball
+  ball_posX = 20;
+  ball_posY = random(20, gb.display.height() - 20);  // Random position along the Y axis
+  ball_speedX = 1;
+
+  if (random(0, 2) == 1) {  // 50% of the time, this is true
+    ball_speedY = 1;
+  } 
+  else {  // Other 50% of the time
+    ball_speedY = -1;
+  }
+
+  // Increment player 1's score
+  score1 = score1 + 1;
+}
+</code></pre> 
+        <p>So now, the ball will respawn at (20, Y), where Y is a random number. Also, we use <code>if (random(0, 2) == 1)</code> because it is true only every other time. You see, <code>random(0, 2)</code> returns either 0 or 1, so there is a 50% chance of getting a 1. With this, we set the ball to start with an upward motion half of the time, and a downward motion the rest of the time. It is these slight modifications that differentiate a 'meh' game from a great game ;)</p> 
+        <p>In C/C++, if we want to test an <strong>equality</strong> in a condition, we have to use a <strong>double equals sign</strong> <code>==</code>. So <code>if (a == b)</code> is true when <code>a</code> IS EQUAL TO <code>b</code>. This is very important to keep in mind, because if you put a single equals sign, your game will do strange things.</p> 
+        <p><img src="/gamebuino/academy-en/assets/3585510d21e53da98fad046d7c0d0dc8d51332f2.gif" alt="" style="max-width:100%"></p> 
+        <h2>Less predictable == more enjoyable</h2> 
+        <p><strong>Let's improve our AI.</strong> To make the computer behave more naturally, it needs to not be perfect at following the ball. With <strong>random</strong>, we can make it so that the enemy paddle has a harder time following the ball. To help the AI out a bit, we will also increase it's speed. With these changes, the game should a lot more fun to play.</p> 
+        <p>Let's start by making a more fluid movement. To do so, we need to create a <strong>variable</strong> that keeps track of the computer's paddle's speed, just like we did for the ball: <code>paddle2_speedY</code>. Let's look at what we will do with it:</p> 
+        <pre><code>int paddle2_speedY = 0;  // Vertical speed of the AI's paddle
+
+void loop() {
+  //// Update paddle1 (player's paddle)
+
+  // Update paddle2 (AI's paddle)
+  if (ball_posY &gt; paddle2_posY + paddle_height / 2 &amp;&amp; random(0, 3) == 1) {
+    paddle2_speedY = 2;  // Move down
+  } else if (ball_posY &lt; paddle2_posY + paddle_height / 2 &amp;&amp; random(0, 3) == 1) {
+    paddle2_speedY = -2;  // Move up
+  }
+
+  paddle2_posY = paddle2_posY + paddle2_speedY;  // Update paddle2's position
+
+  //// Update ball movement and collisions
+  //// Draw the ball, the paddles, and the score
+}
+</code></pre> 
+        <p>Here, we added the <code>random(0, 3) == 1</code> condition. So when the ball is below the paddle's center, the first ** if** is true about once every 3 frames (and it the same is true for the second ** if**). To better understand why this works, imagine the following scenario: the ball is below the paddle, and the paddle is already moving downwards (paddle2_speedY = 2). When the ball ends up above the paddle's center, the paddle's direction should change, but with the <strong>random</strong> condition, it should take a few frames before the paddle actually decides to go up. And with a little bit of luck, the paddle will miss the ball, and you score a point! <img src="/gamebuino/academy-en/assets/4f9db762d708ccbb0c63724b659df5480d8343c4.gif" alt="" style="max-width:100%"></p> 
+        <p>In the code above, we can generalize <code>random(0, 3) == 1</code> with <code>random(0, A) == 1</code> where A = 3. And the bigger** A** gets, the less likely the condition becomes. So in this case, A is related to the AI's reaction speed because if A is bigger, the more frames are necessary for the AI to change directions. We can exploit this finding to change the AI's difficulty, but I will leave this up to you :)</p> 
+        <h2>It's your turn!</h2> 
+        <p>In this workshop, we created our first <strong>AI</strong>, then we improved upon it with the <strong>random()</strong> function. Like at the end of every workshop, I propose a feasible exercise to implement/improve a functionality. Here I want you to make it so the AI can change difficulty with the press of a button. When the player presses the MENU button, the AI switches between "easy" and "hard" play styles.</p> 
+        <p><strong>Tip:</strong> To make the difficulty vary, go over the last part of this tutorial.</p> 
+        <p>It's up to you to polish your <strong>AI</strong>, or to make another one for another game ;)</p> 
+        <p><strong>Show off your talent on social networks with #gamebuino #Pong #AI, we go through them all the time ;)</strong></p> 
+        <h2>Solution Example</h2> 
+        <p>If you ran out of ideas, here is what we did on our side :) <img src="/gamebuino/academy-en/assets/b2da1fabe6abb91664311ebe2b931b41ca8bc14e.gif" alt="" style="max-width:100%"></p> 
+        <pre><code>#include 
+// ball attributes
+int ball_posX = 20;
+int ball_posY = 20;
+int ball_speedX = 1;
+int ball_speedY = 1;
+int ball_size = 3;
+
+
+// paddle1 attributes
+int paddle1_posX = 10;
+int paddle1_posY = 30;
+
+
+// paddle2 attributes
+int paddle2_posX = gb.display.width() - 13;
+int paddle2_posY = 30;
+
+
+// Dimensions for both paddles
+int paddle_height = 10;
+int paddle_width = 3;
+
+
+// For the AI
+int paddle2_speedY = 0;  // Vertical speed of the AI's paddle
+
+
+// Scores
+int score1;  // Player 1's score
+int score2;  // Player 2's score
+
+
+int difficulty = 3;  // Level of difficulty. 3 = EASY et 2 = HARD
+
+
+void setup() {
+  gb.begin();
+}
+
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+
+
+  // Difficulty switch
+  if (gb.buttons.pressed(BUTTON_MENU)) {
+    if (difficulty == 3) { // Easy
+      difficulty = 2;  // Change difficulty
+    }
+    else {  // Hard
+      difficulty = 3;  // Change difficulty
+    }
+  }
+
+
+  // Update paddle 1 (player controlled paddle)
+  if (gb.buttons.repeat(BUTTON_UP, 0)) {
+    paddle1_posY = paddle1_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_DOWN, 0)) {
+    paddle1_posY = paddle1_posY + 1;
+  }
+
+
+  // Update paddle2 (AI controlled paddle)
+  if (ball_posY &gt; paddle2_posY + paddle_height / 2 &amp;&amp; random(0, difficulty) == 1) {
+    paddle2_speedY = 2;
+  } else if (ball_posY &lt; paddle2_posY + paddle_height / 2 &amp;&amp; random(0, difficulty) == 1) {
+    paddle2_speedY = -2;
+  }
+  paddle2_posY = paddle2_posY + paddle2_speedY;  // Update paddle2's position
+
+
+  // Update ball
+  ball_posX = ball_posX + ball_speedX;
+  ball_posY = ball_posY + ball_speedY;
+
+
+  // Collisions with walls
+  if (ball_posY &lt; 0) {
+    ball_speedY = 1;
+  }
+  if (ball_posY &gt; gb.display.height() - ball_size) {
+    ball_speedY = -1;
+  }
+
+
+  // Collision with paddle1
+  if ( (ball_posX == paddle1_posX + paddle_width)
+       &amp;&amp; (ball_posY + ball_size &gt;= paddle1_posY)
+       &amp;&amp; (ball_posY &lt;= paddle1_posY + paddle_height) ) {
+    ball_speedX = 1;
+  }
+  // Collision with paddle2
+  if ( (ball_posX + ball_size == paddle2_posX)
+       &amp;&amp; (ball_posY + ball_size &gt;= paddle2_posY)
+       &amp;&amp; (ball_posY &lt;= paddle2_posY + paddle_height) ) {
+    ball_speedX = -1;
+  }
+
+
+  // Check if the ball exited the screen
+  if (ball_posX &lt; 0) {
+    // Reset the ball
+    ball_posX = 20;
+    ball_posY = random(20, gb.display.height() - 20);  // Random position along the Y axis
+    ball_speedX = 1;
+
+
+    if (random(0, 2) == 1) {  // 50% of the time, this is true
+      ball_speedY = 1;
+    } 
+    else {  // Other 50% of the time
+      ball_speedY = -1;
+    }
+
+
+    // Increment player 2's score
+    score2 = score2 + 1;
+  }
+
+
+  if (ball_posX &gt; gb.display.width()) {
+    // Reset ball
+    ball_posX = 20;
+    ball_posY = random(20, gb.display.height() - 20);  // Random position along the Y axis
+    ball_speedX = 1;
+
+
+    if (random(0, 2) == 1) {  // 50% of the time, this is true
+      ball_speedY = 1;
+    } 
+    else {  // Other 50% of the time
+      ball_speedY = -1;
+    }
+
+
+    // Increment player 1's score
+    score1 = score1 + 1;
+  }
+
+
+  // Draw ball
+  gb.display.fillRect(ball_posX, ball_posY, ball_size, ball_size);
+  // Draw paddle1
+  gb.display.fillRect(paddle1_posX, paddle1_posY, paddle_width, paddle_height);
+  // Draw paddle2
+  gb.display.fillRect(paddle2_posX, paddle2_posY, paddle_width, paddle_height);
+
+
+  // Draw scores
+  gb.display.setCursor(35, 5);
+  gb.display.print(score1);
+  gb.display.setCursor(42, 5);
+  gb.display.print(score2);
+
+
+  // Draw difficulty
+  gb.display.setCursor(33, gb.display.height() - 5);
+  if (difficulty == 3) {
+    gb.display.print("EASY");
+  }
+  else {
+    gb.display.print("HARD");
+  }
+}
+</code></pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/hello-world.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           hello, world 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/tally-counter.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Tally counter 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/bouncing-ball.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Bouncing ball 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/pong.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Pong 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/artificial-intelligence.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Artificial Intelligence 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/hello-world.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          hello, world 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/tally-counter.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Tally counter 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/bouncing-ball.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Bouncing ball 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/pong.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Pong 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/artificial-intelligence.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Artificial Intelligence 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

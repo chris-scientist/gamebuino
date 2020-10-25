@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/discover-python-programming.html"> Get started (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Display text on the screen </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Display text on the screen </h1> 
+        <h5> Step 2 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Step completed? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Now that you've launched your first program, it's time to get your hands dirty!</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Let's go back to the code we executed in the previous step.</p> 
+        <pre><code>from gamebuino_meta import begin, waitForUpdate, display, buttons, color
+
+begin()
+
+while True:
+    waitForUpdate()
+    display.clear()
+
+    display.print("Hello world")
+</code></pre> 
+        <p>The main notion to know is that a Python program is composed of instructions. Each instruction is equivalent to a line of code, and the instructions are executed one after the other. <code>display.print("Hello world")</code> is therefore an instruction to write <em>Hello world</em> on the screen! Don't worry about the other instructions at this time.</p> 
+        <h2>Challenge #1</h2> 
+        <p>Try changing the code to write the sentence "My name is Bob" on the screen. If you observe the code correctly, it shouldn't be too complicated!</p> 
+        <h4>Need help?</h4> 
+        <ul> 
+         <li>The <code>display.print("xxx")</code> instruction is used to display text on the screen</li> 
+         <li>The quotation marks around your text are very important, don't forget them!</li> 
+         <li>Don't forget to save your code in order to run it on your Gamebuino every time you make changes.</li> 
+        </ul> 
+        <blockquote> 
+         <p>Note: if after saving your code nothing happens on the screen of your Gamebuino, which remains frozen, it is probably because there is an error! In this case, <strong>click on the "Serial" button</strong> (the one with the two arrows) in the Mu menu. This will open a small window at the bottom, in which you will have some information in case of error, and especially the line concerned! Feel free to keep this window open throughout this workshop, it will probably help you more than once!</p> 
+        </blockquote> 
+        <h4>Expected result</h4> 
+        <p><img src="/gamebuino/academy-en/assets/20190325_105841.jpg" alt="" style="max-width:100%"></p> 
+        <h4>Solution</h4> 
+        <details> <summary>See</summary> 
+         <div> 
+          <pre><code>from gamebuino_meta import begin, waitForUpdate, display, buttons, color
+
+while True:
+    waitForUpdate()
+    display.clear()
+
+    display.print("My name is Bob")
+</code></pre> 
+         </div> 
+        </details> 
+        <h4>Explanations</h4> 
+        <p>It wasn't very difficult, was it? All you had to do was replace "Hello world" with "My name is Bob".</p> 
+        <h2>Go further</h2> 
+        <p>Before you go any further, don't hesitate to have fun writing other things on the screen (your name may not be Bob, after all)!</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/installation-and-prerequisites.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Installation and prerequisites 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/run-your-first-program.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Run your first program 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/display-text-on-the-screen.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Display text on the screen 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/a-little-bit-of-colour.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           A little bit of colour 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/variables-what-are-they.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Variables, what are they? 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/program-a-pong.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Program a Pong! 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/change-graphics-and-difficulty.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Change graphics and difficulty 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/installation-and-prerequisites.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Installation and prerequisites 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/run-your-first-program.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Run your first program 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/display-text-on-the-screen.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Display text on the screen 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/a-little-bit-of-colour.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          A little bit of colour 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/variables-what-are-they.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Variables, what are they? 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/program-a-pong.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Program a Pong! 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/change-graphics-and-difficulty.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Change graphics and difficulty 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

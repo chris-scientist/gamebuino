@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/make-your-very-first-games-with-pong.html"> Pong (C++ 2/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Bouncing ball </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Bouncing ball </h1> 
+        <h5> Step 2 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Step completed? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Make your game move on its own with a ball bouncing on the screen edges</p> 
+        <ul> 
+         <li>"If else" conditions</li> 
+         <li>Use variables to create movement</li> 
+         <li>Check for collisions</li> 
+         <li>Make it bounce!</li> 
+        </ul> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>This time, it is going to be a lot more dynamic. We are approaching a full game!</p> 
+        <h2>Bouncing all over the place</h2> 
+        <p><strong>Length</strong> 20 minutes</p> 
+        <p><strong>Level</strong> Complete beginner</p> 
+        <p><strong>Prerequisites</strong></p> 
+        <ul> 
+         <li>Access to a <span>Gamebuino META</span> </li> 
+         <li>Completed the <span>Gamebuino META setup</span> workshop</li> 
+         <li>Completed the <span>Hello World</span> and <span>Tally counter</span> workshops</li> 
+        </ul> 
+        <p>In the previous workshop, you made a tally counter. You learned to use <strong>variables</strong> of <strong>type</strong> <code>int</code>. We also looked at <strong>if statements</strong> and <strong>conditions</strong> to interact with the player. Finaly, we used a function to draw rectangles to the screen.</p> 
+        <p>So in summary,** you made a rectangle move by pressing buttons**. So we are not far from having a Pong paddle ;)But a Pong game without a ball is not very fun. This is why we will now code a bouncing ball.</p> 
+        <h2>Moving Forward</h2> 
+        <p>For our bouncing ball, we would need a new variable called <code>positionX</code>, which, like you guessed, stores the X (or horizontal) position of our ball. While we are at it, let's add another variable called <code>speedX</code> which keeps track of the speed of our ball along the X axis.</p> 
+        <p>Now, look at this code: it makes the ball move forward on it's own!</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+int positionX = 32;
+int speedX = 1;
+
+void setup() {
+  gb.begin();
+
+}
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+
+  positionX = positionX + speedX;
+
+  gb.display.print("positionX: ");
+  gb.display.print(positionX);
+  gb.display.print("\nspeedX: ");
+  gb.display.print(speedX);
+
+  gb.display.fillRect(positionX, 32, 4, 4);
+}
+</code></pre> 
+        <p><img src="/gamebuino/academy-en/assets/d02bc7292dc489bd8573d5b40b404ff095b6df93.gif" alt="" style="max-width:100%"></p> 
+        <h2>About the screen and rectangles</h2> 
+        <p><img src="/gamebuino/academy-en/assets/981ed2340a29dbab19a5acc525e9abad9577172a.PNG" alt="" style="max-width:100%"></p> 
+        <p>When you were taught coordinates, you probably saw something like this where the center is where X and Y are equal to zero, and that X and Y get bigger when you go to the up and to the right. But for screens, this isn't the case.</p> 
+        <p><img src="/gamebuino/academy-en/assets/bf710a265997cf56917cd09b3de09609fcc59c2f.png" alt="" style="max-width:100%"> Coordinates on the Gamebuino META's screen, just like all other screens, have their origin in the upper left corner. Not only that, but the Y values get bigger when you move <strong>downwards</strong> (the X values grow when moving to the <strong>right</strong>, just like a regular graph).</p> 
+        <p>This means that the opposite corner (bottom right) is at (<code>gb.display.width() - 1, gb.display.height() - 1</code>).</p> 
+        <p>Now why did we subtract 1 to get the opposite corner? Well it has to do with the fact that the first pixel has a value of 0 on both axes. Let me put it this way: if you had a screen with only four pixels, and the the first pixel's coordinate was 0, what would be the coordinate of the forth (last) pixel?</p> 
+        <p><img src="/gamebuino/academy-en/assets/a4eb88d4d0ee1599c849710b1996b5622e26bd54.png" alt="" style="max-width:100%"></p> 
+        <p>Here you can easily see that the forth pixel has a coordinate of 3, not 4. Well the same thing happens with you console's screen! The rightmost pixel has an x coordinate equal to <code>gb.display.width() - 1</code>. And the same thing goes for the lowest pixel.</p> 
+        <p>Note: the screen's size is <strong>80 pixels wide by 64 pixels tall</strong>. You can check the width by doing <code>gb.display.print(gb.display.width());</code> in your code. Or by counting ;). Also note that even if you know this, you should not use <code>80</code> instead of <code>gb.display.width()</code>, because it is less implicit and is a sort of light <span>obfuscation</span>.</p> 
+        <p>While we are on the topic of screen and positioning, let's take a closer look at how the <code>gb.display.drawRect()</code> function works. First, here is its structure:</p> 
+        <p><code>gb.display.drawRect(int x, int y, int width, int height);</code></p> 
+        <p><img src="/gamebuino/academy-en/assets/1a5979a8aac5d6e2c69aa5937e3afc18420ba177.png" alt="" style="max-width:100%"> Just like the screen, the <code>X</code> and <code>y</code>passed as parameters are the position of the <strong>top left corner</strong> of our rectangle. So, knowing this, the bottom right corner of the rectangle has a position of (<code>x + width - 1, y + height - 1</code>).</p> 
+        <p>Now that this is clear, try to draw the ball higher up the screen. How about drawing the ball so that it is right above the bottom of the screen.</p> 
+        <h2>Keeping The Ball In View</h2> 
+        <p>Let's launch our little game and see what happens...Hey! the ball just flies off the screen! Well actually that's expected, as we did not use <strong>conditions</strong> to stop it. So it just keeps going, even off screen. In that case, how could we keep the ball inside of our screen? Well, let's take a look at this algorithm.</p> 
+        <pre><code>If the ball reaches the right edge
+Then go left
+
+If the ball reaches the left edge
+Then go right
+</code></pre> 
+        <p>So there are a couple of things we must look at:</p> 
+        <ul> 
+         <li>How do we make it so that the ball goes towards the left?</li> 
+         <li>How do we detect the edge of the screen?</li> 
+        </ul> 
+        <p>Now, before I give you the solution, try to figure it out. Here are a few hints:</p> 
+        <p>Think about what <code>speedX</code> does. Play around with its value.</p> 
+        <p>Coordinates on the screen range from <code>0</code> to <code>gb.display.width()</code>. A value of <code>0</code> coresponds to the leftmost pixel, and <code>gb.display.width()</code> is the rightmost pixel.</p> 
+        <p>If you are still stuck, here's what we did:</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+int positionX = 32;
+int speedX = 1;
+
+void setup() {
+  gb.begin();
+
+}
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+
+  positionX = positionX + speedX;
+
+  // If the ball reaches the left side of the screen
+  if(positionX &lt; 0){
+    // Go right
+    speedX = 1;
+  }
+
+  // If the ball reaches the right side of the screen
+  if(positionX &gt; gb.display.width()){
+    // Go left
+    speedX = -1;
+  }
+
+  gb.display.print("positionX: ");
+  gb.display.print(positionX);
+  gb.display.print("\nspeedX: ");
+  gb.display.print(speedX);
+
+  gb.display.fillRect(positionX, 32, 4, 4);
+}
+</code></pre> 
+        <h2>It's your turn!</h2> 
+        <p>If the ball only moves left and right, this is not going to be a very exiting Pong match :P Why not create <code>positionY</code> et <code>speedY</code> so that the ball can now move across the screen. But just like the left-right movement, you will need to detect the edge (with <code>gb.display.height()</code>) and keep the ball inside the screen. Go ahead and give it a go!</p> 
+        <p><strong>Make us proud on social networks with #gamebuino #bouncingball , we go through them all the time;)</strong></p> 
+        <h2>Solution Example</h2> 
+        <p>If you are running out of ideas, or need a little guidance, take a look at what we wrote :)</p> 
+        <p><img src="/gamebuino/academy-en/assets/cefce1ae43bed65c740dd2530a7305b5f8d6b6f5.gif" alt="" style="max-width:100%"></p> 
+        <pre><code>#include 
+int positionX = 32;
+int speedX = 2;
+int positionY = 32;
+int speedY = 1;
+int ballSize = 8;
+
+
+void setup() {
+  gb.begin();
+
+
+}
+
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+
+
+  // Update horizontal position
+  positionX = positionX + speedX;
+
+
+  // If the ball reaches the left side of the screen
+  if(positionX &lt; 0){
+    // Go right
+    speedX = 1;
+  }
+
+
+  // If the ball reaches the right side of the screen
+  if(positionX &gt; gb.display.width() - ballSize){
+    // Go left
+    speedX = -1;
+  }
+
+
+  // Update vertical position
+  positionY = positionY + speedY;
+
+
+  // If the ball reaches the top side of the screen
+  if(positionY &lt; 0){
+    // Go down
+    speedY = 1;
+  }
+
+
+  // If the ball reaches the bottom side of the screen
+  if(positionY &gt; gb.display.height() - ballSize){
+    // Go up
+    speedY = -1;
+  }
+
+
+  gb.display.setColor(BROWN);
+  gb.display.print("positionX: ");
+  gb.display.print(positionX);
+  gb.display.print("\nspeedX: ");
+  gb.display.print(speedX);
+
+
+  gb.display.print("\npositionY: ");
+  gb.display.print(positionY);
+  gb.display.print("\nspeedY: ");
+  gb.display.print(speedY);
+
+
+  gb.display.setColor(WHITE);
+  gb.display.fillRect(positionX, positionY, ballSize, ballSize);
+}
+</code></pre> 
+        <p><em>By Aurélien Rodot, modified by Julien Giovinazzo</em></p> 
+        <p><strong>Any questions / comments / suggestions, be sure to drop a comment down below!</strong></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/hello-world.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           hello, world 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/tally-counter.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Tally counter 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/bouncing-ball.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Bouncing ball 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/pong.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Pong 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/artificial-intelligence.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Artificial Intelligence 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/hello-world.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          hello, world 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/tally-counter.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Tally counter 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/bouncing-ball.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Bouncing ball 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/pong.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Pong 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/artificial-intelligence.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Artificial Intelligence 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>
