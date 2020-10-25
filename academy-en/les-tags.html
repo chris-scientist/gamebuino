@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="gamebuino/academy-en/partagez-votre-projet-sur-github-1.html"> Partagez votre projet sur GitHub </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Les tags </span> 
+     </div> 
+    </div> 
+    <div class="alert alert-warning mb-3">
+      This content is not fully available in your language 😕 You want to contribute? Send us an e-mail at hello@gamebuino.com. 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Les tags </h1> 
+        <h5> Step 2 </h5> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Avant de vous présenter ce qu'est un tag faisons un petit point ! Ce tutoriel suppose que vous avez les connaissance de bases sur Git, dans le cas contraire reportez vous à l'étape 1 (les bases). Je présente ici une notion avancée de la gestion des sources.</p> 
+        <p>Qu'est-ce qu'un tag ? Un tag est un instantané de votre projet, par exemple il peut s'agir de la version 1.0 de votre projet. Ce tag vous permet de garder un historique figé de votre projet, en effet c'est une version que vous ne pourrez pas modifier.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h1>Pratique</h1> 
+        <h2>Créer un tag</h2> 
+        <p>Imaginons que je souhaite faire un tag, et que je souhaite le nommez "v1.0", la commande pour générique est : <code>git tag -a nom-tag -m commentaire-entre-double-quote</code>.</p> 
+        <p>Voici la commande relative à notre exemple :</p> 
+        <pre><code>$ git tag -a v1.0 -m "Les bases v0.2.0"
+</code></pre> 
+        <h2>Diffuser le tag</h2> 
+        <p>Comme vous l'avez sûrement compris avec le titre, le tag que nous avons créer à l'étape précédente a été créé en local. Si vous souhaitez partager votre tag la commande générique est : <code>git push origin nom-tag</code>.</p> 
+        <p>La commande appliquée à notre exemple est la suivante :</p> 
+        <pre><code>$ git push origin v1.0
+</code></pre> 
+        <p>Vous pouvez retrouvez les tags partagés d'un projet dans "release" :</p> 
+        <p><img src="gamebuino/academy-en/assets/P02_01_depot.png" alt="Accès au tag" style="max-width:100%"></p> 
+        <p>Voici l'ensemble des tags qui ont été partagé :</p> 
+        <p><img src="gamebuino/academy-en/assets/P02_02_set_tags.png" alt="Ensemble tags partagés" style="max-width:100%"></p> 
+        <p>Pour voir les détails d'un tag, comme le montre la capture ci-dessous, cliquez dessus à l'étape précédente :</p> 
+        <p><img src="gamebuino/academy-en/assets/P02_03_details_tag.png" alt="Détails tag" style="max-width:100%"></p> 
+        <h2>Consulter les informations relatives aux tags en local</h2> 
+        <p>Vous pouvez, en ligne de commande, récupérer les informations relatives aux tags.</p> 
+        <p>Pour consulter la liste des tags, tapez <code>git tag</code>.</p> 
+        <p>Pour consulter les détails d'un tag, la commande générique est : <code>git show nom-tag</code>.</p> 
+        <p>Pour reprendre notre exemple, la commande pour avoir les détails est :</p> 
+        <pre><code>$ git show v1.0
+tag v1.0
+Tagger: chris-scientist &lt;votre-adresse-mail&gt;
+Date:   Fri Jan 25 19:04:34 2019 +0100
+
+Les bases v0.2.0
+
+commit 33500709ae481594a7d578808a2a14534db30285 (HEAD -&gt; master, tag: v1.0, origin/master, origin/HEAD)
+Author: chris-scientist &lt;votre-adresse-mail&gt;
+Date:   Thu Jan 24 19:30:36 2019 +0100
+</code></pre> 
+        <h1>Conclusion</h1> 
+        <p>Ce court tutoriel s'arrête là. Vous savez maintenant créer, partager et consulter les informations d'un tag.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="gamebuino/academy-en/les-bases-1.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Les bases 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/les-tags.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Les tags 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/les-branches.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Les branches 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="gamebuino/academy-en/les-bases-1.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Les bases 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/les-tags.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Les tags 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/les-branches.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Les branches 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

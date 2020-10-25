@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="gamebuino/academy-en/sokoban-vs-poo.html"> Apprenez la programmation orientée objet avec Sokoban </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> L'affichage </span> 
+     </div> 
+    </div> 
+    <div class="alert alert-warning mb-3">
+      This content is not fully available in your language 😕 You want to contribute? Send us an e-mail at hello@gamebuino.com. 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> L'affichage </h1> 
+        <h5> Step 3 </h5> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Nous allons voir dans cette troisième étape la gestion de l'affichage, ainsi à la fin de cette étape notre écran affichera de belles images.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h2>Introduction</h2> 
+        <p>Les <strong>pré-requis</strong> de cette étape sont :</p> 
+        <ul> 
+         <li>Avoir réaliser l'étape 1 ainsi que l'étape 2 de ce workshop.</li> 
+        </ul> 
+        <p>Je vous invite à télécharger <span>le code</span> qui est le résultat de la deuxième étape, ceci pour partir sur des bases communes.</p> 
+        <h2>Création des sprites</h2> 
+        <p>Nous allons voir dans un premier temps la gestion et l'affichage des différents sprites qui composent notre jeu. Le jeu compte 7 sprites différents qui sont :</p> 
+        <ul> 
+         <li>un mur ;</li> 
+         <li>une caisse (en dehors de la zone de 'chargement') ;</li> 
+         <li>une caisse sur la zone de 'chargement' ;</li> 
+         <li>une zone de 'chargement' ;</li> 
+         <li>le joueur (en dehors de la zone de 'chargement') ;</li> 
+         <li>le joueur sur la zone de chargement ;</li> 
+         <li>et le sol.</li> 
+        </ul> 
+        <p>Pour chaque sprites le principe est le même, il faut créer une fois l'image et la stocker en mémoire afin de l'utiliser durant toute la vie de notre programme. Je vous montre avec l'image du mur et je vous laisserai faire avec les autres images. Rendez-vous dans SpritesManager.cpp, où nous allons y définir la méthode getWall.</p> 
+        <p>Voici le code :</p> 
+        <pre><code>bool SpritesManager::wallInitialized = false;
+Image SpritesManager::wall;
+    
+Image&amp; SpritesManager::getWall()  {
+  if(! SpritesManager::wallInitialized) {
+    static const uint16_t wallData[] = {
+      8, 8, 1, 0, 0, 0, 
+      0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,
+      0xacd0,0xacd0,0xacd0,0x5268,0x5268,0xacd0,0xacd0,0xacd0,
+      0xacd0,0xacd0,0xacd0,0x5268,0x5268,0xacd0,0xacd0,0xacd0,
+      0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,
+      0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,
+      0x5268,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0x5268,
+      0x5268,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0x5268,
+      0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,0x5268,0x5268
+    };
+    SpritesManager::wall = Image(wallData);
+    SpritesManager::wallInitialized = true;
+  }
+  return SpritesManager::wall;
+}
+</code></pre> 
+        <p>Voici les tableaux associés aux autres sprites :</p> 
+        <pre><code>// Une caisse
+static const uint16_t boxData[] = {
+  8, 8, 1, 0, 0, 0, 
+  0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,
+  0xacd0,0x0,0x0,0x0,0x0,0x0,0x0,0xacd0,
+  0xacd0,0x0,0x0,0xfeb2,0xfeb2,0xfeb2,0x0,0xacd0,
+  0xacd0,0x0,0xfeb2,0x0,0xfeb2,0xfeb2,0x0,0xacd0,
+  0xacd0,0x0,0xfeb2,0xfeb2,0x0,0xfeb2,0x0,0xacd0,
+  0xacd0,0x0,0xfeb2,0xfeb2,0xfeb2,0x0,0x0,0xacd0,
+  0xacd0,0x0,0x0,0x0,0x0,0x0,0x0,0xacd0,
+  0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0
+};
+    
+// Une caisse sur la zone de 'chargement'
+static const uint16_t boxOnAreaData[] = {
+  8, 8, 1, 0, 0, 0, 
+  0x44a,0x44a,0x44a,0x44a,0x44a,0x44a,0x44a,0x44a,
+  0x44a,0x0,0x0,0x0,0x0,0x0,0x0,0x44a,
+  0x44a,0x0,0x0,0xfeb2,0xfeb2,0xfeb2,0x0,0x44a,
+  0x44a,0x0,0xfeb2,0x0,0xfeb2,0xfeb2,0x0,0x44a,
+  0x44a,0x0,0xfeb2,0xfeb2,0x0,0xfeb2,0x0,0x44a,
+  0x44a,0x0,0xfeb2,0xfeb2,0xfeb2,0x0,0x0,0x44a,
+  0x44a,0x0,0x0,0x0,0x0,0x0,0x0,0x44a,
+  0x44a,0x44a,0x44a,0x44a,0x44a,0x44a,0x44a,0x44a
+};
+    
+// Une zone de 'chargement'
+static const uint16_t areaData[] = {
+  8, 8, 1, 0, 0, 0, 
+  0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,
+  0xd8e4,0xfd42,0xfd42,0xcc68,0xcc68,0xfd42,0xfd42,0xd8e4,
+  0xd8e4,0xcc68,0xfd42,0xfd42,0xcc68,0xcc68,0xfd42,0xd8e4,
+  0xd8e4,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xd8e4,
+  0xd8e4,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xd8e4,
+  0xd8e4,0xcc68,0xfd42,0xfd42,0xcc68,0xcc68,0xfd42,0xd8e4,
+  0xd8e4,0xcc68,0xcc68,0xfd42,0xfd42,0xcc68,0xcc68,0xd8e4,
+  0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4
+};
+    
+// Le joueur (en dehors de la zone de 'chargement')
+static const uint16_t characterData[] = {
+  8, 8, 1, 0, 0, 0, 
+  0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,
+  0xcc68,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xcc68,
+  0xcc68,0xacd0,0x7ddf,0xfeb2,0xfeb2,0x7ddf,0xacd0,0xfd42,
+  0xfd42,0xfd42,0xfd42,0xfeb2,0xfeb2,0xfd42,0xfd42,0xfd42,
+  0xfd42,0x210,0x210,0x210,0x210,0x210,0x210,0xfd42,
+  0xcc68,0xcc68,0x210,0x210,0x210,0x210,0xfd42,0xfd42,
+  0xfd42,0xcc68,0xcc68,0x210,0x210,0xcc68,0xcc68,0xfd42,
+  0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42
+};
+    
+// Le joueur sur la zone de chargement
+static const uint16_t characterOnAreaData[] = {
+  8, 8, 1, 0, 0, 0, 
+  0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,
+  0xd8e4,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xacd0,0xd8e4,
+  0xd8e4,0xacd0,0x7ddf,0xfeb2,0xfeb2,0x7ddf,0xacd0,0xd8e4,
+  0xd8e4,0xfd42,0xfd42,0xfeb2,0xfeb2,0xfd42,0xfd42,0xd8e4,
+  0xd8e4,0x210,0x210,0x210,0x210,0x210,0x210,0xd8e4,
+  0xd8e4,0xcc68,0x210,0x210,0x210,0x210,0xfd42,0xd8e4,
+  0xd8e4,0xcc68,0xcc68,0x210,0x210,0xcc68,0xcc68,0xd8e4,
+  0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4,0xd8e4
+};
+    
+// Le sol
+static const uint16_t floorData[] = {
+  8, 8, 1, 0, 0, 0, 
+  0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,
+  0xcc68,0xfd42,0xfd42,0xcc68,0xcc68,0xfd42,0xfd42,0xcc68,
+  0xcc68,0xcc68,0xfd42,0xfd42,0xcc68,0xcc68,0xfd42,0xfd42,
+  0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,
+  0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,
+  0xcc68,0xcc68,0xfd42,0xfd42,0xcc68,0xcc68,0xfd42,0xfd42,
+  0xfd42,0xcc68,0xcc68,0xfd42,0xfd42,0xcc68,0xcc68,0xfd42,
+  0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42,0xfd42
+};
+</code></pre> 
+        <p>Je vous fournis des sprites mais libre à vous de personnaliser l'affichage comme vous le souhaitez. Pour ce faire rien de bien compliqué, créez votre image de 8 pixels par 8, passez cette dernière dans le <span>générateur</span> puis modifiez le tableau en conséquence.</p> 
+        <p>Dans MapView.cpp nous allons écrire la méthode getSprites, dont voici un extrait du pseudo code :</p> 
+        <pre><code>SELON type de sprites ALORS
+  SI type de sprites = mur ALORS
+    RETOURNER image du mur
+  FIN SI
+  SI type de sprites = caisse ALORS
+    RETOURNER image de la caisse
+  FIN SI
+  // Faire de même pour l'ensemble des sprites
+FIN SELON
+</code></pre> 
+        <p>Voici le code complet de la méthode getSprites :</p> 
+        <pre><code>Image&amp; MapView::getSprites(const char typeOfSprites) const {
+  switch(typeOfSprites) {
+    case TypeOfSprites::WALL_TYPE:
+      return SpritesManager::getWall();
+    break;
+    case TypeOfSprites::BOX_TYPE:
+      return SpritesManager::getBox();
+    break;
+    case TypeOfSprites::DESTINATION_TYPE:
+      return SpritesManager::getArea();
+    break;
+    case TypeOfSprites::BOX_ON_ZONE_TYPE:
+      return SpritesManager::getBoxOnArea();
+    break;
+    case TypeOfSprites::PLAYER_TYPE:
+      return SpritesManager::getCharacter();
+    break;
+    case TypeOfSprites::PLAYER_ON_ZONE_TYPE:
+      return SpritesManager::getCharacterOnArea();
+    break;
+    case TypeOfSprites::FLOOR_TYPE:
+      return SpritesManager::getFloorImg();
+    break;
+  }
+}
+</code></pre> 
+        <p>Nous allons tester l'affichage de nos sprites. Dans un premier temps vous pouvez commenter l'ensemble des lignes de debug créées jusqu'à maintenant. Rappelez-vous il s'agit de ces lignes qui affichent du texte. Une fois fait, dans la méthode paint de MapView écrivez le code pour afficher les sprites.</p> 
+        <p>Par exemple, pour afficher le mur en x, y voici ce que vous devez écrire :</p> 
+        <pre><code>gb.display.drawImage(x, y, getSprites(TypeOfSprites::WALL_TYPE));
+</code></pre> 
+        <p>Essayez d'obtenir le résultat suivant :</p> 
+        <p><img src="gamebuino/academy-en/assets/affichage_sprites.BMP" alt="Affichage des différents sprites sur la Gamebuino" style="max-width:100%"></p> 
+        <p>Voici le code que j'ai écris pour obtenir un tel résultat :</p> 
+        <pre><code>void MapView::paint(const int* aCameraPos) const {
+  //gb.display.printf("Init pos %d,%d", mapModel-&gt;getPlayerPositions()[0], mapModel-&gt;getPlayerPositions()[1]);
+  gb.display.drawImage(0, 0, getSprites(TypeOfSprites::PLAYER_TYPE));
+  gb.display.drawImage(16, 0, getSprites(TypeOfSprites::WALL_TYPE));
+  gb.display.drawImage(32, 0, getSprites(TypeOfSprites::BOX_TYPE));
+  gb.display.drawImage(48, 0, getSprites(TypeOfSprites::DESTINATION_TYPE));
+  gb.display.drawImage(0, 16, getSprites(TypeOfSprites::PLAYER_ON_ZONE_TYPE));
+  gb.display.drawImage(16, 16, getSprites(TypeOfSprites::FLOOR_TYPE));
+  gb.display.drawImage(32, 16, getSprites(TypeOfSprites::BOX_ON_ZONE_TYPE));
+}
+</code></pre> 
+        <h2>AFFICHER LA ZONE VISIBLE DE LA CARTE</h2> 
+        <p>Dans un premier temps, nous allons afficher le caractère représentant le sprites, nous verrons ensuite comment afficher l'image correspondante.</p> 
+        <p>Il faut écrire dans MapModel la méthode qui pour les coordonnées X, Y retourne le caractère, il s'agit de la méthode getTypeOfSprites que voici :</p> 
+        <pre><code>const char MapModel::getTypeOfSprites(const int aXSprites, const int aYSprites) {
+  return mapOfGame[aYSprites][aXSprites];
+}
+</code></pre> 
+        <p>Voici le pseudo code qui affiche la partie visible de la carte, à écrire dans la méthode paint de MapView :</p> 
+        <pre><code>POUR y allant de Y0 à Y1 FAIRE
+  POUR x allant de X0 à X1 FAIRE
+    Afficher le caractère ayant pour coordonnées x, y
+  FIN POUR
+  Retourner à la ligne
+FIN POUR
+</code></pre> 
+        <p>Voici 2 astuces pour vous guider :</p> 
+        <pre><code>// Afficher le caractère '@'
+gb.display.printf("%c", '@');
+    
+// Retourner à la ligne
+gb.display.println("");
+</code></pre> 
+        <p>Voici le code à écrire :</p> 
+        <pre><code>void MapView::paint(const int* aCameraPos) const {
+  for(int y = aCameraPos[1] ; y &lt; aCameraPos[3] ; y++) {
+    for(int x = aCameraPos[0] ; x &lt; aCameraPos[2] ; x++) {
+      gb.display.printf("%c", mapModel-&gt;getTypeOfSprites(x, y));
+    }
+    gb.display.println("");
+  }
+}
+</code></pre> 
+        <p>Dans un second temps, vous pouvez maintenant afficher les images des sprites, voici le code à écrire :</p> 
+        <pre><code>void MapView::paint(const int* aCameraPos) const {
+  int l = 0;
+  for(int y = aCameraPos[1] ; y &lt; aCameraPos[3] ; y++) {
+    int c = 0;
+    for(int x = aCameraPos[0] ; x &lt; aCameraPos[2] ; x++) {
+      gb.display.drawImage(c*SpritesManager::WIDTH_SPRITES, l*SpritesManager::HEIGHT_SPRITES, getSprites(mapModel-&gt;getTypeOfSprites(x, y)));
+      c++;
+    }
+    l++;
+  }
+}
+</code></pre> 
+        <p>La gestion de l'affichage est désormais écrite, amusez-vous à déplacer le joueur sur la carte (le caractère '@') et relancez le programme pour constater que l'affichage est différent.</p> 
+        <p>Si vous avez terminé ou si vous rencontrez des problèmes vous pouvez télécharger la solution <span>ici</span>.</p> 
+        <p>Dans la prochaine étape, c'est-à-dire la quatrième, nous réaliserons la gestion du personnage.</p> 
+        <p>N'hésitez pas à me faire un retour : les améliorations que vous apporteriez (un regard extérieur est toujours bienvenu), les fautes, etc.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="gamebuino/academy-en/les-bases.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Les bases 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/la-camera.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           La caméra 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/l-affichage.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           L'affichage 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/le-personnage.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Le personnage 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/la-physique-et-la-partie.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           La physique et la partie 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="gamebuino/academy-en/les-bases.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Les bases 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/la-camera.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          La caméra 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/l-affichage.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          L'affichage 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/le-personnage.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Le personnage 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/la-physique-et-la-partie.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          La physique et la partie 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

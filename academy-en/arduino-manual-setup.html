@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="row align-items-stretch"> 
+      <div class="col-md-7 col-lg-8 d-flex flex-column justify-content-between"> 
+       <h1>Arduino manual setup</h1> 
+       <p> </p> 
+       <p>If you had an issue during the quick setup, or if you want to know how it works, you're in the right place!</p> 
+       <p></p> 
+       <div class="d-flex align-item-center"> 
+        <div class="mr-3 language-tag language-0"> 
+        </div> 
+        <p class="ml-3 mb-0"> <i class="fal fa-tachometer-slowest fa-fw difficulty-1"></i> Beginner</p> 
+       </div> 
+      </div> 
+      <div class="col-md-5 col-lg-4 mt-3 mt-md-0 d-flex align-items-center"> 
+       <div class="image" style="background-image:url(https://s3.eu-west-3.amazonaws.com/gamebuino/upload/images/workshops/a6953a67c073e8663388de8c10fbcb53.png)"> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="gamebuino/academy-en/index.html"> Academy</a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div><span> Arduino manual setup</span> 
+     </div> 
+    </div> 
+    <div class="d-flex justify-content-end"> 
+     <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Tutorial completed? </span> 
+     </div> 
+    </div> 
+    <div class="mt-5"> 
+     <div class="lesson-content"> 
+      <h2>Download and install the Arduino IDE</h2> 
+      <p>Go to the official Arduino website, <span>and download Arduino 1.8+</span>.</p> 
+      <ul> 
+       <li>This might require administrator rights on the computer</li> 
+       <li>Compatible with Windows, Mac, Linux, and even Raspberry Pi!</li> 
+       <li>Download and install the software</li> 
+       <li>Windows users: Install the drivers when asked to</li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/60f72e60132f0ecdb6052b8179287790a678d5e1.png" alt="" style="max-width:100%"></p> 
+      <p>Now, we need to setup two key elements to be able to program on your Gamebuino: the board and the libraries.</p> 
+      <h2>Install the boards</h2> 
+      <ul> 
+       <li>Launch the Arduino IDE</li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/74c0a2ae01a6502a96e83b345a62ed001fdda0a8.gif" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li>Click on "Files/Preferences"</li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/2ecdc73703d503b4d65ad3715875d0d9edcededc.png" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li> <p>Copy the following address in "Additional Boards Manager URLs:". If you already have other URLs present, separate them with a comma ",": <code>https://lab.gamebuino.com/arduino/package_gamebuino_index.json</code></p> </li> 
+       <li> <p>You can check "Show verbose output during compilation" and during "upload" to have more info about what is going on under the hood.</p> </li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/2d30cd0b1ba0abbcabc1bcfb72884c144507e827.png" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li> <p>Click "OK"</p> </li> 
+       <li> <p>Click on "Tools/Boards/Board Manager..."</p> </li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/2573a9f66764375eb11e4e531537a6e67c4a5bdb.png" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li> <p>Wait for the boards list to be updated. We will now download <strong>two</strong> boards</p> </li> 
+       <li> <p>Search for "<strong>Arduino SAMD</strong>" and install it</p> </li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/174248edbbf31eee1d4a29cd9c9244afa75c28fc.gif" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li>Search for "<strong>Gamebuino META</strong>" and install it</li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/ac4f646f82bc3be15f2b8acbfb0a0eef9596d019.gif" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li> <p>Sit down and relax while it's downloading. You can check out the Creations and give a few likes to kill time :)</p> </li> 
+       <li> <p>Click "Close"</p> </li> 
+       <li> <p>Click on "Tools/Boards/Gamebuino META" (at the bottom of the list) to select the right device</p> </li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/7c06e7b53d7379b97e468afddbb55fa89bce7a91.png" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li> <p><strong>Linux only</strong>: Give permission to the serial port with one of the following commands depending on your system, then <strong>log out</strong> and in again</p> 
+        <ul> 
+         <li>Raspberry + Archlinux: <code>sudo usermod -a -G uucp $USER</code> </li> 
+         <li>Ubuntu: <code>sudo usermod -a -G dialout $USER</code> </li> 
+        </ul> </li> 
+      </ul> 
+      <h2>Install the library</h2> 
+      <ul> 
+       <li> <p>Launch the Arduino IDE (if you closed it)</p> </li> 
+       <li> <p>Click on "Sketch/Include Library/Manage Libraries"</p> </li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/c5e885fac7b36621548a89865482c28d97cb2204.png" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li> <p>Wait for the library list to be updated</p> </li> 
+       <li> <p>Search for "Gamebuino META" and install it</p> </li> 
+      </ul> 
+      <p><img src="gamebuino/academy-en/assets/6af61320111f5f10586f098f990f1a16cf92557b.gif" alt="" style="max-width:100%"></p> 
+      <ul> 
+       <li> <p>Close your eyes, breathe deeply and think about the game you want to make while it's downloading.</p> </li> 
+       <li> <p>Click on "Close"</p> </li> 
+      </ul> 
+      <p>If you have a Gamebuino, <span>it's time to try out your first code!</span></p> 
+     </div> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

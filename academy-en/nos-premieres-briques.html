@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="gamebuino/academy-en/casse-briques.html"> Blockbreaker (C++ 5/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Nos premières briques </span> 
+     </div> 
+    </div> 
+    <div class="alert alert-warning mb-3">
+      This content is not fully available in your language 😕 You want to contribute? Send us an e-mail at hello@gamebuino.com. 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Nos premières briques </h1> 
+        <h5> Step 1 </h5> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Apprendre à représenter les briques.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Pour comprendre comment nous allons parvenir à avoir une grille de briques, commençons par afficher une simple ligne horizontale sans couleurs, comme ceci :</p> 
+        <p><img src="gamebuino/academy-en/assets/5d5dcd9c06161d64c63935dd5636c3fba96d7b20.gif" alt="" style="max-width:100%"></p> 
+        <p>Des briques alignées ? Cela ressemble beaucoup à notre jeu de TapTap. Pour ce jeu-là, nous avions créé un tableau d'entiers qui représentait les briques.</p> 
+        <p><img src="gamebuino/academy-en/assets/beb458327cd4c2beb17a7d9f1195886568664d05.gif" alt="" style="max-width:100%"></p> 
+        <p>La différence ici, c'est que nous ne voulons pas savoir si la brique est 'à gauche' ou 'à droite'. Mais plutôt, si la brique existe ou pas ! Et nous n'allons pas nous casser la tête, au début, notre tableau sera rempli de 1, et puis à chaque fois que la balle viendra frapper une brique, sa valeur passera à 0.</p> 
+        <pre><code>// Breakout.ino //
+
+// Raquette //
+// Balle //
+
+
+// Briques. Chaque entier correspond à une couleur
+const int GRILLE_TAILLE = 8;  // Grille carré
+int briques[GRILLE_TAILLE];
+const int BRIQUE_LARGEUR = gb.display.width() / GRILLE_TAILLE - 2;
+const int BRIQUE_HAUTEUR = 3;
+
+// setUp() //
+// loop() //
+</code></pre> 
+        <p>Nous allons devoir afficher une ligne de 8 briques. Et à la place de bricoler pour obtenir la largeur parfaite pour que toutes les briques rentrent dans l'écran, on peut tout simplement la calculer ! Enfin, "tout simplement"... Il faut réfléchir pour trouver la bonne formule. En divisant la largeur de l'écran par le nombre de briques on obtient la largeur maximale des briques pour qu'elles rentrent toutes. Mais pour mieux les discerner, on place un trou de 2 pixels entre chaque brique. C'est comme ça qu'on obtient <code>BRIQUE_LARGEUR = gb.display.width() / GRILLE_TAILLE - 2;.</code></p> 
+        <pre><code>// miseAJour.ino //
+void miseAJour() {
+  // MAJ balle //
+  // Collisions avec murs //
+  // Collision avec raquette //
+
+  // Collision avec les briques
+  for (int x = 0; x &lt; GRILLE_TAILLE; x += 1) {
+    if (briques[x] == 0) {  // Ignorer les briques nulles
+      continue;  // 'Continue' force la boucle à passer a recommencer (et donc incrémenter)
+    }
+
+    int briqueX = x * (BRIQUE_LARGEUR + 2) + 1;
+    int briqueY = 10;  // Hauteur des briques
+    if (gb.collide.rectRect(balleX, balleY, BALLE_TAILLE, BALLE_TAILLE,
+                            briqueX, briqueY, BRIQUE_LARGEUR, BRIQUE_HAUTEUR)) {
+      balleVY *= -1;
+      briques[x] = 0;  // Détruire la brique
+
+      // Verifier qu'il reste encore des briques
+      bool encoreDesBriques = false;  // Si ce booléen reste faux, alors il n'y a plus de briques
+      for (int i = 0; i &lt; GRILLE_TAILLE; i += 1) {
+        if (briques[x] == 0) {  // On a trouver une brique!
+          encoreDesBriques = true;  // Il reste encore au moins une brique
+        }
+
+      }
+
+      if (encoreDesBriques == false) {  // S'il n'y a plus de briques
+        reinitialiser();
+      }
+    }
+
+  }
+}
+
+void reinitialiser() {
+  // Remise à zero de la balle //
+
+  for (int i = 0; i &lt; GRILLE_TAILLE; i += 1) {
+    briques[i] = 1;  // Faire réapparaitre toutes les briques
+  }
+}
+// affichage.ino //
+
+
+
+
+void affichage() {
+  // raquette //
+  // Balle //
+
+
+  // Briques
+  for (int x = 0; x &lt; GRILLE_TAILLE; x += 1) {
+    if (briques[x] == 0) {
+      continue;  // Passer à la brique suivante
+    }
+
+
+int briqueX = x * (BRIQUE_LARGEUR + 2) + 1;
+int briqueY = 20;
+gb.display.fillRect(briqueX, briqueY, BRIQUE_LARGEUR, BRIQUE_HAUTEUR);
+  
+
+
+
+  }
+}
+</code></pre> 
+        <p>Afin de pouvoir afficher et calculer les collisions des briques, il nous faut leur taille et leur position. Toutes les briques ont la même taille (<code>BRIQUE_LARGEUR</code> et <code>BRIQUE_HAUTEUR</code>). Il reste donc la position. Pour cela, nous allons calculer les coordonnées du coin en haut à gauche de chaque brique. Je les ai appelées <code>briqueX</code> et <code>briqueY</code>. Ces variables sont <strong>déclarées dans les accolades</strong> de notre boucle. Donc **elles n'existent pas **en dehors de ces accolades. Ce fait n'est pas seulement vrai pour les boucles, c'est vrai à chaque fois qu'il y a des accolades. <strong>Toutes variables déclarées à l'intérieur de deux accolades n'existent pas à l'extérieur de ces accolades</strong>, on appelle ça "<strong>la portée</strong>" d'une variable.</p> 
+        <p><em>Il y a deux exceptions. Tout d'abord, les <span>variables statiques</span>, nous vous laissons explorer ce que c'est si vous êtes curieux ;). L'autre exception se trouve dans la boucle for, quand on écrit <code>for (int i = 0; i &lt; var; i += 1) { ... }</code>, on considère que <code>i</code> est déclaré dans les accolades de la boucle.</em></p> 
+        <p>Pour en revenir au calcul de nos briques, nous pouvons directement définir la position Y des briques. Vu qu'elles sont toutes alignées, on peut simplement leur donner une hauteur de 10 (plus tard, quand nous ajouterons d'autres briques, cette valeur changera). Pour <code>briqueX</code>, il faut pouvoir déterminer sa position en fonction de son indice dans notre tableau. Dans mon code, l'indice s'appelle <code>x</code>. Donc quand <code>x</code> vaut 0, on veut que la brique s'affiche tout à gauche. La brique d'après s'affiche à sa droite, avec un espace de deux pixels, etc. Dans ce cas <code>briqueX = x * (BRIQUE_LARGEUR + 2);</code>. Dans mon code, j'ai ajouté 1 à la position de toutes les briques pour que la première brique ne soit pas collée au bord de l'écran.</p> 
+        <p>Dernière chose à propos de ces deux fichiers. J'utilise le mot clé <code>continue</code> au début de mes boucles. <code>Continue</code> force la boucle ignorer le reste de son code. En termes plus concrets, <code>continue</code> passe à l'indice suivant. Je l'appelle quand il n'y a pas de brique (i.e. <code>brique[x] = 0</code>), car c'est inutile de calculer la position d'une brique inexistante ;)</p> 
+        <p>Et voilà, nous avons complété notre casse-briques ! Mais il n'a qu'une seule rangée de briques... Que dites-vous d'améliorer ça dans la prochaine étape ?</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="gamebuino/academy-en/premiere-etape-titre-a-trouver.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction - Commençons à faire ce que l'on a déjà appris... 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/nos-premieres-briques.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Nos premières briques 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/des-trucs-dans-des-trucs.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Des trucs dans des trucs 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/arc-en-ciel.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Arc-En-Ciel 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/a-vous-de-jouer.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           A vous de jouer ! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="gamebuino/academy-en/premiere-etape-titre-a-trouver.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction - Commençons à faire ce que l'on a déjà appris... 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/nos-premieres-briques.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Nos premières briques 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/des-trucs-dans-des-trucs.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Des trucs dans des trucs 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/arc-en-ciel.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Arc-En-Ciel 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/a-vous-de-jouer.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          A vous de jouer ! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

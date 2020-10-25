@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="gamebuino/academy-en/make-your-very-first-games-with-pong.html"> Pong (C++ 2/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Pong </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Pong </h1> 
+        <h5> Step 3 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Step completed? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>The famous game where you hit on the ball with a paddle</p> 
+        <ul> 
+         <li>Advanced collision</li> 
+         <li>Practice all you just learnt</li> 
+        </ul> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Challenge your friends with a 2 player game. You will build upon everything we have seen until now, as well as expanding your knowledge on ** if** statements.</p> 
+        <h2>Pong, a classic video game</h2> 
+        <p><strong>Length</strong> 30-40 minutes</p> 
+        <p>**Level **Complete beginner</p> 
+        <p><strong>Prerequisites</strong></p> 
+        <ul> 
+         <li>Access to a <span>Gamebuino META</span> </li> 
+         <li>Completed the <span>Gamebuino META setup</span> workshop</li> 
+         <li>Completed the <span>Hello World</span>, <span>tally counter</span>, and <span>bouncing ball</span> workshops</li> 
+        </ul> 
+        <p>Pong, released in 1972, was one of the first arcade video games that became successful. This classic is both fun and easy enough to learn code.</p> 
+        <p>In this workshop, we will recreate this classic. To do so, we will have to use what we saw in <span>the previous workshop</span> to move the ball and control the paddles based on what we did in the <span>tally counter</span> workshop. Let's start with a detailed breakdown of the game as a whole.</p> 
+        <h2>The structure of the game</h2> 
+        <p>I have split the game into multiple steps. This allows us to focus on a single smaller task at a time. Trying to figure out the logic behind a game while viewing the game as a whole is... well intimidating and tough. By breaking it down, we will see that Pong, just like any other game, is composed of many simple parts.</p> 
+        <ul> 
+         <li>Create the ball and a paddle</li> 
+         <li>Draw the ball and the paddle</li> 
+         <li>Update the paddle's position</li> 
+         <li>Update the ball's position</li> 
+         <li>Check for collisions between the ball and walls</li> 
+         <li>Check for collisions between the ball and the paddle</li> 
+         <li>Check to see if the game is not over</li> 
+         <li>Add a second paddle</li> 
+         <li>Count and display the scores</li> 
+        </ul> 
+        <p>So we will start by creating a 1-player Pong. Once we get that working, adding another player will then be a simple task.</p> 
+        <h2>Implementing a ball and a paddle</h2> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+
+
+// Ball attributes
+int ball_posX = 20;
+int ball_posY = 20;
+int ball_speedX = 1;
+int ball_speedY = 1;
+int ball_size = 4;
+
+
+// paddle1 attributes
+int paddle1_posX = 10;
+int paddle1_posY = 30;
+
+
+// Dimensions of both paddles
+int paddle_height = 12;
+int paddle_width = 3;
+
+
+void setup() {
+  gb.begin();
+}
+
+
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+}
+</code></pre> 
+        <p>Here we created the variables necessary to describe two things: the ball and the first paddle. The ball has 2 ints to keep track of its position along the two axes X and Y. For each of those axes, we also have a speed that describes the direction of our ball. The paddle also has an X and Y position. However, having a speed variable is unnecessary because we want to control it with the arrows.<code>paddle_height</code> and <code>paddle_width</code> are the paddle's dimensions. We also describe the ball's size, but since it is a square, only one variable (<code>ball_size</code>) is necessary to memorize both its height and width.</p> 
+        <pre><code>void loop() {
+  while (gb.update());
+  gb.display.clear();
+
+  // Draw the ball
+  gb.display.fillRect(ball_posX, ball_posY, ball_size, ball_size);
+  // Draw paddle1
+  gb.display.fillRect(paddle1_posX, paddle1_posY, paddle_width, paddle_height);
+}
+</code></pre> 
+        <p>Here nothing too new, we are displaying the ball and paddle as rectangle. As a refresher, here is the syntax for <code>fillRect</code>:</p> 
+        <p><code>gb.display.fillRect( x coordinate of our rectangle , y coordinate of our rectangle , width , height );</code></p> 
+        <h2>Controlling the paddle</h2> 
+        <pre><code>void loop() {
+
+
+  while (gb.update());
+  gb.display.clear();
+
+
+  // paddle1 movement
+  if (gb.buttons.repeat(BUTTON_UP, 0)) {
+    paddle1_posY = paddle1_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_DOWN, 0)) {
+    paddle1_posY = paddle1_posY + 1;
+  }
+
+
+  // Draw the ball and paddle //
+}
+</code></pre> 
+        <p>This piece of code is what allows us to control the paddle's movement. In preceding workshops, we used the function <code>gb.buttons.pressed(BUTTON_A)</code> to check when the user pressed down on button A. But here, we want to move the paddle not WHEN the button was pressed, but rather AS LONG AS the button is pressed. Thankfully, the Gamebuino library offers 5 different functions tied to button behavior:</p> 
+        <pre><code>* gb.buttons.pressed()
+* gb.buttons.released()
+* gb.buttons.held()
+* gb.buttons.repeat()
+* gb.buttons.timeHeld()
+</code></pre> 
+        <p>We already know <code>gb.buttons.pressed()</code> and we will talk about<code>gb.buttons.repeat()</code> shortly. To learn more about what the other 3 functions do, head over to the <span>reference page</span></p> 
+        <p><code>gb.buttons.repeat(BUTTON_UP, 3)</code> is <strong>true</strong> every 3 frames while the UP arrow is held down. By putting a 0 where the 3 is, this function is <strong>true</strong> for every frame where the arrow is held down.</p> 
+        <h2>Collisions</h2> 
+        <pre><code>void setup() {
+  // setup
+}
+
+
+
+void loop() {
+  // paddle1 movement //
+
+
+  ball_posX = ball_posX + ball_speedX;
+  ball_posY = ball_posY + ball_speedY;
+
+
+  if (ball_posY &lt; 0) {  // Bounce on top edge
+    ball_speedY = 1;
+  }
+
+
+  if (ball_posY &gt; gb.display.height() - ball_size) {  // Bounce on bottom edge
+    ball_speedY = -1;
+  }
+
+
+  if (ball_posX &gt; gb.display.width() - ball_size) {  // Bounce on the right edge
+    ball_speedX = -1;
+  }
+
+
+  // Draw the ball and paddle //
+}
+</code></pre> 
+        <p>Here we apply everything we have seen previously. We update the ball's position, then we check to see if it collided with the edges of the screen and make it bounce. The only difference is that we only check for three edges: top, bottom, and right. The left side must be "defended" by our paddle. Later, when we will have a second player, we will remove the right wall as well.</p> 
+        <p>Now, if you play the game as it is (go ahead, don't be afraid to try), the ball and paddle move as planed. But the ball goes straight through the paddle! Not very fun right? So let's look into that right now!</p> 
+        <p><img src="gamebuino/academy-en/assets/e33e90711f63cebffd919183a311375b61abd98d.png" alt="" style="max-width:100%"></p> 
+        <p>Unlike the collisions with walls, the paddle moves. We have to check multiple conditions to be sure the ball hits the paddle. Let's take a look at the diagrams above. The black rectangle is the paddle, and the three squares are the three possible positions for the ball. In each situation, we want the ball to bounce off the paddle. There are three conditions to deduce from these diagrams.</p> 
+        <p>First of all, you may have guessed that we only want the ball to bounce when it hits the paddle. When looking at it from the X-axis' point of view, this mean that the left side of the ball is overlapping the right side of the paddle.</p> 
+        <p>Also, we want the ball to bounce even if it is only touching the paddle partially. This corresponds to ball 1 and 3 in the diagrams. In the case of ball 1, we need to check that the <strong>bottom of the ball</strong> is LOWER than the <strong>top of the paddle</strong>. In a similar fashion with ball 3, we need the <strong>top of the ball</strong> to be HIGHER than the <strong>bottom of the paddle.</strong></p> 
+        <ul> 
+         <li>If the left side of the ball touches the right side of the paddle</li> 
+         <li>If the bottom of the ball is lower than the top of the paddle</li> 
+         <li>If the top of the ball is higher than the bottom of the paddle</li> 
+        </ul> 
+        <p><em>Complex conditions like this are almost impossible to deduce without some help like the diagram above. I initially made the diagram above on a sheet of paper (I cleaned it up and made it a .png later for this tutorial :P ). This is why you should pretty much always have a pencil and a piece of paper within reach when making games. It really prevents headaches.</em></p> 
+        <p>So if these three conditions are true, then we change the ball's direction. To implement this, we could place three nested ifs:</p> 
+        <pre><code>if (ball_posX == paddle1_posX + paddle_width) {  // If the left side of the ball touches the right side of the paddle
+  if (ball_posY + ball_size &gt;= paddle1_posY) {  // If the bottom of the ball is lower than the top of the paddle
+    if (ball_posY &lt;= paddle1_posY + paddle_height) {  // If the top of the ball is higher than the bottom of the paddle
+       // Bounce off the paddle
+    }
+  }
+	
+}
+</code></pre> 
+        <p>However, "nesting" <strong>if</strong>s one into another like so creates many brackets, which is not easy to read. In C/C++ there is a way to simplify these "waterfalls" of brackets: conditions can use <strong>AND</strong> and <strong>OR</strong> operators. The <strong>AND</strong> operator is written <code>&amp;&amp;</code> and the <strong>OR</strong> operator is <code>||</code>. Here is an example:</p> 
+        <pre><code>// If a is 3 AND b is negative
+if ((a == 3) &amp;&amp; (b &lt; 0)) {
+}
+
+// If a is at least 3 OR b is equal to 0
+if ((a &gt;= 3) || (b == 0)) {
+}
+</code></pre> 
+        <p><em>The outermost parentheses <code>( )</code> (around all conditions) are required.</em></p> 
+        <p>For our code, we need to test 3 conditions. But the <code>&amp;&amp;</code> and <code>||</code> operators are used the same way whether it is with 2, 3, or 12 conditions. Now if you try to place all three of our conditions on the same line, you will have fixed the "waterfall" problem, but created another readability problem: the line is very long. A very long line of code is generally badly seen in the coding community. But we can fix this easily as we are allowed to put line breaks in between conditions (or inside conditions for that matter). Look at the difference:</p> 
+        <pre><code>// The three conditions on one line
+if ( (ball_posX == paddle1_posX + paddle_width) &amp;&amp; (ball_posY + b &gt;= paddle1_posY) &amp;&amp; (ball_posY &lt;= paddle1_posY + paddle_height) ) {
+    // Bounce
+}
+
+// The same thing, but with line breaks
+if ( (ball_posX == paddle1_posX + paddle_width) 
+  &amp;&amp; (ball_posY + ball_size &gt;= paddle1_posY)
+  &amp;&amp; (ball_posY &lt;= paddle1_posY + paddle_height) ) {
+  // Bounce
+}
+</code></pre> 
+        <p>We can now interact with the ball! And when the player misses the ball, it flies off the screen and the game is over. But the player probably wants to play another round. So let's place the ball back into the screen after a game is lost.</p> 
+        <pre><code>void loop() {
+  // Paddle movement //
+  // Update ball movement + collisions //
+
+  if (balle_posX &lt; 0) {
+    // Reset the ball
+    int ball_posX = 20;
+    int ball_posY = 20;
+    int ball_speedX = 1;
+    int ball_speedY = 1;
+  }
+
+  // Draw the ball and paddle //
+}
+</code></pre> 
+        <p>Here we go, now when the ball leave the screen on the left side, we put it back on the screen and make it go to the right as not to surprise the player ;) Here is all the code we have written up to this point: <img src="gamebuino/academy-en/assets/ae40a9cbe30fdb9ed406c259ae7dea3eba4d09bc.gif" alt="" style="max-width:100%"></p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+// ball attributes
+int ball_posX = 20;
+int ball_posY = 20;
+int ball_speedX = 1;
+int ball_speedY = 1;
+int ball_size = 4;
+
+
+// paddle1 attributes
+int paddle1_posX = 10;
+int paddle1_posY = 30;
+
+
+// Dimension of both paddles
+int paddle_height = 10;
+int paddle_width = 3;
+
+
+void setup() {
+  gb.begin();
+}
+
+
+void loop() {
+  while(!gb.update());
+  gb.display.clear();
+
+
+  // Update paddle1 position
+  if (gb.buttons.repeat(BUTTON_UP, 0)) {
+    paddle1_posY = paddle1_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_DOWN, 0)) {
+    paddle1_posY = paddle1_posY + 1;
+  }
+
+
+  // Update ball position
+  ball_posX = ball_posX + ball_speedX;
+  ball_posY = ball_posY + ball_speedY;
+
+
+  // Collisions with walls
+  if (ball_posY &lt; 0) {
+    ball_speedY = 1;
+  }
+  if (ball_posY &gt; gb.display.height() - ball_size) {
+    ball_speedY = -1;
+  }
+  if (ball_posX &gt; gb.display.width() - ball_size) {
+    ball_speedX = -1;
+  }
+
+
+  // Ball-paddle1 collisions
+  if ( (ball_posX == paddle1_posX + paddle_width)
+    &amp;&amp; (ball_posY + ball_size &gt;= paddle1_posY) 
+    &amp;&amp; (ball_posY &lt;= paddle1_posY + paddle_height) ) {
+    ball_speedX = 1;
+  }
+
+
+  // Check if the ball left the screen (on the left side)
+  if (ball_posX &lt; 0) {
+    // Reset ball
+    ball_posX = 20;
+    ball_posY = 20;
+    ball_speedX = 1;
+    ball_speedY = 1;
+  }
+
+
+  // Display ball
+  gb.display.fillRect(ball_posX, ball_posY, ball_size, ball_size);
+  // Display paddle1
+  gb.display.fillRect(paddle1_posX, paddle1_posY, paddle_width, paddle_height);
+}
+</code></pre> 
+        <h2>It's your turn!</h2> 
+        <p>We started by breaking down Pong into feasible parts. So far we built the core mechanics of the game. We created and drew a ball and a paddle that both move and interact. If the ball slips by the player (and goes off-screen), we reset the ball. The rest is up to you:</p> 
+        <ul> 
+         <li>Add a second paddle</li> 
+         <li>Use buttons A and B to make it move</li> 
+         <li>Detect when the ball leaves the right side of the screen</li> 
+         <li>Count the score of each player</li> 
+         <li>Draw the score</li> 
+        </ul> 
+        <p>Tip: To count and draw the score, refresh your memory with the<span> tally counter</span> workshop.</p> 
+        <p><strong>Share your game on social media #gamebuino #pong , we go through them all the time ;)</strong></p> 
+        <h2>Solution example</h2> 
+        <p>If you are getting stuck or ran out of ideas, here's what we did :)</p> 
+        <p><img src="gamebuino/academy-en/assets/350157c30a88b7629b696433ea18b6ee07dc55b0.gif" alt="" style="max-width:100%"></p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// ball attributes
+int ball_posX = 20;
+int ball_posY = 20;
+int ball_speedX = 1;
+int ball_speedY = 1;
+int ball_size = 4;
+
+// paddle1 attributes
+int paddle1_posX = 10;
+int paddle1_posY = 30;
+
+// paddle2 attributes
+int paddle2_posX = gb.display.width() - 13;
+int paddle2_posY = 30;
+
+// Dimension of both paddles
+int paddle_height = 10;
+int paddle_width = 3;
+
+
+// Scores
+int score1;  // Player 1 score
+int score2;  // Player 2 score
+
+void setup() {
+  gb.begin();
+}
+
+void loop() {
+  while(!gb.update());
+  gb.display.clear();
+
+  // Update paddle positions
+  if (gb.buttons.repeat(BUTTON_UP, 0)) {
+    paddle1_posY = paddle1_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_DOWN, 0)) {
+    paddle1_posY = paddle1_posY + 1;
+  }
+  if (gb.buttons.repeat(BUTTON_B, 0)) {
+    paddle2_posY = paddle2_posY - 1;
+  }
+  if (gb.buttons.repeat(BUTTON_A, 0)) {
+    paddle2_posY = paddle2_posY + 1;
+  }
+
+  // Update ball position
+  ball_posX = ball_posX + ball_speedX;
+  ball_posY = ball_posY + ball_speedY;
+
+  // Collisions with walls
+  if (ball_posY &lt; 0) {
+    ball_speedY = 1;
+  }
+  if (ball_posY &gt; gb.display.height() - ball_size) {
+    ball_speedY = -1;
+  }
+  if (ball_posX &gt; gb.display.width() - ball_size) {
+    ball_speedX = -1;
+  }
+
+  // Ball-paddle1 collisions
+  if ( (ball_posX == paddle1_posX + paddle_width)
+    &amp;&amp; (ball_posY + ball_size &gt;= paddle1_posY) 
+    &amp;&amp; (ball_posY &lt;= paddle1_posY + paddle_height) ) {
+    ball_speedX = 1;
+  }
+  // Ball-paddle2 collisions
+  if ( (ball_posX + ball_size == paddle2_posX)
+    &amp;&amp; (ball_posY + ball_size &gt;= paddle2_posY) 
+    &amp;&amp; (ball_posY &lt;= paddle2_posY + paddle_height) ) {
+    ball_speedX = -1;
+  }
+
+  // Check if the ball left the screen
+  if (ball_posX &lt; 0) {
+    // Reset ball
+    ball_posX = 20;
+    ball_posY = 20;
+    ball_speedX = 1;
+    ball_speedY = 1;
+    // Increment player2's score
+    score2 = score2 + 1;
+  }
+  if (balle_posX &gt; gb.display.width()) {
+    // Reset ball
+    ball_posX = 20;
+    ball_posY = 20;
+    ball_speedX = 1;
+    ball_speedY = 1;
+    // Increment player1's score
+    score1 = score1 + 1;
+  }
+
+  // Display ball
+  gb.display.fillRect(ball_posX, ball_posY, ball_size, ball_size);
+  // Display paddle1
+  gb.display.fillRect(paddle1_posX, paddle1_posY, paddle_width, paddle_height);
+  // Display paddle2
+  gb.display.fillRect(paddle2_posX, paddle2_posY, paddle_width, paddle_height);
+
+  // Display scores
+  gb.display.setCursor(35, 5);
+  gb.display.print(score1);
+  gb.display.setCursor(42, 5);
+  gb.display.print(score2);
+}
+</code></pre> 
+        <p><em>By Julien Giovinazzo</em></p> 
+        <p><strong>Any questions / comments / suggestions, be sure to drop a comment down below!</strong></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="gamebuino/academy-en/hello-world.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           hello, world 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/tally-counter.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Tally counter 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/bouncing-ball.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Bouncing ball 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/pong.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Pong 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/artificial-intelligence.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Artificial Intelligence 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="gamebuino/academy-en/hello-world.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          hello, world 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/tally-counter.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Tally counter 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/bouncing-ball.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Bouncing ball 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/pong.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Pong 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/artificial-intelligence.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Artificial Intelligence 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

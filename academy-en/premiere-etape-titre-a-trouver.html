@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="gamebuino/academy-en/casse-briques.html"> Blockbreaker (C++ 5/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Introduction - Commençons à faire ce que l'on a déjà appris... </span> 
+     </div> 
+    </div> 
+    <div class="alert alert-warning mb-3">
+      This content is not fully available in your language 😕 You want to contribute? Send us an e-mail at hello@gamebuino.com. 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Introduction - Commençons à faire ce que l'on a déjà appris... </h1> 
+        <h5> Step 0 </h5> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Une balle, une raquette... ça vous rappelle quelque chose ?</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Le casse-briques est un jeu extrêmement connu. Il est sorti pour la toute première fois en 1975 et une quantité incroyable de clones et de variantes ont été créés depuis (et encore aujourd'hui, surtout sur mobile). Dans cet atelier, nous allons continuer la tradition en faisant notre propre clone !</p> 
+        <p>L'objectif sera d'approfondir nos capacités d'utilisation des <strong>tableaux</strong> et des <strong>boucles for.</strong> Nous verrons ici comment utiliser les <strong>boucles imbriquées</strong> et maitriser les <strong>tableaux 2D.</strong> Pour finir, je vous donnerais de quoi exercer avec tout ça, en modifiant les briques.</p> 
+        <p>Je vais commencer en estimant que vous êtes capables de programmer le casse-briques sans les briques mais juste la raquette, la balle, et les murs. Si vous avez du mal, je vous conseille de relire et de refaire l'atelier <a href="gamebuino/academy-en/make-your-very-first-games-with-pong.html">Pong</a>.</p> 
+        <pre><code>// Breakout.ino //
+#include &lt;Gamebuino-Meta.h&gt;
+
+// Caractèristiques de la raquette
+int raquetteX;
+const int RAQUETTE_Y = 58;
+const int RAQUETTE_LARGEUR = 10;
+const int RAQUETTE_HAUTEUR = 2;
+
+// Caractéristiques de la balle
+int balleX;
+int balleY;
+int balleVX;
+int balleVY;
+const int BALLE_TAILLE = 3;
+
+void setup() {
+  gb.begin();
+  reinitialiser();  // Situé dans miseAJour.ino
+}
+
+void loop() {
+  while (!gb.update());
+  // INPUTS //
+  entrees();
+
+  // LOGIC //
+  miseAJour();
+
+  // DRAW //
+  affichage();
+}
+
+// entrees.ino //
+void entrees() {
+    if (gb.buttons.repeat(BUTTON_LEFT, 1) &amp;&amp; raquetteX &gt; 0) {
+        raquetteX -= 3;
+    }
+    else if (gb.buttons.repeat(BUTTON_RIGHT, 1) &amp;&amp; raquetteX &lt; gb.display.width() - RAQUETTE_LARGEUR) {
+        raquetteX += 3;
+    }
+}
+
+// miseAJour.ino //
+void miseAJour() {
+  // MAJ Balle
+  balleX += balleVX;
+  balleY += balleVY;
+
+  // Collisions avec les murs
+  if (balleX &lt; 0 || balleX &gt; gb.display.width() - BALLE_TAILLE) {
+    balleVX *= -1;
+  }
+  if (balleY &lt; 0) {
+    balleVY *= -1;
+  }
+  else if (balleY &gt; gb.display.height()) {
+    reinitialiser();
+  }
+
+  // Collision avec la raquette
+  if (gb.collideRectRect(balleX, balleY, BALLE_TAILLE, BALLE_TAILLE,
+                          raquetteX, RAQUETTE_Y, RAQUETTE_LARGEUR, RAQUETTE_HAUTEUR)) {
+    balleVY = -1;  // Haut
+  }
+}
+
+void reinitialiser() {
+  balleX = random(0, gb.display.width() - BALLE_TAILLE);
+  balleY = RAQUETTE_Y - BALLE_TAILLE - 1;  // Juste au dessus de la raquette
+  balleVX = 1;  // Droite
+  balleVY = -1;  // Haut
+}
+
+
+// affichage.ino //
+void affichage() {
+  gb.display.clear();
+
+  // Raquette
+  gb.display.fillRect(raquetteX, RAQUETTE_Y, RAQUETTE_LARGEUR, RAQUETTE_HAUTEUR);
+
+  // Balle
+  gb.display.fillRect(balleX, balleY, BALLE_TAILLE, BALLE_TAILLE);
+}
+</code></pre> 
+        <p>Ici, nous avons une structure de code très similaire aux derniers jeux que nous avons fait. Nos trois fonctions <code>entrees()</code>, <code>miseAJour()</code> et <code>affichage()</code> sont présentes, et j'ai ajouté une quatrième fonction : <code>reinitialiser()</code> dans miseAJour.ino. Elle sert à remettre la balle dans l'écran en début de partie. Elle servira aussi plus tard à remettre les briques cassées. En parlant de briques... Rendez-vous à l'étape suivante !</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="gamebuino/academy-en/premiere-etape-titre-a-trouver.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction - Commençons à faire ce que l'on a déjà appris... 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/nos-premieres-briques.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Nos premières briques 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/des-trucs-dans-des-trucs.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Des trucs dans des trucs 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/arc-en-ciel.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Arc-En-Ciel 
+         </div> </a></li> 
+       <li class=""> <a href="gamebuino/academy-en/a-vous-de-jouer.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           A vous de jouer ! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="gamebuino/academy-en/premiere-etape-titre-a-trouver.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction - Commençons à faire ce que l'on a déjà appris... 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/nos-premieres-briques.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Nos premières briques 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/des-trucs-dans-des-trucs.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Des trucs dans des trucs 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/arc-en-ciel.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Arc-En-Ciel 
+        </div> </a></li> 
+      <li class=""> <a href="gamebuino/academy-en/a-vous-de-jouer.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          A vous de jouer ! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>
