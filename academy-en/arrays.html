@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/tap-tap-toc.html"> Tap Tap (C++ 3/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Arrays </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Arrays </h1> 
+        <h5> Step 3 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Step completed? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Our little demo isn't very engaging. There is only one brick on-screen, it is impossble to play fast. So let's add some bricks to help the player.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>The player will have to hit the brick that is on the bottom of the screen, but the other brick we help him/her anticipate :D</p> 
+        <p>Naturally, you may say that we just need to add <code>brick1</code>, <code>brick2</code>, <code>brick3</code>, etc to do this. And this is technically a viable solution, it is not the right way to do this.</p> 
+        <p><em>How will we code the bricks then?</em> Well, we will be using an <strong>array</strong>. In C++, an <strong>array</strong> is a list that contains a specific number of elements. If we think of variables as boxes, then an array is a chain of boxes.</p> 
+        <p><img src="../assets/0a4a7bcf54c0823124ece1f4eeca34f40f2db8d9.png" alt="" style="max-width:100%"></p> 
+        <p>And instead of having a name of each box, we will have a name for the chain. Array are powerful because they can contain any type and quantity of elements. Here we want an <strong>array of integers</strong>. To access an element of the array, simply place the index of the element in square brackets <code>[ ]: arrayName[elementIndex]</code>. But be careful, <strong>arrays start at 0</strong>, so:</p> 
+        <pre><code>First element :        arrayName[0]
+Second element :    arrayName[1]
+Third element :        arrayName[2]
+...
+Nth element :        arrayName[N - 1]
+...
+Last element :        arrayName[NUM_OF_ELEMENTS - 1]
+</code></pre> 
+        <p>Okay, but this is to interact with the elements of the array. How do we create an array?</p> 
+        <p><code>int arrayName[NUM_OF_ELEMENTS];</code></p> 
+        <p>To declare an <strong>array of integers</strong>, it is almost like declaring an integer. We first place the type of the array's elements. Then it's <strong>name</strong>, followed by the <strong>number of elements</strong> within square brackets <code>[ ]</code></p> 
+        <p><code>int gamebuinoTeamAges[3] = {26, 23, 19};</code></p> 
+        <p>You can also initialize the array with your own values by using curly brackets <code>{ }</code>. BUT, you can only do this during the declaration. If you try to do this elsewhere, you will get a compiling error!</p> 
+        <p>To get back to our TapTap game, we will need an array <code>bricks</code>. To start off, we will have four bricks. And we will use a constant to keep track of how many bricks we have. Also, <code>bricks[0]</code> will be the bottom-most brick (the one the player has to hit).</p> 
+        <pre><code>#include 
+
+// Constants
+// ...
+const int NUM_OF_BRICKS = 4;
+
+int bricks[NUM_OF_BRICKS];  // Our bricks. Either LEFT or RIGHT
+int arrow;  // LEFT, RIGHT, or NO_DIRECTION
+int score = 0;
+
+void setup() {
+    gb.begin();
+
+    // Random bricks
+    bricks[0] = random(LEFT, RIGHT + 1);  // +1 because random(1, 3) =&gt; 1 or 2 (not 3)
+    bricks[1] = random(LEFT, RIGHT + 1);
+    bricks[2] = random(LEFT, RIGHT + 1);
+    bricks[3] = random(LEFT, RIGHT + 1);
+
+    arrow = NO_DIRECTION;
+}
+
+void loop() {
+    while(!gb.update());
+
+    // INPUTS //
+    // ...
+
+    // LOGIC //
+    if (score &gt; 0) {
+        score -= 1;
+    }
+    if (arrow != NO_DIRECTION) {
+        if (bricks[0] == arrow) {  // Correct arrow
+            score += 15;
+
+            // Shift bricks down ([0] becomes [1], etc...)
+            bricks[0] = bricks[1];
+            bricks[1] = bricks[2];
+            bricks[2] = bricks[3];
+            bricks[3] = random(LEFT, RIGHT + 1);  // New brick
+        }
+        else {
+            // Lost :(
+            score = 0;
+        }
+
+        arrow = NO_DIRECTION;  // User input handled
+    }
+
+    // DRAW //
+    gb.display.clear();
+
+    if (bricks[0] == LEFT) {
+        gb.display.fillRect(20, 40, 20, 10);
+    } 
+    else {  // RIGHT
+        gb.display.fillRect(40, 40, 20, 10);
+    }
+    if (bricks[1] == LEFT) {
+        gb.display.fillRect(20, 30, 20, 10);
+    } 
+    else {  // RIGHT
+        gb.display.fillRect(40, 30, 20, 10);
+    }
+    if (bricks[2] == LEFT) {
+        gb.display.fillRect(20, 30, 20, 10);
+    } 
+    else {  // RIGHTRIGHT
+        gb.display.fillRect(40, 30, 20, 10);
+    }
+    if (bricks[3] == LEFT) {
+        gb.display.fillRect(20, 20, 20, 10);
+    } 
+    else {  // RIGHT
+        gb.display.fillRect(40, 20, 20, 10);
+    }
+
+
+    // Score
+    gb.display.print(score);
+}
+</code></pre> 
+        <p>Now that we use an array <code>bricks</code> of size 4, we give it random values inside of <code>setup()</code>. Regarding inputs, nothing to report (thanks to the fact that we "decoupled" inputs from the rest). For the logic and drawing of the game, we must adapt the existing code to handle our array.</p> 
+        <p>For the logic update, we also made it so that bricks "fall". Each brick takes the value of the one above it, and the top bricks gets a random value. In the drawing section, we display each brick one by one. You may note that our code almost has identical lines repeating themeseves. In the next workshop, we will explore a way to simplify this kind of code :D</p> 
+        <p>But before that...</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/tap-tap-how-fast-can-you-tap.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Tap Tap, how fast can you tap? 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/inputs-update-draw.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Inputs, update, draw 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/constants.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Constants 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/arrays.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Arrays 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/it-s-your-turn.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           It's your turn! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/tap-tap-how-fast-can-you-tap.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Tap Tap, how fast can you tap? 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/inputs-update-draw.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Inputs, update, draw 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/constants.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Constants 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/arrays.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Arrays 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/it-s-your-turn.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          It's your turn! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/discover-python-programming.html"> Get started (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Program a Pong! </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Program a Pong! </h1> 
+        <h5> Step 5 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Step completed? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>You learned some basic programming principles in the previous step, it's time to have some fun!</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Delete your code (you can save it into another file if you wich to reuse it later), and put the code below instead. Remember to save to run it on your Gamebuino.</p> 
+        <pre><code>from gamebuino_meta import begin, waitForUpdate, display, color, buttons, collide
+
+# Size, speed and initial position of the ball:
+ball_size = 3
+ball_x_speed = 1
+ball_y_speed = 1
+ball_x_position = 20
+ball_y_position = 20
+
+# Initial size of the player's racket:
+player_height = 12
+player_width = 3
+player_speed = 2
+
+# Initial position of the racket:
+player_x_position = 10
+player_y_position = 30
+
+# Score
+score = 0
+
+while True:
+    waitForUpdate()
+    display.clear()
+
+    # If you press the UP or DOWN buttons, we move the racket up or down:
+    if buttons.repeat(buttons.UP, 0):
+        player_y_position = player_y_position - player_speed
+
+    if buttons.repeat(buttons.DOWN, 0):
+        player_y_position = player_y_position + player_speed
+
+    # We move the ball
+    ball_x_position = ball_x_position + ball_x_speed
+    ball_y_position = ball_y_position + ball_y_speed
+
+    # Check if the ball collides with the top, bottom or right of the screen
+    # If so, we reverse its direction
+    if ball_y_position &lt;= 0:
+        ball_y_speed = -ball_y_speed
+
+    if ball_y_position &gt;= 64 - ball_size:
+        ball_y_speed = -ball_y_speed
+
+    if ball_x_position + ball_size &gt;= 80:
+        ball_x_speed = -ball_x_speed
+
+    # We test if there is a collision between the ball and the player's racket
+    if collide.rectRect(ball_x_position, ball_y_position, ball_size, ball_size, 
+                        player_x_position, player_y_position, player_width, player_height):
+        ball_x_speed = -ball_x_speed
+        score = score + 1
+
+    # Check if the ball is out of the screen
+    if ball_x_position &lt;= 0:
+        score = 0  # Nous remettons le score à 0
+        ball_x_speed = -ball_x_speed
+				
+		# Prevent the racket from getting out the screen
+    if player_y_position &lt;= 0:
+        player_y_position = 0
+    
+    if player_y_position &gt;= 64 - player_height:
+        player_y_position = 64 - player_height
+
+    # Ball display
+    display.fillRect(ball_x_position, ball_y_position, ball_size, ball_size)
+
+    # Display of the player's racket
+    display.fillRect(player_x_position, player_y_position, player_width, player_height)
+		
+</code></pre> 
+        <p>Well done, you just launched your first game! Simple, isn't it? Try to play! Use the arrows on your Gamebuino to move the racket, and return the ball.</p> 
+        <p>Look at the code a little: don't worry, it's quite normal if you don't understand everything. But, if you look closely, you will notice things you already know: variables! There are many, but you must have noticed the one called "score": it is equal to 0 when you start the game.</p> 
+        <p>The rules are as follows: as soon as you succeed in sending the ball back, you earn one point. As soon as you miss the ball, your score goes back to 0. Everything is already programmed, you don't have to do it! But there is a problem: the score is not displayed on the screen. That's where you come in!</p> 
+        <h2>Challenge #4</h2> 
+        <p>Try to display the following sentence on the screen, in green: "My score is X" (where X is of course the value of our score). Normally, you have all the knowledge to do it, but if you block, read the help below!</p> 
+        <h4>Need help?</h4> 
+        <ul> 
+         <li>Remember: the instruction to display something on the screen is <code>display.print("My text")</code>. You can also replace "My text" with a variable.</li> 
+         <li>The instruction to change the color to green is as follows: <code>display.setColor(color.GREEN)</code>. Place it just before the instruction to write your text!</li> 
+         <li>You can write the display instructions anywhere in the code, but in general, we do it <strong>all at the end</strong>.</li> 
+        </ul> 
+        <h4>Expected result</h4> 
+        <p><img src="../assets/20190325_140225.jpg" alt="" style="max-width:100%"></p> 
+        <h4>Solution</h4> 
+        <details> <summary>See</summary> 
+         <div> 
+          <pre><code>from gamebuino_meta import begin, waitForUpdate, display, color, buttons, collide
+
+# Size, speed and initial position of the ball:
+ball_size = 3
+ball_x_speed = 1
+ball_y_speed = 1
+ball_x_position = 20
+ball_y_position = 20
+
+# Initial size of the player's racket:
+player_height = 12
+player_width = 3
+player_speed = 2
+
+# Initial position of the racket:
+player_x_position = 10
+player_y_position = 30
+
+# Score
+score = 0
+
+while True:
+    waitForUpdate()
+    display.clear()
+
+    # If you press the UP or DOWN buttons, we move the racket up or down:
+    if buttons.repeat(buttons.UP, 0):
+        player_y_position = player_y_position - player_speed
+
+    if buttons.repeat(buttons.DOWN, 0):
+        player_y_position = player_y_position + player_speed
+
+    # We move the ball
+    ball_x_position = ball_x_position + ball_x_speed
+    ball_y_position = ball_y_position + ball_y_speed
+
+    # Check if the ball collides with the top, bottom or right of the screen
+    # If so, we reverse its direction
+    if ball_y_position &lt;= 0:
+        ball_y_speed = -ball_y_speed
+
+    if ball_y_position &gt;= 64 - ball_size:
+        ball_y_speed = -ball_y_speed
+
+    if ball_x_position + ball_size &gt;= 80:
+        ball_x_speed = -ball_x_speed
+
+    # We test if there is a collision between the ball and the player's racket
+    if collide.rectRect(ball_x_position, ball_y_position, ball_size, ball_size, 
+                        player_x_position, player_y_position, player_width, player_height):
+        ball_x_speed = -ball_x_speed
+        score = score + 1
+
+    # Check if the ball is out of the screen
+    if ball_x_position &lt;= 0:
+        score = 0  # Nous remettons le score à 0
+        ball_x_speed = -ball_x_speed
+				
+		# Prevent the racket from getting out the screen
+    if player_y_position &lt;= 0:
+        player_y_position = 0
+    
+    if player_y_position &gt;= 64 - player_height:
+        player_y_position = 64 - player_height
+
+    # Ball display
+    display.fillRect(ball_x_position, ball_y_position, ball_size, ball_size)
+
+    # Display of the player's racket
+    display.fillRect(player_x_position, player_y_position, player_width, player_height)
+		
+		# Score display
+    display.setColor(color.GREEN)
+    display.print("My score is")
+    display.print(score)
+
+</code></pre> 
+         </div> 
+        </details> 
+        <h6>Explanations</h6> 
+        <p>You have simply put into practice what we have seen before. Pretty easy, isn't it? Just remember one thing: for clarity, display instructions are usually placed at the end. As seen above, the score variable is modified by the program, and we display its new value each time.</p> 
+        <h2>Go further</h2> 
+        <p>Our score is reset each time the ball hits the left side of the screen. What if we wanted to display the total number of times we sent the ball back? Try creating a variable called "total" and displaying it on the screen in a different color. Observe how we manage the "score" variable throughout the program. All you have to do is do the same with "total", but without the instruction that resets it to zero!</p> 
+        <p>If you want inspiration, here's what we've done:</p> 
+        <img src="../assets/pong-python.gif" height="320" width="400" style="max-width:100%"> 
+        <details> <summary>See</summary> 
+         <div> 
+          <pre><code>from gamebuino_meta import begin, waitForUpdate, display, color, buttons, collide
+
+# Size, speed and initial position of the ball:
+ball_size = 3
+ball_x_speed = 1
+ball_y_speed = 1
+ball_x_position = 20
+ball_y_position = 20
+
+# Initial size of the player's racket:
+player_height = 12
+player_width = 3
+player_speed = 2
+
+# Initial position of the racket:
+player_x_position = 10
+player_y_position = 30
+
+# Score
+score = 0
+total = 0
+
+while True:
+    waitForUpdate()
+    display.clear()
+
+    # If you press the UP or DOWN buttons, we move the racket up or down:
+    if buttons.repeat(buttons.UP, 0):
+        player_y_position = player_y_position - player_speed
+
+    if buttons.repeat(buttons.DOWN, 0):
+        player_y_position = player_y_position + player_speed
+
+    # We move the ball
+    ball_x_position = ball_x_position + ball_x_speed
+    ball_y_position = ball_y_position + ball_y_speed
+
+    # Check if the ball collides with the top, bottom or right of the screen
+    # If so, we reverse its direction
+    if ball_y_position &lt;= 0:
+        ball_y_speed = -ball_y_speed
+
+    if ball_y_position &gt;= 64 - ball_size:
+        ball_y_speed = -ball_y_speed
+
+    if ball_x_position + ball_size &gt;= 80:
+        ball_x_speed = -ball_x_speed
+
+    # We test if there is a collision between the ball and the player's racket
+    if collide.rectRect(ball_x_position, ball_y_position, ball_size, ball_size, 
+                        player_x_position, player_y_position, player_width, player_height):
+        ball_x_speed = -ball_x_speed
+        score = score + 1
+        total = total + 1
+
+    # Check if the ball is out of the screen
+    if ball_x_position &lt;= 0:
+        score = 0  # Nous remettons le score à 0
+        ball_x_speed = -ball_x_speed
+				
+    # Prevent the racket from getting out the screen
+    if player_y_position &lt;= 0:
+        player_y_position = 0
+    
+    if player_y_position &gt;= 64 - player_height:
+        player_y_position = 64 - player_height
+
+    # Ball display
+    display.fillRect(ball_x_position, ball_y_position, ball_size, ball_size)
+
+    # Display of the player's racket
+    display.fillRect(player_x_position, player_y_position, player_width, player_height)
+		
+		# Score display
+    display.setColor(color.GREEN)
+    display.print("My score is")
+    display.print(score)
+		    
+    display.print("\n")
+    
+    display.setColor(color.BLUE)
+    display.print("Total:")
+    display.print(total)
+</code></pre> 
+         </div> 
+        </details> 
+        <p>Not bad, is it? Now, let's have some fun with the graphics and the gameplay.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/installation-and-prerequisites.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Installation and prerequisites 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/run-your-first-program.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Run your first program 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/display-text-on-the-screen.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Display text on the screen 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/a-little-bit-of-colour.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           A little bit of colour 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/variables-what-are-they.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Variables, what are they? 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/program-a-pong.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Program a Pong! 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/change-graphics-and-difficulty.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Change graphics and difficulty 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/installation-and-prerequisites.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Installation and prerequisites 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/run-your-first-program.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Run your first program 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/display-text-on-the-screen.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Display text on the screen 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/a-little-bit-of-colour.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          A little bit of colour 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/variables-what-are-they.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Variables, what are they? 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/program-a-pong.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Program a Pong! 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/change-graphics-and-difficulty.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Change graphics and difficulty 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

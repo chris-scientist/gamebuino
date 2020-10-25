@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/learn-to-code-a-snake-game-with-python.html"> Snake (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Modeling </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Modeling </h1> 
+        <h5> Step 2 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Step completed? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Modeling a virtual world.<br> Snake modeling.<br> Implementation using lists and dictionaries.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h3>The virtual grid</h3> 
+        <p>Now that the scenery is in place, we will look at how to render the game scene, with the snake and apples appearing randomly.</p> 
+        <p>Here the rendering is relatively simple. The "world" can be modeled by a grid on which the different objects are positioned:</p> 
+        <div style="max-width:100%;width:536px;height:442px;margin:1.5em auto;"> 
+         <img src="../assets/3-virtual-grid-1072x884.png" alt="Référentiel spatial" style="max-width:100%"> 
+        </div> 
+        <p>The grid cells are square and their size is determined by the size of the snake, or more precisely of a section of snake. This is what I represented by the term <code>SNAKE_SIZE</code> in the diagram. The origin of the grid is located at the <code>(OX,OY)</code> coordinates, and the grid contains <code>COLS</code> columns and <code>ROWS</code> rows.</p> 
+        <p>All the plots we are going to make depend entirely on this data. We will therefore declare them as global variables:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+SNAKE_SIZE = 2
+COLS       = (SCREEN_WIDTH  - 4) // SNAKE_SIZE
+ROWS       = (SCREEN_HEIGHT - 4) // SNAKE_SIZE
+OX         = (SCREEN_WIDTH  - COLS * SNAKE_SIZE) // 2
+OY         = (SCREEN_HEIGHT - ROWS * SNAKE_SIZE) // 2
+</code></pre> 
+        <p>The calculation is simple. Don't forget that we have already plotted the ground enclosure which is 1 pixel thick... and we will leave at least 1 pixel of distance between the boundaries of the enclosure and those of the grid. In other words, we remove 2 pixels on each side, horizontally and vertically, from the width and height of the screen to perform our calculations. This explains the terms <code>SCREEN_WIDTH - 4</code> and <code>SCREEN_HEIGHT - 4</code>.</p> 
+        <p>The <code>//</code> operator is an integer division. The result of this division simply corresponds to the integer part of the quotient.</p> 
+        <h3>The snake</h3> 
+        <p>How are we going to model the snake? To determine this, let's take a look at how it moves on the virtual grid.</p> 
+        <h4>Modeling</h4> 
+        <p>At each <strong>t</strong> time, the snake advances from a cell in the direction imposed by the player through the console's directional PAD. And to model the entire body of the snake, we need to memorize the succession of cells through which the head passed at times prior to <strong>t</strong>. The length of the stored sequence corresponds to the length of the snake:</p> 
+        <div style="max-width:100%;width:351px;height:159px;margin:1.5em auto;"> 
+         <img src="../assets/3-snake-tail-702x318.png" alt="Enregistrement des positions successives du serpent" style="max-width:100%"> 
+        </div> 
+        <p>Each time the snake advances from a cell, it will therefore be necessary to memorize two data: the <strong>x</strong> abscissa and the <strong>y</strong> ordinate of the snake's head. But it will also be necessary to maintain the former positions she held in the previous moments.</p> 
+        <p>To do this, we will use a data structure called a "list" in Python (which could be similar to a dynamic table, found in other languages). Indeed, the structure we need must be of dynamic size, since each time the snake swallows an apple, it must be able to lengthen... A list will therefore do just fine, since it is precisely a dynamic data structure.</p> 
+        <div style="max-width:100%;width:223px;height:127px;margin:1.5em auto;"> 
+         <img src="../assets/3-snake-buffers-446x254.png" alt="Enregistrement des positions successives du serpent" style="max-width:100%"> 
+        </div> 
+        <p>Each item in the list is identified by an index ranging from <code>0</code> to <code>n-1</code> (where <code>n</code> corresponds to the length of the list). Therefore, if the length of the snake is <code>7</code> (as shown in the diagram above), the successive positions occupied by the snake head at times <code>t</code>, <code>t-1</code>, <code>t-2</code>, <code>t-3</code>, <code>t-4</code>, <code>t-5</code> and <code>t-6</code> will be recorded in two separate lists <code>x</code> and <code>y</code>, and associated with the indexes between <code>0</code> and <code>6</code>.</p> 
+        <p>The position recording procedure is simple. It is enough to associate to the lists <code>x</code> and <code>y</code> a cursor, which could be assimilated to a reading head, which indicates the position of the snake's head. Each time the snake moves one cell forward, the reading head is moved one box to the right in the list, and the new position of the snake's head is recorded. By doing this, we simply overwrite the position it occupied at the time <code>t-7</code>, which is no longer needed, as long as we only keep its positions until the time <code>t-6</code>.</p> 
+        <p>When the reading head is positioned on the last index of the list, the next recording is made by bringing the reading head back to the beginning of the list (to the <code>0</code> index). The process is therefore cyclical because it finally "rotates" on the lists. Everything happens as if the lists were rolled up like&nbsp; <span style="color:#ccc;">snake&nbsp;&nbsp;<i class="far fa-laugh-beam"></i></span>&nbsp;&nbsp;rings.</p> 
+        <p>Let's see how to implement this with Python.</p> 
+        <h4>Implementation</h4> 
+        <p>Let the <code>l</code> list be defined by :</p> 
+        <pre><code class="language-python">l  = [1, 2, 4, 8, 16, 32, 64, 128, 256]
+</code></pre> 
+        <p>The element of index <code>4</code> is obtained with:</p> 
+        <pre><code class="language-python">l[4] # --&gt; returns the value of the fifth element: 16
+</code></pre> 
+        <p>To store the value <code>'sixteen'' at index</code>4', write:</p> 
+        <pre><code class="language-python">l[4] = 'sixteen'
+
+# --&gt; the list becomes [1, 2, 4, 8, 'sixteen', 32, 64, 128, 256]
+</code></pre> 
+        <p>You see that you can also mix the types of data in a list, without any problem.</p> 
+        <p>Python also offers a data structure quite close to the list, in which the recorded elements are not necessarily indexed by integers, but by alphanumeric keys. This structure is called a <strong>dictionary</strong>:</p> 
+        <pre><code class="language-python">d = {
+    'head': 4,
+    'x':    [0, 1, 2, 2, 2, 3, 4, 5],
+    'y':    [0, 0, 0, 1, 2, 2, 2, 2]
+}
+</code></pre> 
+        <p>Well... it looks like the way we could implement our snake!&nbsp;&nbsp;<i class="far fa-smile"></i>&nbsp;&nbsp;You see that the value associated with a key can be a list. We could even nest a dictionary in a dictionary... or even build lists of dictionaries, which would themselves nest lists... Data structuring can become complex. We will limit ourselves to simple structures in this workshop. And don't forget that these data structures are hosted in the console's RAM. Therefore, it is wise to choose data structures that do not consume more memory than necessary.</p> 
+        <p>Dictionaries also make it possible to define composite data structures according to which a variable can be described by several properties. In the example above, the variable <code>d</code> is described by <code>head</code>, <code>x</code> and <code>y</code> properties. This process thus makes it possible to define kinds of "super-variables", i.e. variables that themselves aggregate several variables. It looks (by far) like the <code>struct</code> of the C language. Except that a <code>struct</code> is not a dynamic structure, whereas Python dictionaries are.</p> 
+        <p>To access the value associated with the <code>head</code> key in the <code>d</code> dictionary, simply write:</p> 
+        <pre><code class="language-python">d['head'] # --&gt; returns 4
+</code></pre> 
+        <p>And to assign the value <code>5</code> to this same key, we will write :</p> 
+        <pre><code class="language-python">d['head'] = 5
+</code></pre> 
+        <p>Simple, right?</p> 
+        <p>Come on, I think we have enough to move forward.<br> Let's model our snake:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Initialization
+# ----------------------------------------------------------
+
+snake = {
+    'x':    [],
+    'y':    [],
+    'head': 0,
+    'len':  0,
+    'vx':   0,
+    'vy':   0
+}
+</code></pre> 
+        <p>We can see the lists of coordinates <code>x</code> and <code>y</code>, which are empty for the moment. The <code>head</code> property refers to the position of the reading head in the <code>x</code> and <code>y</code> lists. Although Python offers a <code>len()</code> function that allows you to calculate the length of a list, for optimization reasons I preferred to add a <code>len</code> property to the <code>snake</code> structure to store the length of the <code>x</code> and <code>y</code> lists. Finally, I added two properties <code>vx</code> and <code>vy</code> which represent the horizontal and vertical components of the velocity of the snake's movement on the grid.</p> 
+        <p>The data structure representing our snake is now initialized. With each new game, its properties will be systematically reset to default values. So I suggest that we describe this reset procedure in a <code>resetSnake()</code> function:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def resetSnake():
+    x = COLS // 2
+    y = ROWS // 2
+    snake['x'] = []
+    snake['y'] = []
+    for _ in range(SNAKE_LENGTH):
+        snake['x'].append(x)
+        snake['y'].append(y)
+    snake['head'] = SNAKE_LENGTH - 1
+    snake['len']  = SNAKE_LENGTH
+    snake['vx'] = 0
+    snake['vy'] = 0
+</code></pre> 
+        <p>First we calculate the starting coordinates <code>x</code> and <code>y</code> of the snake. It is positioned here in the center of the grid:</p> 
+        <pre><code class="language-python">x = COLS // 2
+y = ROWS // 2
+</code></pre> 
+        <p>The <code>snake['x']</code> and <code>snake['y']</code> lists are reset by empty lists:</p> 
+        <pre><code class="language-python">snake['x'] = []
+snake['y'] = []
+</code></pre> 
+        <p>Then we will fill them with the <code>x</code> and <code>y</code> coordinates that we have just calculated. I introduce here a new global variable that designates the initial length of the snake <code>SNAKE_LENGTH</code>, and that we will immediately define:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+SNAKE_LENGTH = 4
+</code></pre> 
+        <p>The <code>for</code> loop increments an anonymous iterator <code>_</code> in the interval <code>[0, SNAKE_LENGTH - 1]</code> and executes, at each iteration, the nested instructions:</p> 
+        <pre><code class="language-python">for _ in range(SNAKE_LENGTH):
+    snake['x'].append(x)
+    snake['y'].append(y)
+</code></pre> 
+        <p>This has the effect of adding:</p> 
+        <ul> 
+         <li>the <code>x</code> value at the end of the <code>snake['x']</code> list</li> 
+         <li>the <code>y</code> value at the end of the <code>snake['y']</code> list</li> 
+        </ul> 
+        <p>And as we repeat these operations <code>SNAKE_LENGTH</code> times (i.e. `4 times), when the loop ends the lists are defined as follows:</p> 
+        <pre><code class="language-python">  0   1   2   3
+
+[19, 19, 19, 19]    snake['x']
+[15, 15, 15, 15]    snake['y']
+
+              ^
+             head
+</code></pre> 
+        <p>Indeed, at the beginning all the sections of the snake are gathered on the same cell (as if the snake were wrapped around itself).</p> 
+        <p>The list reading head is positioned at the index <code>SNAKE_LENGTH - 1</code> (therefore <code>3</code>), it is the index of the coordinates of the snake head.</p> 
+        <p>The length of the snake is initialized to <code>SNAKE_LENGTH</code> (therefore <code>4</code>), and the initial velocity of the snake is zero (it does not yet move).</p> 
+        <pre><code class="language-python">snake['head'] = SNAKE_LENGTH - 1
+snake['len']  = SNAKE_LENGTH
+snake['vx'] = 0
+snake['vy'] = 0
+</code></pre> 
+        <p>From here, our snake is in the matrix... we don't see it yet, because we haven't written the display routine that allows us to observe it yet. Nor can we apply him commands to move around.</p> 
+        <p>But that's exactly what we're going to do in the next step!</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/overview.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Overview 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/setting-up.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Setting up 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/modeling.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Modeling 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/controls-and-display.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Controls and display 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/imposing-rules.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Imposing rules 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/score-points.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Score points 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/optimization.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Optimization 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/finishes.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           8 
+         </div> 
+         <div class="title ml-3">
+           Finishes 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/overview.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Overview 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/setting-up.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Setting up 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/modeling.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Modeling 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/controls-and-display.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Controls and display 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/imposing-rules.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Imposing rules 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/score-points.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Score points 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/optimization.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Optimization 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/finishes.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          8 
+        </div> 
+        <div class="title ml-3">
+          Finishes 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

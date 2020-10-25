@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/attrap-oeuf.html"> Egg catcher (C++ 4/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> A vous de jouer! </span> 
+     </div> 
+    </div> 
+    <div class="alert alert-warning mb-3">
+      This content is not fully available in your language 😕 You want to contribute? Send us an e-mail at hello@gamebuino.com. 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> A vous de jouer! </h1> 
+        <h5> Step 5 </h5> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-content mt-5"> 
+        <p>Notre jeu Attrap'oeuf n'est pas encore fini. Ensemble, nous avons ajouté le panier et les œufs. Il vous reste à implémenter les carottes. Mais avec l'aide des <strong>boucles for</strong> et l'organisation des <strong>fonctions</strong>, je suis sûr que vous pouvez le faire !</p> 
+        <p>Petites indications de design: commencer par ajouter un nombre fixe de carottes, ensuite essayez de créer un mini système de progression, c'est-à-dire que plus le score sera grand, plus il y aura de carottes qui tombent, avec une quantité maximale de carottes a ne pas dépasser. Autre mission: centrez le panier pour qu'il change de taille sûr la gauche et la droite (actuellement, seul le côté droit grandit/rapetisse).</p> 
+        <p><strong>Astuce #1:</strong> Par rapport au système de progression, vous pouvez utiliser la fonction <code>min()</code> pour ne pas dépasser le nombre maximal de carottes (<span>en savoir plus ici</span>.</p> 
+        <p><strong>Astuce #2:</strong> Toujours pour le système de progression, il vous faudra une variable qui traque le nombre de carottes actuellement en jeu, et une <strong>constante</strong> pour le nombre maximal de carottes.</p> 
+        <p><strong>Astuce #3:</strong> Pour centrer le panier, il faut que <code>panierX</code> corresponde au centre du panier. A vous de trouver comment l'afficher et gérer les collisions.</p> 
+        <p><strong>Partage ton talent sur les réseaux avec #gamebuino #atelier #attrapoeuf, on les regarde tous ;)</strong></p> 
+        <h2>Exemple de Solution</h2> 
+        <p>Si vous êtes en panne d'inspiration, voilà ce qu'on a fait de notre côté :) <img src="../assets/810fd38c6ced338b365120d8898614dd397e5e31.gif" alt="" style="max-width:100%"></p> 
+        <p><strong>Attrapoeuf.ino</strong></p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Eggs
+const int NBR_D_OEUFS = 10;
+int oeufsX[NBR_D_OEUFS] = {};
+int oeufsY[NBR_D_OEUFS] = {};
+
+const int OEUF_LARGEUR = 2;
+const int OEUF_HAUTEUR = 3;
+
+// Carots
+const int NBR_MAX_DE_CAROTTES = 8;
+int nbrDeCarottes = 0;
+int carottesX[NBR_MAX_DE_CAROTTES] = {};
+int carottesY[NBR_MAX_DE_CAROTTES] = {};
+
+const int CAROTTE_LARGEUR = 3;
+const int CAROTTE_HAUTEUR = 5;
+
+// Panier
+int panierX = 20;  // Le panier peut bouger horizontalement, donc ce n'est pas une constante
+const int PANIER_Y = gb.display.height() - 4;  // Constante car le panier est fixe selon l'axe Y
+int panierLargeur = 0;  // Pas constant car la taille dépend de la nourriture restante
+const int PANIER_HAUTEUR = 3;  // Constante
+
+int score = 0;
+int highscore = 0;
+int nourriture;  // Plus de nourriture est mieux. 0 nourriture = game over
+
+void setup() {
+  gb.begin();
+  // Placer les oeufs aléatoirement au dessus de l'écran
+  for (int i = 0; i &lt; NBR_D_OEUFS; i += 1) {
+    oeufsX[i] = random(0, gb.display.width());
+    oeufsY[i] = random(-40, -OEUF_HAUTEUR);  // Au dessus de l'écran
+  }
+  nourriture = 300;
+}
+
+void loop() {
+  while (!gb.update());
+  entrees();
+  miseAJour();
+  affichage();
+}
+
+
+entrees.ino
+
+void entrees() {
+  if (gb.buttons.repeat(BUTTON_LEFT, 0) &amp;&amp; panierX &gt; 0) {
+    panierX -= 2;
+  }
+  else if (gb.buttons.repeat(BUTTON_RIGHT, 0) &amp;&amp; panierX &lt; gb.display.width()) {
+    panierX += 2;
+  }
+}
+
+
+miseAJour.ino
+
+void miseAJour() {
+  // La faim fait doucement baisser notre nourriture dans la panier
+  nourriture--;
+  panierLargeur = nourriture / 20;
+  if (nourriture &lt;= 0) {  // Somme nous mort de faim??
+    nbrDeCarottes = 0;  // Reset les carottes
+    score = 0;  // Recommencer le jeu
+    nourriture = 300;  // Reset nourriture
+    for (int i = 0; i &lt; NBR_D_OEUFS; i += 1) {
+      oeufsX[i] = random(0, gb.display.width());
+      oeufsY[i] = random(-40, -OEUF_HAUTEUR);  // Au dessus de l'écran
+    }
+  }
+
+  // Eggs
+  for (int i = 0; i &lt; NBR_D_OEUFS; i += 1) {
+    oeufsY[i] += 1;
+
+    // Collisions
+    if (gb.collide.rectRect(panierX - panierLargeur / 2, PANIER_Y, panierLargeur, PANIER_HAUTEUR, oeufsX[i], oeufsY[i], OEUF_LARGEUR, OEUF_HAUTEUR)) {
+      score += 1;
+      if (score &gt; highscore) {
+        highscore = score;
+      }
+      nourriture = nourriture + 20;  // MMmmmmm des oeufs
+      // Ajouter des carrotes. Sans dépasser le plafond
+      nbrDeCarottes = min(score / 5, NBR_MAX_DE_CAROTTES);
+
+      // Reset l'oeuf
+      oeufsX[i] = random(0, gb.display.width());
+      oeufsY[i] = random(-40, -OEUF_HAUTEUR);  // Au dessus de l'écran
+    }
+
+    // Verifier que la carotte ne soit pas sortie de l'écran
+    if (oeufsY[i] &gt;= gb.display.height()) {
+      // Reset l'oeuf
+      oeufsX[i] = random(0, gb.display.width());
+      oeufsY[i] = random(-40, -OEUF_HAUTEUR);  // Au dessus de l'écran
+    }
+  }
+
+  // Carottes
+  for (int i = 0; i &lt; nbrDeCarottes; i += 1) {
+    carottesY[i] += 2;
+
+    // Collisions avec le joueur
+    if (gb.collide.rectRect(panierX - panierLargeur / 2, PANIER_Y, panierLargeur, PANIER_HAUTEUR, carottesX[i], carottesY[i], CAROTTE_LARGEUR, CAROTTE_HAUTEUR)) {
+
+      nourriture -= 40;  // Allergie =&gt; moins de nourriture :(
+
+      // Reset la carotte
+      carottesX[i] = random(0, gb.display.width());
+      carottesY[i] = random(-20, -CAROTTE_HAUTEUR);  // Au dessus de l'écran
+    }
+
+    // Verifier que la carotte ne soit pas sortie de l'écran
+    if (carottesY[i] &gt;= gb.display.height()) {
+      // Reset la carotte
+      carottesX[i] = random(0, gb.display.width());
+      carottesY[i] = random(-20, CAROTTE_HAUTEUR);  // Au dessus de l'écran
+    }
+  }
+
+}
+
+
+affichage.ino
+
+void affichage() {
+  gb.display.clear();
+
+  // Eggs
+  gb.display.setColor(BROWN);
+  for (int i = 0; i &lt; NBR_D_OEUFS; i += 1) {
+    gb.display.fillRect(oeufsX[i], oeufsY[i], OEUF_LARGEUR, OEUF_HAUTEUR);
+  }
+
+  // Carrots
+  gb.display.setColor(ORANGE);
+  for (int i = 0; i &lt; nbrDeCarottes; i += 1) {
+    gb.display.fillRect(carottesX[i], carottesY[i], CAROTTE_LARGEUR, CAROTTE_HAUTEUR);
+  }
+
+  // Player
+  gb.display.setColor(WHITE);
+  gb.display.fillRect(panierX - panierLargeur / 2, PANIER_Y, panierLargeur, PANIER_HAUTEUR);
+
+  // Score
+  gb.display.setColor(WHITE);
+  gb.display.setCursor(gb.display.width() - 8, 0);
+  gb.display.print(score);
+  gb.display.setColor(RED);
+  gb.display.setCursor(gb.display.width() - 8, 8);
+  gb.display.print(highscore);
+}
+</code></pre> 
+        <p><em>Par Julien Giovinazzo</em></p> 
+        <p><strong>Des questions / commentaires / suggestions? Laissez-nous un commentaire</strong></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/introduction.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/panier-a-oeufs.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Panier à œufs 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/fonctions.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Fonctions 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/les-boucles-for.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Les boucles For 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/a-vous-de-jouer-1.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           A vous de jouer! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/introduction.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/panier-a-oeufs.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Panier à œufs 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/fonctions.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Fonctions 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/les-boucles-for.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Les boucles For 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/a-vous-de-jouer-1.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          A vous de jouer! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Academy - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-en/"> Home of Academy (EN)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-en/index.html"> Academy </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-en/sokoban-vs-poo.html"> Apprenez la programmation orientée objet avec Sokoban </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> La caméra </span> 
+     </div> 
+    </div> 
+    <div class="alert alert-warning mb-3">
+      This content is not fully available in your language 😕 You want to contribute? Send us an e-mail at hello@gamebuino.com. 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> La caméra </h1> 
+        <h5> Step 2 </h5> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Nous allons voir dans cette deuxième étape la gestion de la caméra.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h2>Introduction</h2> 
+        <p>Les <strong>pré-requis</strong> de cette étape sont :</p> 
+        <ul> 
+         <li>Avoir réalisé la première étape de ce workshop.</li> 
+        </ul> 
+        <p>Je vous invite à télécharger <span>le code</span> qui est le résultat de la première étape, ceci pour partir sur des bases communes.</p> 
+        <h2>Paramétrage</h2> 
+        <p>Nous allons voir ici le paramétrage du programme c'est-à-dire la valorisation des constantes utiles au programme (du moins celle qui ne le sont pas déjà, en effet la carte du jeu est déjà initialisée comme d'autres paramètres du jeu).</p> 
+        <p>Dans CameraModel nous avons deux constantes :</p> 
+        <ul> 
+         <li>W_CENTER_PLAYER : qui indique le nombre de sprites avant d'afficher le personnage sur l'axe X.</li> 
+         <li>H_CENTER_PLAYER : qui indique le nombre de sprites avant d'afficher le personnage sur l'axe Y.</li> 
+        </ul> 
+        <p>Sur l'axe X on veut afficher 5 sprites avant le personnage et sur l'axe Y on veut afficher 4 sprites.</p> 
+        <p>Nous allons initialiser ces valeurs dans le fichier de définition de la classe c'est-à-dire CameraModel.cpp. Pensez à inclure le fichier de déclaration de la classe, sans quoi vous aurez des problèmes.</p> 
+        <p>Voici ce que vous devriez obtenir :</p> 
+        <pre><code>#include "CameraModel.h"
+	
+const int CameraModel::W_CENTER_PLAYER = 5;
+const int CameraModel::H_CENTER_PLAYER = 4;
+</code></pre> 
+        <h2>Gestion de la caméra</h2> 
+        <p><strong>Etape 1 : la position du joueur</strong></p> 
+        <p>En effet, la caméra est centrée sur la position du joueur. Ainsi il nous faut connaître la position du joueur avant de développer la gestion de la caméra.</p> 
+        <p>Nous allons écrire la définition de la méthode <em>initPlayerPositions</em> de la classe MapModel. Le pseudo code de cette méthode est le suivant :</p> 
+        <pre><code>SI position non initialisé ALORS
+  PARCOURIR l'axe Y
+    PARCOURIR l'axe X
+      SI position actuelle = position du joueur ALORS
+        Initialiser la position du joueur
+      FIN SI
+    FIN PARCOURIR
+  FIN PARCOURIR
+FIN SI
+</code></pre> 
+        <p>Si vous ne savez pas comment faire ou si vous voulez vérifier votre code voici comment j'ai fait :</p> 
+        <pre><code>void MapModel::initPlayerPositions() {
+  if(playerPositions[0] == -1 &amp;&amp; playerPositions[1] == -1) {
+    // on initialise la position que si elle ne l'ai pas dÈj‡
+    for(int y=0 ; y &lt; HEIGHT_MAP ; y++) {
+      for(int x=0 ; x &lt; WIDTH_MAP; x++) {
+        if(mapOfGame[y][x] == TypeOfSprites::PLAYER_TYPE) {
+          playerPositions[0] = x;
+          playerPositions[1] = y;
+        }
+      }
+    }
+  }
+}
+</code></pre> 
+        <p>Remarque : cette méthode n'est pas optimisée, effectivement elle continue à parcourir le reste de la carte, et ceci même après avoir trouvé le joueur.</p> 
+        <p>Il est nécessaire d'appeler cette méthode à l'initialisation du programme. Vous voyez où ? Oui c'est ça dans le constructeur de MapModel, comme ceci :</p> 
+        <pre><code>MapModel::MapModel() {
+  initPlayerPositions();
+}
+</code></pre> 
+        <p>Maintenant nous allons initialiser le joueur avec sa position (que nous venons de calculer) et nous allons développer un programme qui permet d'afficher cette position (ceci dans le but de débugguer notre programme).</p> 
+        <p>Pour ce faire il faut écrire les accesseurs sur la position initiale, on parle également de <em>getters</em>. Les quoi ? Les méthodes qui permettent d'accéder à un attribut. En effet, rappelez-vous de l'encapsulation qui interdit au code extérieur d'avoir accès au attribut.</p> 
+        <p>Il faut alors écrire :</p> 
+        <ul> 
+         <li> <em>getPlayerPositions</em> de <em>MapModel</em> </li> 
+         <li> <em>getPlayerPositions</em> de <em>MapController</em> </li> 
+        </ul> 
+        <p>Voici le code :</p> 
+        <pre><code>// Dans MapModel.cpp
+const int* MapModel::getPlayerPositions() const {
+  return playerPositions;
+}
+	
+// Dans MapController.cpp
+const int* MapController::getPlayerPositions() const {
+  return model-&gt;getPlayerPositions();
+}
+</code></pre> 
+        <p>Pour initialiser la position du joueur, il faut écrire les constructeurs des classes suivantes :</p> 
+        <ul> 
+         <li>MainController</li> 
+         <li>MapController</li> 
+         <li>MapView</li> 
+         <li>CharacterController</li> 
+         <li>CharacterModel</li> 
+        </ul> 
+        <p>Voici dans l'ordre les constructeurs, pensez à inclure les fichiers de déclaration :</p> 
+        <pre><code>// Dans MainController.cpp :
+MainController::MainController(MapController *aMapController, CameraModel *aCameraModel, CharacterController * aCharacterController) : mapController(aMapController), cameraModel(aCameraModel), characterController(aCharacterController) {
+    
+}
+	
+// Dans MapController.cpp :
+MapController::MapController(MapModel *aMapModel, MapView *aMapView) : model(aMapModel), view(aMapView) {
+    
+}
+	
+// Dans MapView.cpp :
+MapView::MapView(MapModel *aMapModel) : mapModel(aMapModel) {
+    
+}
+	
+// Dans CharacterController.cpp :
+CharacterController::CharacterController(CharacterModel *aCharacter, MapModel *aMapModel) : character(aCharacter), mapModel(aMapModel), stopMove(false) {
+    
+}
+	
+// Note : le rôle de l'attribut stopMove sera traité ultèrieurement.
+	
+// Dans CharacterModel.cpp :
+CharacterModel::CharacterModel(const int* initPlayerPos) : x(initPlayerPos[0]), y(initPlayerPos[1]), oldTypeOfSprites(TypeOfSprites::FLOOR_TYPE) {
+  nextPos[0] = x;
+  nextPos[1] = y;
+}
+</code></pre> 
+        <p>Nous allons maintenant initialisé nos objets dans le programme principale, voici ce que vous devez écrire (pensez à inclure les fichiers de déclaration) :</p> 
+        <pre><code>// En dehors des fonctions setup et loop :
+MainController * mainController;
+MapModel * mapModel;
+MapController * mapController;
+	
+// Voici à quoi doit ressembler la fonction setup
+void setup() {
+  // initialiser la gamebuino
+  gb.begin();
+  // initialision de l'application
+  mapModel = new MapModel();
+  mapController = new MapController(mapModel, new MapView(mapModel));
+ mainController = new MainController(mapController, new CameraModel(), new CharacterController(new CharacterModel(mapController-&gt;getPlayerPositions()), mapModel));
+ }
+</code></pre> 
+        <p>Voilà pour l'initialisation de la position du joueur, à ce stade vous pouvez compiler votre code, ça ne fera rien mais vous ne devriez pas avoir d'erreur, maintenant affichons cette position.</p> 
+        <p>Pour cela nous allons nous servir de la méthode run de MainController, qui va appeler la méthode paint de MapController, qui à son tour fait appel à paint de MapView.</p> 
+        <p>Voici le code :</p> 
+        <pre><code>// Dans MainController.cpp :
+void MainController::run() {
+  gb.display.println("v2.0.0"); // A SUPPRIMER
+  const int cameraPos[4] = {0, 0, 0, 0};
+  mapController-&gt;paint(cameraPos);
+}
+	
+// Dans MapController.cpp :
+void MapController::paint(const int* aCameraPos) const {
+  view-&gt;paint(aCameraPos);
+}
+	
+// Dans MapView.cpp
+void MapView::paint(const int* aCameraPos) const {
+  gb.display.println("Init pos %d,%d", mapModel-&gt;getPlayerPositions()[0], mapModel-&gt;getPlayerPositions()[1]);
+}
+</code></pre> 
+        <p>Enfin avant de tester, il faut ajouter une ligne dans le programme principale, exactement à la fin de la fonction loop :</p> 
+        <pre><code>mainController-&gt;run();
+</code></pre> 
+        <p>Compilez ce programme !</p> 
+        <p>Votre gamebuino devrait afficher quelque chose comme :</p> 
+        <pre><code>v2.0.0
+Init pos 11,8
+</code></pre> 
+        <p>La première étape pour la gestion de la caméra est achevée.</p> 
+        <p><strong>Etape 2 : calculer coordonnées caméra</strong></p> 
+        <p>Pour calculer les coordonnées de la caméra il nous faut accéder à la position actuelle du joueur, ainsi écrivons les getters des coordonnées.</p> 
+        <p>Une petite aide rendez-vous dans CharacterModel et CharacterController.</p> 
+        <p>Voici le code à écrire :</p> 
+        <pre><code>// ---------------------------------------
+// Dans CharacterModel.cpp :
+	
+const int CharacterModel::getX() const {
+  return x;
+}
+	
+const int CharacterModel::getY() const {
+  return y;
+}
+	
+// ---------------------------------------
+// Dans CharacterController.cpp :
+	
+const int CharacterController::getX() const {
+  return character-&gt;getX();
+}
+	
+const int CharacterController::getY() const {
+  return character-&gt;getY();
+}
+</code></pre> 
+        <p>Pour tester ces getters vous pouvez ajouter les deux lignes suivantes dans MainController::run :</p> 
+        <pre><code>gb.display.printf("Player pos %d,%d", characterController-&gt;getX(), characterController-&gt;getY());
+gb.display.println("");
+</code></pre> 
+        <p>Ainsi votre programme devrait afficher quelque chose comme :</p> 
+        <pre><code>v2.0.0
+Player pos 11,8
+Init pos 11,8
+</code></pre> 
+        <p>Une dernière étape avant de calculer les coordonnées de la caméra, il faut déterminer le nombres de sprites qu'on peut dessiner dans la largeur et la hauteur.</p> 
+        <p>Pour ce faire rendez-vous dans SpritesManager où nous allons y définir la taille des sprites et c'est assez simple puisque les sprites font 8 pixels de large par 8 pixels de haut. Définissez les constantes WIDTH_SPRITES et HEIGHT_SPRITES.</p> 
+        <p>Voici le code :</p> 
+        <pre><code>// Dans SpritesManager.cpp :
+const uint16_t SpritesManager::WIDTH_SPRITES = 8;
+const uint16_t SpritesManager::HEIGHT_SPRITES = 8;
+</code></pre> 
+        <p>Calculer le nombre de sprites en largeur et en hauteur est plutôt facile, voici le pseudo code :</p> 
+        <pre><code>// Nombre de sprites en largeur :
+Largeur d'écran / Largeur du sprites
+	
+// Nombres de sprites en hauteur :
+Hauteur d'écran / Hauteur du sprites
+</code></pre> 
+        <p>Avant de regarder la solution, aller faire un tour dans Constantes.h, en effet on y définit la taille de l'écran. Enfin dernière piste : il faut écrire les méthodes getNbSpritesInWidth et getNbSpritesInHeight dans CameraModel.</p> 
+        <p>Voici le résultat :</p> 
+        <pre><code>const int CameraModel::getNbSpritesInWidth() {
+  return (WIDTH_SCREEN / SpritesManager::WIDTH_SPRITES);
+}
+    
+const int CameraModel::getNbSpritesInHeight() {
+  return (HEIGHT_SCREEN / SpritesManager::HEIGHT_SPRITES);
+}
+</code></pre> 
+        <p>Pour vous guider dans l'écriture de la gestion de la caméra je vais vous fournir à nouveau le pseudo code, pour cela on suppose que <em>aX</em> représente la position x du joueur et <em>aY</em> sa position y. De plus, la caméra a deux couples de coordonnées (X0,Y0) et (X1,Y1), le premier couple se trouve en haut à gauche alors que le second se trouve en bas à droite.</p> 
+        <pre><code>X0 = aX - Nombre de sprites en largeur avant le joueur
+Y0 = aY - Nombre de sprites en hauteur avant le joueur
+X1 = X0 + Nombre de sprites en largeur + 1
+Y1 = Y0 + Nombre de sprites en hauteur + 1
+	
+SI X0 en dehors de la carte ALORS
+  X0 = 0
+  X1 = X0 + Nombre de sprites en largeur + 1
+FIN SI
+	
+SI Y0 en dehors de la carte ALORS
+  Y0 = 0
+  Y1 = Y0 + Nombre de sprites en hauteur + 1
+FIN SI
+    
+SI X1 en dehors de la carte ALORS
+  X1 = Largeur de la carte
+  X0 = X1 - Nombre de sprites en largeur
+FIN SI
+    
+SI Y1 en dehors de la carte ALORS
+  Y1 = Hauteur de la carte
+  Y0 = Y1 - Nombre de sprites en hauteur
+FIN SI
+</code></pre> 
+        <p>Voici le code à écrire :</p> 
+        <pre><code>const int* CameraModel::getCameraPositions(const int aX, const int aY) {
+  // Par défaut, nous essayons de centrer la caméra sur le personnage soit :
+  // - en largeur : 5 sprites + le personnage + 4 sprites
+  // - en hauteur : 4 sprites + le personnage + 3 sprites
+  cameraPositions[0] = aX - CameraModel::W_CENTER_PLAYER;
+  cameraPositions[1] = aY - CameraModel::H_CENTER_PLAYER;
+  cameraPositions[2] = cameraPositions[0] + getNbSpritesInWidth() + 1;
+  cameraPositions[3] = cameraPositions[1] + getNbSpritesInHeight() + 1;
+
+  // si la camÈra est en-dehors de la carte
+  bool cameraX0Out = (cameraPositions[0] &lt; 0);
+  bool cameraY0Out = (cameraPositions[1] &lt; 0);
+  bool cameraX1Out = (cameraPositions[2] &gt;= MapModel::WIDTH_MAP);
+  bool cameraY1Out = (cameraPositions[3] &gt;= MapModel::HEIGHT_MAP);
+  if(cameraX0Out || cameraY0Out || cameraX1Out || cameraY1Out) {
+    if(cameraX0Out) {
+      cameraPositions[0] = 0;
+      cameraPositions[2] = cameraPositions[0] + getNbSpritesInWidth() + 1;
+    }
+    if(cameraY0Out) {
+      cameraPositions[1] = 0;
+      cameraPositions[3] = cameraPositions[1] + getNbSpritesInHeight() + 1;
+    }
+    if(cameraX1Out) {
+      cameraPositions[2] = MapModel::WIDTH_MAP;
+      cameraPositions[0] = cameraPositions[2] - getNbSpritesInWidth();
+    }
+    if(cameraY1Out) {
+      cameraPositions[3] = MapModel::HEIGHT_MAP;
+      cameraPositions[1] = cameraPositions[3] - getNbSpritesInHeight();
+    }
+  }
+
+  return cameraPositions;
+}
+</code></pre> 
+        <p>Remplacer la ligne suivante, par le calcul des coordonnées de la caméra c'est-à-dire faire appel à la méthode que l'on vient d'écrire :</p> 
+        <pre><code>const int cameraPos[4] = {0, 0, 0, 0};
+</code></pre> 
+        <p>Voici comment faire :</p> 
+        <pre><code>const int* cameraPos = cameraModel-&gt;getCameraPositions(characterController-&gt;getX(), characterController-&gt;getY());
+</code></pre> 
+        <p>Enfin pour tester votre code dans MainController::run ajouter les deux lignes suivantes :</p> 
+        <pre><code>gb.display.printf("Cam %d,%d : %d,%d", cameraPos[0], cameraPos[1], cameraPos[2], cameraPos[3]);
+gb.display.println("");
+</code></pre> 
+        <p>Compilez, le résultat obtenu devrait ressembler à :</p> 
+        <pre><code>v2.0.0
+Player pos 11,8
+Cam 6,3 : 17,11
+Init pos 11,8
+</code></pre> 
+        <p>La gestion de la caméra est désormais écrite, amusez-vous à déplacer le joueur sur la carte (le caractère '@') et relancez le programme pour constater que les coordonnées de la caméra sont modifiées.</p> 
+        <p>Si vous avez terminé ou si vous rencontrez des problèmes vous pouvez télécharger la solution <span>ici</span>.</p> 
+        <p>Dans la prochaine étape, c'est-à-dire la troisième, nous réaliserons l'affichage du jeu.</p> 
+        <p>N'hésitez pas à me faire un retour : les améliorations que vous apporteriez (un regard extérieur est toujours bienvenu), les fautes, etc.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-en/les-bases.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Les bases 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/la-camera.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           La caméra 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/l-affichage.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           L'affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/le-personnage.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Le personnage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-en/la-physique-et-la-partie.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           La physique et la partie 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Steps</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-en/les-bases.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Les bases 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/la-camera.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          La caméra 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/l-affichage.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          L'affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/le-personnage.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Le personnage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-en/la-physique-et-la-partie.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          La physique et la partie 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>
