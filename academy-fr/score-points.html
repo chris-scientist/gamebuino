@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/learn-to-code-a-snake-game-with-python.html"> Snake (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Marquer des points </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Marquer des points </h1> 
+        <h5> Étape 5 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Gestion de l'extension de la queue du serpent.<br> Gestion et affichage du score.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h3>Quand le serpent&nbsp;s'allonge...</h3> 
+        <p>On va maintenant s'intéresser à la progression du jeu et à l'accroissement de la difficulté, qui est corrélée à l'allongement de la queue du serpent. Ce phénomène se produit à chaque fois que le serpent avale une pomme.</p> 
+        <p>Commençons par écrire une fonction <code>extendSnakeTail()</code> qui va gérer l'allongement de la queue&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def extendSnakeTail():
+    i = snake['head']
+    n = snake['len']
+    i = (i + 1) % n
+    x = snake['x'][i]
+    y = snake['y'][i]
+    for _ in range(SNAKE_EXTENT):
+        snake['x'].insert(i, x)
+        snake['y'].insert(i, y)
+    snake['len'] += SNAKE_EXTENT
+</code></pre> 
+        <p>Cette fonction s'appuie sur une nouvelle variable globale qui détermine la longueur de queue supplémentaire, c'est-à-dire le nombre de tronçons qu'on va ajouter au serpent&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+SNAKE_EXTENT = 2
+</code></pre> 
+        <p>La fonction <code>extendSnakeTail()</code> est relativement simple&nbsp;:</p> 
+        <p>On commence par se positionner sur l'extrémité de la queue du serpent (qui se trouve être la case qui suit immédiatement la tête) au niveau des listes <code>snake['x']</code> et <code>snake['y']</code>&nbsp;:</p> 
+        <pre><code class="language-python">i = snake['head']
+n = snake['len']
+i = (i + 1) % n
+</code></pre> 
+        <p>On pioche alors la position <code>(x,y)</code> de l'extrémité de la queue&nbsp;:</p> 
+        <pre><code class="language-python">x = snake['x'][i]
+y = snake['y'][i]
+</code></pre> 
+        <p>Puis on va insérer, toujours à l'extrémité de la queue, des copies de <code>x</code> et <code>y</code> (<code>SNAKE_EXTENT</code> copies plus précisément)&nbsp;:</p> 
+        <pre><code class="language-python">for _ in range(SNAKE_EXTENT):
+    snake['x'].insert(i, x)
+    snake['y'].insert(i, y)
+</code></pre> 
+        <p>Enfin, on met à jour la propriété qui caractérise la longueur des listes <code>snake['len']</code>&nbsp;:</p> 
+        <pre><code class="language-python">snake['len'] += SNAKE_EXTENT
+</code></pre> 
+        <p>Voilà un schéma qui résume la succession des opérations effectuées&nbsp;:</p> 
+        <div style="max-width:100%;width:450px;height:215px;margin:1.5em auto;"> 
+         <img src="../assets/6-snake-extension-901x429.png" alt="Gamebuino META" style="max-width:100%"> 
+        </div> 
+        <p>Par conséquent, les <code>2</code> tronçons supplémentaires occupent initialement la même position que celui de l'extrémité de la queue (puisque ce sont des copies). Ils se «&nbsp;dérouleront&nbsp;» progressivement au fur et à mesure que le serpent avancera sur la grille.</p> 
+        <p>Il ne reste plus qu'à intégrer cette routine au niveau de l'ordonnanceur&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        spawnApple()
+        game['mode'] = MODE_READY
+    elif game['mode'] == MODE_READY:
+        handleButtons()
+        moveSnake()
+        if snakeHasMoved():
+            game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if didSnakeEatApple():
+            extendSnakeTail()
+            spawnApple()
+        if didSnakeBiteItsTail() or didSnakeHitTheWall():
+            game['mode'] = MODE_START
+
+    draw()
+</code></pre> 
+        <p>L'extension de la queue s'effectue pendant la phase <code>MODE_PLAY</code> lorsque le serpent avale une pomme&nbsp;:</p> 
+        <pre><code class="language-python">if didSnakeEatApple():
+    extendSnakeTail()
+    spawnApple()
+</code></pre> 
+        <p>Et voilà&nbsp;! Démonstration&nbsp;:</p> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/6-demo-tail-extension-640x512.gif" alt="Démo" style="max-width:100%"> 
+        </div> 
+        <p>Parfait ! Maintenant, on va pouvoir s'occuper du score du joueur...</p> 
+        <h3>Gestion du score</h3> 
+        <p>Pour mémoriser le score au fur et à mesure de la progression du jeu, on va le stocker au niveau du moteur de jeu <code>game</code>&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Initialization
+# ----------------------------------------------------------
+
+game = {
+    'mode':  MODE_START,
+    'score': 0
+}
+</code></pre> 
+        <p>Ensuite, on va l'incrémenter à chaque fois que le serpent avale une pomme. Et il ne faut pas oublier de le réinitialiser à chaque fois que le jeu passe en phase <code>MODE_START</code>&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        spawnApple()
+        game['mode'] = MODE_READY
+        game['score'] = 0
+    elif game['mode'] == MODE_READY:
+        handleButtons()
+        moveSnake()
+        if snakeHasMoved():
+            game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if didSnakeEatApple():
+            game['score'] += 1
+            extendSnakeTail()
+            spawnApple()
+        if didSnakeBiteItsTail() or didSnakeHitTheWall():
+            game['mode'] = MODE_START
+
+    draw()
+</code></pre> 
+        <p>Réinitialisation du score en début de partie&nbsp;:</p> 
+        <pre><code class="language-python">if game['mode'] == MODE_START:
+    resetSnake()
+    spawnApple()
+    game['mode'] = MODE_READY
+    game['score'] = 0
+</code></pre> 
+        <p>Augmentation du score à chaque fois que le serpent avale une pomme&nbsp;:</p> 
+        <pre><code class="language-python">if didSnakeEatApple():
+    game['score'] += 1
+    extendSnakeTail()
+    spawnApple()
+</code></pre> 
+        <p>Il ne reste plus qu'à afficher le score&nbsp;! Pour cela on va définir une nouvelle variable globale pour déterminer sa couleur d'affichage&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+COLOR_SCORE = 0xffff
+</code></pre> 
+        <p>Puis on va ajouter une fonction <code>drawScore()</code> qui sera chargée de l'afficher à l'écran, qu'on appellera à partir de la méthode principale <code>draw()</code>, responsable de l'affichage global de la scène de jeu&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def draw():
+    clearScreen()
+    drawWalls()
+    drawSnake()
+    drawScore()
+    drawApple()
+
+def drawScore():
+    display.setColor(COLOR_SCORE)
+    display.print(2, 2, game['score'])
+</code></pre> 
+        <p>Le score est affiché aux coordonnées <code>(2,2)</code>.</p> 
+        <p>Allez&nbsp;!... On sauve le script et on peut maintenant admirer le résultat&nbsp;:</p> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/6-demo-score-640x512.gif" alt="Démo" style="max-width:100%"> 
+        </div> 
+        <p>On a pratiquement terminé notre Snake&nbsp;!&nbsp;&nbsp;<i class="far fa-smile"></i></p> 
+        <p>Il nous reste à optimiser un peu les choses et à apporter quelques touches de finitions pour terminer la partie en beauté.</p> 
+        <p>Direction la prochaine étape&nbsp;!</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Mise en place 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Modélisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Contrôle et affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Imposer des règles 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Marquer des points 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Optimisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           8 
+         </div> 
+         <div class="title ml-3">
+           Finitions 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Mise en place 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Modélisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Contrôle et affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Imposer des règles 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Marquer des points 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Optimisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          8 
+        </div> 
+        <div class="title ml-3">
+          Finitions 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

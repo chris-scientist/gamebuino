@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/sokoban-vs-poo.html"> Apprenez la programmation orientée objet avec Sokoban </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Le personnage </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Le personnage </h1> 
+        <h5> Étape 4 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Nous allons voir dans cette quatrième étape la gestion du personnage, ainsi à la fin de cette étape nous serons en mesure de déplacer le personnage (sans contrainte de physique : on pourra traverser les murs par exemple).</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h2>Introduction</h2> 
+        <p>Les <strong>pré-requis</strong> de cette étape sont :</p> 
+        <ul> 
+         <li>Avoir réaliser l'étape 1, l'étape 2 et l'étape 3 de ce workshop.</li> 
+        </ul> 
+        <p>Je vous invite à télécharger <span>le code</span> qui est le résultat de la troisième étape, ceci pour partir sur des bases communes.</p> 
+        <h2>Création des bases</h2> 
+        <p>Nous allons dans un premier temps définir toutes les méthodes transverses au déplacement, c'est-à-dire qu'on utilise quand on se déplace dans n'importe quelle direction.</p> 
+        <p>Nous avons besoin d'un moyen d'agir sur la carte, en effet il va falloir déplacer le personnage mais aussi remplacer l'ancienne position du personnage par un sprite. Pour ce faire nous allons écrire un <em>setter</em>, il s'agit d'une méthode qui modifie un attribut. Le setter en question est setTypeOfSprites de la classe MapModel, que voici :</p> 
+        <pre><code>void MapModel::setTypeOfSprites(const int aXSprites, const int aYSprites, const char aTypeOfSprites) {
+  mapOfGame[aYSprites][aXSprites] = aTypeOfSprites;
+}
+</code></pre> 
+        <p>Nous allons maintenant intervenir dans la classe CharacterModel.</p> 
+        <p>D'abord, il faut créer le getter sur la nouvelle position soit la méthode getNextPos :</p> 
+        <pre><code>const int * CharacterModel::getNextPos() const {
+  return nextPos;
+}
+</code></pre> 
+        <p>Ensuite, créons le getter sur l'ancien sprites soit la méthode getOldTypeOfSprites :</p> 
+        <pre><code>const char CharacterModel::getOldTypeOfSprites() const {
+  return oldTypeOfSprites;
+}
+</code></pre> 
+        <p>Créons le setter sur l'ancien sprites soit la méthode setOldTypeOfSprites :</p> 
+        <pre><code>void CharacterModel::setOldTypeOfSprites(const char aOldTypeOfSprites) {
+  oldTypeOfSprites = aOldTypeOfSprites;
+}
+</code></pre> 
+        <p>Créons la méthode updatePositions, cette méthode affecte la position suivante (nextPos) à la position courante comme ceci :</p> 
+        <pre><code>void CharacterModel::updatePositions() {
+  x = nextPos[0];
+  y = nextPos[1];
+}
+</code></pre> 
+        <p>Enfin créons la méthode resetNextPositions, cette méthode réinitialise la position suivante avec la position courante comme ceci :</p> 
+        <pre><code>void CharacterModel::resetNextPositions() {
+  nextPos[0] = x;
+  nextPos[1] = y;
+}
+</code></pre> 
+        <p>Il reste une derniÞre méthode transverse, en effet il faut calculer le sprites du joueur : s'agit-il du joueur ou du joueur sur une zone de 'chargement' ? Pour le déterminer on s'appuie sur le sprites à remplacer. Voici le pseudo code de la méthode getPlayerSprites de CharacterController, on précise que le sprites à remplacer se nomme aReplacedSprites :</p> 
+        <pre><code>SI aReplacedSprites = zone de chargement OU aReplacedSprites = caisse sur zone de chargement ALORS
+  Retourner sprites joueur sur zone de chargement
+SINON
+  Retourner sprites du joueur
+FIN SI
+</code></pre> 
+        <p>Voici le code correspondant :</p> 
+        <pre><code>char CharacterController::getPlayerSprites(const char aReplacedSprites) const {
+  if((aReplacedSprites == TypeOfSprites::DESTINATION_TYPE) || (aReplacedSprites == TypeOfSprites::BOX_ON_ZONE_TYPE)) {
+    return TypeOfSprites::PLAYER_ON_ZONE_TYPE;
+  }
+  return TypeOfSprites::PLAYER_TYPE;
+}
+</code></pre> 
+        <p>Nous venons d'écrire toutes les méthodes tranverses au déplacement.</p> 
+        <h2>Se déplacer vers le haut</h2> 
+        <p>Déplacer le personnage vers le haut nécessite d'écrire deux méthodes.</p> 
+        <p>Dans un premier temps, il faut calculer les coordonnées fictives qui correspondent au déplacement. Pourquoi des coordonnées fictives ? Et bien c'est assez simple à comprendre : imaginez que le personnage est en haut de la carte et qu'il souhaite aller encore plus haut, et bien il faut interdire ce déplacement et ne pas modifier les coordonnées du personnage.</p> 
+        <p>Pour aller en haut il faut définir la méthode goUp de CharacterModel, pour ce faire on cherche à modifier la coordonnée "y" du personnage comme ceci :</p> 
+        <pre><code>void CharacterModel::goUp() {
+  nextPos[1] = y - 1;
+}
+</code></pre> 
+        <p>Dans un second temps, il faut écrire l'ensemble des actions nécessaire au déplacement vers le haut, ceci sera réalisé dans CharacterController et précisément dans la méthode goUp. goUp ? Mais on a déjà une méthode de ce nom dans CharacterModel ? C'est vrai, si le C++ n'autorise pas d'écrire deux fois une fonction avec le même nom (et la même signature), et bien vous pouvez en orienté objet écrire la méthode x dans la classe A mais également écrire une méthode x dans la classe B et avec la même signature. Voyons le pseudo code de CharacterController::goUp :</p> 
+        <pre><code>Calculer la position fictive relative à un déplacement vers le haut
+Récupérer le sprites relatif à la position fictive
+SI nous sommes toujours sur la carte avec la position fictive ALORS
+  Ecraser la position fictive avec la tuile correspondant au joueur
+  Remplacer l'ancienne position du joueur par le sprites qui s'y trouvait avant
+  Stocker le sprites relatif à la position fictive
+  Mettre à jour la position du personnage
+SINON
+  Réintialiser la position fictive
+FIN SI
+</code></pre> 
+        <p>Avant de donner la solution le contrôle si nous sommes toujours sur la carte est relatif au déplacement effectué, en effet ce ne sera pas le même lorsque nous allons en bas ou dans n'importe quelle autre direction. Le contrôle pour un déplacement vers le haut est le suivant :</p> 
+        <pre><code>character-&gt;getNextPos()[1] &gt;= 0
+</code></pre> 
+        <p>Voici le code de cette méthode :</p> 
+        <pre><code>void CharacterController::goUp() {
+  // calcul de la nouvelle position
+  character-&gt;goUp();
+  // récupérer la tuile de la nouvelle position
+  char newTypeOfSprites = mapModel-&gt;getTypeOfSprites(character-&gt;getNextPos()[0], character-&gt;getNextPos()[1]);
+  // si la nouvelle position du personnage est sur la carte
+  if(character-&gt;getNextPos()[1] &gt;= 0) {
+    // écraser nouvelle position par la tuile du joueur
+    mapModel-&gt;setTypeOfSprites(character-&gt;getNextPos()[0], character-&gt;getNextPos()[1], getPlayerSprites(newTypeOfSprites));
+    // remplacer ancienne position par la tuile qui était à cette position précédement
+    mapModel-&gt;setTypeOfSprites(character-&gt;getX(), character-&gt;getY(), character-&gt;getOldTypeOfSprites());
+    // stocker la tuile de la nouvelle position
+    character-&gt;setOldTypeOfSprites(newTypeOfSprites);
+    // mettre à jour la position
+    character-&gt;updatePositions();
+  } else {
+    // remettre à zéro la position suivante
+    character-&gt;resetNextPositions();
+  }
+}
+</code></pre> 
+        <p>Vous pouvez compiler votre projet et tester... Rien ne se passe quand vous appuez sur la flèche du haut !? C'est normal, nous verrons à la fin de cette étape comment animer notre personnage, soyez patient.</p> 
+        <h2>Quelques pistes pour les autres déplacements</h2> 
+        <p>Pour les autres direction le principe est le même que pour le déplacement vers le haut, il faut simplement faire quelques adaptations. Je dresse ici une brève aide afin d'écrire les autres déplacements.</p> 
+        <p><strong>Aller vers la droite</strong></p> 
+        <p>Pour ce faire il faut écrire la méthode CharacterModel::goRight comme ceci :</p> 
+        <pre><code>void CharacterModel::goRight() {
+  nextPos[0] = x + 1;
+}
+</code></pre> 
+        <p>Puis écrire la méthode CharacterController::goRight à l'image de goUp, le contrôle est cette fois-ci le suivant :</p> 
+        <pre><code>character-&gt;getNextPos()[0] &lt; MapModel::WIDTH_MAP
+</code></pre> 
+        <p><strong>Aller vers le bas</strong></p> 
+        <p>Pour ce faire il faut écrire la méthode CharacterModel::goDown comme ceci :</p> 
+        <pre><code>void CharacterModel::goDown() {
+  nextPos[1] = y + 1;
+}
+</code></pre> 
+        <p>Puis écrire la méthode CharacterController::goDown à l'image de goUp, le contrôle est cette fois-ci le suivant :</p> 
+        <pre><code>character-&gt;getNextPos()[1] &lt; MapModel::HEIGHT_MAP
+</code></pre> 
+        <p><strong>Aller vers la gauche</strong></p> 
+        <p>Pour ce faire il faut écrire la méthode CharacterModel::goLeft comme ceci :</p> 
+        <pre><code>void CharacterModel::goLeft() {
+  nextPos[0] = x - 1;
+}
+</code></pre> 
+        <p>Puis écrire la méthode CharacterController::goLeft à l'image de goUp, le contrôle est cette fois-ci le suivant :</p> 
+        <pre><code>character-&gt;getNextPos()[0] &gt;= 0
+</code></pre> 
+        <h2>Association avec la croix directionnelle</h2> 
+        <p>Une fois chaque déplacement développé, il nous reste à associer la croix directionnelle à chaque mouvement. Nous allons pour ce faire définir la méthode CharacterController::run.</p> 
+        <p>Il faut déplacer le personnage à chaque pression sur l'une des flèches ce qui ce traduit par l'utilisation de :</p> 
+        <pre><code>gb.buttons.pressed(UN_BOUTON)
+</code></pre> 
+        <p>Le pseudo code est :</p> 
+        <pre><code>SI le joueur appuie sur la flèche du haut ALORS
+  Aller vers le haut
+SINON SI le joueur appuie sur la flèche de droite ALORS
+  Aller vers la droite
+SINON SI le joueur appuie sur la flèche du bas ALORS
+  Aller vers le bas
+SINON SI le joueur appuie sur la flèche de gauche ALORS
+  Aller vers la gauche
+FIN SI
+</code></pre> 
+        <p>Voici le code :</p> 
+        <pre><code>void CharacterController::run() {
+  if(gb.buttons.pressed(BUTTON_UP)) {
+    goUp();
+  } else if(gb.buttons.pressed(BUTTON_RIGHT)) {
+    goRight();
+  }  else if(gb.buttons.pressed(BUTTON_DOWN)) {
+    goDown();
+  } else if(gb.buttons.pressed(BUTTON_LEFT)) {
+    goLeft();
+  }
+}
+</code></pre> 
+        <p>Enfin dans MainController::run il faut faire un appel à la méthode que l'on vient d'écrire comme ceci :</p> 
+        <pre><code>void MainController::run() {
+  //gb.display.println("v2.0.0"); // A SUPPRIMER
+  //gb.display.printf("Player pos %d,%d", characterController-&gt;getX(), characterController-&gt;getY());
+  //gb.display.println("");
+  characterController-&gt;run();
+  const int* cameraPos = cameraModel-&gt;getCameraPositions(characterController-&gt;getX(), characterController-&gt;getY());
+  //gb.display.printf("Cam %d,%d : %d,%d", cameraPos[0], cameraPos[1], cameraPos[2], cameraPos[3]);
+  //gb.display.println("");
+  mapController-&gt;paint(cameraPos);
+}
+</code></pre> 
+        <p>Notre personnage est maintenant capable de se déplacer dans les limites de la carte à l'aide de la croix directionnelle.</p> 
+        <p>Si vous avez terminé ou si vous rencontrez des problèmes vous pouvez télécharger la solution <span>ici</span>.</p> 
+        <p>Dans la prochaine étape, c'est-à-dire la cinquième et dernière, nous réaliserons la gestion de la physique ainsi que la fin de partie.</p> 
+        <p>N'hésitez pas à me faire un retour : les améliorations que vous apporteriez (un regard extérieur est toujours bienvenu), les fautes, etc.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/les-bases.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Les bases 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/la-camera.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           La caméra 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/l-affichage.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           L'affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/le-personnage.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Le personnage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/la-physique-et-la-partie.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           La physique et la partie 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/les-bases.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Les bases 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/la-camera.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          La caméra 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/l-affichage.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          L'affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/le-personnage.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Le personnage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/la-physique-et-la-partie.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          La physique et la partie 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

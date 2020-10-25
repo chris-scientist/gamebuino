@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/discover-python-programming.html"> Premiers pas (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Modifiez les graphismes et la difficulté </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Modifiez les graphismes et la difficulté </h1> 
+        <h5> Étape 6 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Nous avons mis en application ce que nous avons appris sur les variables. Jouons un peu avec les graphismes et les mécaniques de jeu !</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h2>Challenge #5</h2> 
+        <p>Notre raquette et notre balle ont une hauteur et une largeur, en pixels. Ces valeurs sont définies dans des variables. De plus, elles sont toutes blanches... Nous aimerions rendre le jeu un peu plus simple. Essayez de rendre la raquette et la balle un peu plus grandes, et d'afficher les deux dans des couleurs différentes !</p> 
+        <h4>Besoin d'aide ?</h4> 
+        <ul> 
+         <li>Les tailles sont stockées dans des variables, trouvez où elles sont ! La raquette possède une hauteur et une largeur, tandis que la balle n'a qu'une seule variable (car sa hauteur et sa largeur sont identiques).</li> 
+         <li>Pour ce qui est de la couleur, c'est exactement le même principe que pour le texte. Il vous suffit de trouver à quel endroit sont affichés les éléments souhaités, puis de rajouter une instruction pour modifier la couleur juste avant. Par exemple, pour le rouge : <code>display.setColor(color.RED)</code> </li> 
+        </ul> 
+        <h4>Résultat attendu</h4> 
+        <p>Vous êtes libre de choisir les tailles et couleurs de votre choix, mais voici un exemple de ce que vous pouvez faire !</p> 
+        <p><img src="../assets/20190325_142548.jpg" alt="" style="max-width:100%"></p> 
+        <h4>Solution</h4> 
+        <details> <summary>Voir</summary> 
+         <div> 
+          <p>Il s'agit d'une solution possible, la votre est peut-être différente !</p> 
+          <pre><code>from gamebuino_meta import begin, waitForUpdate, display, color, buttons, collide
+
+# Taille, vitesse et position initiale de la balle :
+ball_size = 3
+ball_x_speed = 1
+ball_y_speed = 1
+ball_x_position = 20
+ball_y_position = 20
+
+# Taille initiale de la raquette du joueur :
+player_height = 12
+player_width = 3
+player_speed = 2
+
+# Position initiale de la raquette :
+player_x_position = 10
+player_y_position = 30
+
+# Score
+score = 0
+total = 0
+
+begin()
+
+while True:
+    waitForUpdate()
+    display.clear()
+
+    # Si on presse les boutons UP ou DOWN, nous déplaçons la raquette vers le haut, ou vers le bas :
+    if buttons.repeat(buttons.UP, 0):
+        player_y_position = player_y_position - player_speed
+
+    if buttons.repeat(buttons.DOWN, 0):
+        player_y_position = player_y_position + player_speed
+
+    # Nous déplaçons la balle
+    ball_x_position = ball_x_position + ball_x_speed
+    ball_y_position = ball_y_position + ball_y_speed
+
+    # Vérification si la balle entre en collision avec le haut, bas ou droite de l'écran
+    # Si c'est le cas, nous inversons sa direction
+    if ball_y_position &lt;= 0:
+        ball_y_speed = -ball_y_speed
+
+    if ball_y_position &gt;= 64 - ball_size:
+        ball_y_speed = -ball_y_speed
+
+    if ball_x_position + ball_size &gt;= 80:
+        ball_x_speed = -ball_x_speed
+
+    # Nous testons s'il y a collision entre la balle et la raquette du joueur
+    if (    (ball_x_position &lt;= player_x_position + player_width)
+            and (ball_y_position + ball_size &gt;= player_y_position)
+            and (ball_y_position &lt;= player_y_position + player_height)
+        ):
+        ball_x_speed = -ball_x_speed
+        score = score + 1
+        total = total + 1
+		
+    # Vérifier si la balle est sortie de l'écran
+    if ball_x_position &lt;= 0:
+        score = 0  # Nous remettons le score à 0
+        ball_x_speed = -ball_x_speed
+				
+    # Empêcher la raquette de sortir de l'écran
+    if player_y_position &lt;= 0:
+        player_y_position = 0
+    
+    if player_y_position &gt;= 64 - player_height:
+        player_y_position = 64 - player_height
+
+    # Affichage de la balle
+    display.setColor(color.PINK)
+    display.fillRect(ball_x_position, ball_y_position, ball_size, ball_size)
+
+    # Affichage de la raquette du joueur
+    display.setColor(color.BROWN)
+    display.fillRect(player_x_position, player_y_position, player_width, player_height)
+	
+	# Affichage du score
+    display.setColor(color.GREEN)
+    display.print("Mon score est ")
+    display.print(score)
+	
+    display.print("\n")
+    
+    display.setColor(color.BLUE)
+    display.print("Total : ")
+    display.print(total)
+</code></pre> 
+         </div> 
+        </details> 
+        <h4>Explications</h4> 
+        <p>En modifiant la valeur de <code>ball_size</code> à 6, notre balle fait désormais 6 pixels de haut, et 6 pixels de large. Pour la raquette, nous avons modifié <code>player_height</code> et <code>player_width</code>. C'est tout ! Enfin, nous avons changé la couleur juste avant l'affichage de nos éléments : la raquette en marron (<code>color.BROWN</code>), et la balle en rose (<code>color.PINK</code>). Le jeu est désormais un peu plus simple !</p> 
+        <h2>Aller plus loin</h2> 
+        <p>Trop simple, même ? Et si nous faisions l'inverse : rendre le jeu plus difficile ?</p> 
+        <p>Quelques pistes :</p> 
+        <ul> 
+         <li>Diminuer la taille de la raquette et de la balle</li> 
+         <li>Augmenter la vitesse de la balle</li> 
+         <li>Offrir 2 points au lieu de 1 à chaque renvoi réussi</li> 
+         <li>...</li> 
+        </ul> 
+        <p>Nous ne vous donnons pas d'exemple ici, mais nous sommes certains que vous serez créatifs !</p> 
+        <p>Nous sommes arrivés à la fin de ce workshop, et nous espérons qu'il vous aura donné envie d'aller un peu plus loin dans l'apprentissage du Python. D'autres workshops vont arriver prochainement, mais d'ici là, vous avez assez de connaissances pour pouvoir vous amuser et pratiquer de votre côté !</p> 
+        <h2>Remarques et infos utiles</h2> 
+        <p>Maintenant que vous avez fait vos premiers pas, vous êtes sûrement impatient de vous lancer dans une vraie création et de pouvoir y jouer sur votre Gamebuino où et quand vous le souhaitez !</p> 
+        <p>Toutefois, le développement de l'environnement Python sur Gamebuino est très récent et certaines choses ne sont pas encore possible à l'heure d'aujourd'hui.</p> 
+        <h5>Code.py n'est pas persistant :</h5> 
+        <p>Lorsque vous sauvez le fichier code.py sur le volume CIRCUITPY de votre Gamebuino, celui est interprété et exécuté directement sur la console. Mais à l'heure actuelle il n'est pas encore possible de sauver ce fichier code.py sur la carte SD et de le monter dans CircuitPython sans que vous soyez raccordé à un ordinateur pour effectuer manuellement l'opération. Il y a encore des choses à développer avant que cela ne soit possible.</p> 
+        <p>Pour le moment la seule façon d'avoir une création persistante exécutable depuis le menu de la Gamebuino est d'utiliser <a href="/gamebuino/academy-fr/start-with-your-gamebuino.html">l'environnement Arduino/C++</a> de la Gamebuino.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/installation-and-prerequisites.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Installation et pré-requis 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/run-your-first-program.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Exécutez votre premier programme 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/display-text-on-the-screen.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Affichez du texte à l'écran 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/a-little-bit-of-colour.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Un peu de couleur 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/variables-what-are-they.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Des variables, qu'est ce que c'est ? 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/program-a-pong.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Programmez un Pong ! 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/change-graphics-and-difficulty.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Modifiez les graphismes et la difficulté 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/installation-and-prerequisites.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Installation et pré-requis 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/run-your-first-program.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Exécutez votre premier programme 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/display-text-on-the-screen.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Affichez du texte à l'écran 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/a-little-bit-of-colour.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Un peu de couleur 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/variables-what-are-they.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Des variables, qu'est ce que c'est ? 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/program-a-pong.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Programmez un Pong ! 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/change-graphics-and-difficulty.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Modifiez les graphismes et la difficulté 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

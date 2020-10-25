@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/learn-to-code-a-snake-game-with-python.html"> Snake (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Contrôle et affichage </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Contrôle et affichage </h1> 
+        <h5> Étape 3 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Interception des interactions utilisateur.<br> Contrôle des déplacements du serpent.<br> Affichage du serpent sur la scène de jeu.<br> Ordonnancement des tâches du moteur de jeu.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h3>Contrôler les déplacements du serpent</h3> 
+        <p>Le joueur contrôle les déplacements du serpent en utilisant le PAD directionnel de la META, c'est-à-dire les boutons <code>LEFT</code>, <code>RIGHT</code>, <code>UP</code> et <code>DOWN</code>&nbsp;:</p> 
+        <div style="max-width:100%;width:524px;height:246px;margin:1.5em auto;"> 
+         <img src="../assets/4-gamebuino-meta-1048x492.png" alt="Gamebuino META" style="max-width:100%"> 
+        </div> 
+        <p>En fonction du bouton sur lequel le joueur aura appuyé, il suffira d'appeler une fonction <code>dirSnake()</code> chargée d'appliquer une commande directionnelle pour modifier le déplacement du serpent.</p> 
+        <div style="max-width:100%;width:254px;height:257px;margin:1.5em auto;"> 
+         <img src="../assets/4-directional-controls-508x514.png" alt="Commandes directionnelles" style="max-width:100%"> 
+        </div> 
+        <p>Cette fonction se définit très simplement&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def dirSnake(dx, dy):
+    snake['vx'] = dx
+    snake['vy'] = dy 
+</code></pre> 
+        <p><code>dx</code> et <code>dy</code> sont en effet directement associés à la vitesse de déplacement du serpent, puisqu'ils correspondent exactement à des variations instantanées de positions.</p> 
+        <p>Il existe plusieurs manières d'intercepter la façon dont le joueur agit sur les boutons de la console. Nous utiliserons l'une d'entre elles, qui permet simplement de détecter si le joueur enfonce un bouton en particulier. Par exemple&nbsp;:</p> 
+        <pre><code class="language-python">buttons.pressed(buttons.LEFT)
+</code></pre> 
+        <p>retourne un booléen (<code>True</code> ou <code>False</code>) selon que le bouton <code>LEFT</code> est enfoncé ou non.</p> 
+        <p>Les commandes directionnelles peuvent alors être facilement appliquées de la manière suivante&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def handleButtons():
+    if buttons.pressed(buttons.LEFT):
+        dirSnake(-1, 0)
+    elif buttons.pressed(buttons.RIGHT):
+        dirSnake(1, 0)
+    elif buttons.pressed(buttons.UP):
+        dirSnake(0, -1)
+    elif buttons.pressed(buttons.DOWN):
+        dirSnake(0, 1)
+</code></pre> 
+        <p><code>elif</code> est la contraction de <code>else if</code> et permet de relancer le test sur une nouvelle condition.</p> 
+        <p>À ce stade, le serpent ne se déplace pas encore véritablement... en effet, on n'a fait que lui affecter une vitesse. Il faut maintenant mettre en œuvre son déplacement en modifiant la position de sa tête en fonction de la vitesse qu'on vient de lui appliquer&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def moveSnake():
+    h = snake['head']
+    x = snake['x'][h]
+    y = snake['y'][h]
+    h = (h + 1) % snake['len']
+    snake['x'][h] = x + snake['vx']
+    snake['y'][h] = y + snake['vy']
+    snake['head'] = h
+</code></pre> 
+        <p>La fonction <code>moveSnake()</code> récupère d'abord les coordonnées de la tête du serpent dans les listes <code>snake['x']</code> et <code>snake['y']</code>&nbsp;:</p> 
+        <pre><code class="language-pyhton">h = snake['head']
+x = snake['x'][h]
+y = snake['y'][h]
+</code></pre> 
+        <p>Puis elle avance la tête de lecture d'un cran, en effectuant une rotation grâce à l'opérateur modulo <code>%</code>&nbsp;:</p> 
+        <pre><code class="language-python">h = (h + 1) % snake['len']
+</code></pre> 
+        <p>La nouvelle position de la tête du serpent est alors calculée et enregistrée dans les listes à l'endroit pointé par la tête de lecture&nbsp;:</p> 
+        <pre><code class="language-python">snake['x'][h] = x + snake['vx']
+snake['y'][h] = y + snake['vy']
+</code></pre> 
+        <p>On sauvegarde enfin la nouvelle position de la tête de lecture&nbsp;:</p> 
+        <pre><code class="language-python">snake['head'] = h
+</code></pre> 
+        <h3>Afficher le serpent sur la scène</h3> 
+        <p>À l'étape précédente, nous en étions restés à la définition suivante pour la fonction <code>draw()</code>, chargée d'effectuer le rendu graphique de la scène de jeu&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def draw():
+    display.clear(COLOR_BG)
+    display.setColor(COLOR_WALL)
+    display.drawRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+</code></pre> 
+        <p>On va avoir besoin de définir une nouvelle variable globale pour la couleur du serpent&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+COLOR_SNAKE = 0xfd40
+</code></pre> 
+        <p>Et maintenant que les élément sur la scène commencent à se multiplier, on va aussi structurer l'affichage en créant des fonctions plus spécialisées&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def draw():
+    clearScreen()
+    drawWalls()
+
+def clearScreen():
+    display.clear(COLOR_BG)
+
+def drawWalls():
+    display.setColor(COLOR_WALL)
+    display.drawRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+</code></pre> 
+        <p>On va y ajouter une nouvelle fonction <code>drawSnake()</code> qui sera chargée d'afficher le serpent sur la grille. La manière la plus simple d'afficher le serpent est de dessiner un à un chacun de ses tronçons&nbsp;:</p> 
+        <pre><code class="language-python">def drawSnake():
+    display.setColor(COLOR_SNAKE)
+    n = snake['len']
+    for i in range(n):
+        x = snake['x'][i]
+        y = snake['y'][i]
+        display.fillRect(
+            OX + x * SNAKE_SIZE,
+            OY + y * SNAKE_SIZE,
+            SNAKE_SIZE,
+            SNAKE_SIZE
+        )
+</code></pre> 
+        <p>Pour cela, on parcourt simplement les listes <code>snake['x']</code> et <code>snake['y']</code> pour y piocher les coordonnées de chaque tronçon et on dessine un rectangle de la taille d'une cellule de la grille. Néanmoins, il ne s'agit pas de la manière la plus rapide d'exécuter ce tracé. Nous verrons dans une prochaine étape comment l'optimiser.</p> 
+        <p>Pour le moment, ajoutons l'appel à cette nouvelle fonction dans notre fonction <code>draw()</code>&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def draw():
+    clearScreen()
+    drawWalls()
+    drawSnake()
+</code></pre> 
+        <h3>Intégration à l'ordonnanceur</h3> 
+        <p>Maintenant, il nous reste à intégrer tout ce que nous venons de faire à l'ordonnanceur principal pour que le jeu commence enfin à prendre forme.</p> 
+        <p>Pour cela, nous allons organiser les tâches à exécuter en fonction des phases du jeu. Au départ, quand le jeu démarre, il faut réinitialiser le serpent. Puis, on lance la partie et on active le contrôleur chargé d'observer le comportement du joueur en examinant les boutons de la console. L'affichage de la scène de jeu doit être réalisé également.</p> 
+        <p>Pour modéliser ces différentes phase du jeu, on va définir quelques variables globales&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+MODE_START = 0
+MODE_PLAY  = 1
+</code></pre> 
+        <p>Puis on va définir un nouveau dictionnaire pour représenter, en quelque sorte, le moteur du jeu&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Initialization
+# ----------------------------------------------------------
+
+game = {
+    'mode': MODE_START
+}
+</code></pre> 
+        <p>Le moteur de jeu va donc gérer les différentes phases du jeu.</p> 
+        <p>Maintenant, revenons sur notre fonction <code>tick()</code>, chargée d'appliquer l'ordonnancement des différentes tâches&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+
+    draw()
+</code></pre> 
+        <p>Et voyons un peu ce que ça donne&nbsp;:</p> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/4-demo-640x512.gif" alt="Démo" style="max-width:100%"> 
+        </div> 
+        <p>Ça marche plutôt bien, nan&nbsp;?</p> 
+        <p>Bon... ok, la détection des murs n'est pas encore implémentée... ni le fait que le serpent ne puisse pas rebrousser chemin... car, dans ce cas, il se mordrait la queue. Nous allons traiter ces cas de figure à l'étape suivante&nbsp;!</p> 
+        <p>Voici le script <code>code.py</code> complet, qui intègre tout ce que nous avons fait jusqu'à maintenant&nbsp;:</p> 
+        <pre><code class="language-python">from gamebuino_meta import waitForUpdate, display, color, buttons
+
+# ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+SCREEN_WIDTH  = 80
+SCREEN_HEIGHT = 64
+SNAKE_SIZE    = 2
+SNAKE_LENGTH  = 4
+COLS          = (SCREEN_WIDTH  - 4) // SNAKE_SIZE
+ROWS          = (SCREEN_HEIGHT - 4) // SNAKE_SIZE
+OX            = (SCREEN_WIDTH  - COLS * SNAKE_SIZE) // 2
+OY            = (SCREEN_HEIGHT - ROWS * SNAKE_SIZE) // 2
+COLOR_BG      = 0x69c0
+COLOR_WALL    = 0xed40
+COLOR_SNAKE   = 0xfd40
+MODE_START    = 0
+MODE_PLAY     = 1
+
+# ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+
+    draw()
+
+def handleButtons():
+    if buttons.pressed(buttons.LEFT):
+        dirSnake(-1, 0)
+    elif buttons.pressed(buttons.RIGHT):
+        dirSnake(1, 0)
+    elif buttons.pressed(buttons.UP):
+        dirSnake(0, -1)
+    elif buttons.pressed(buttons.DOWN):
+        dirSnake(0, 1)
+
+# ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def resetSnake():
+    x = COLS // 2
+    y = ROWS // 2
+    snake['x'] = []
+    snake['y'] = []
+    for _ in range(SNAKE_LENGTH):
+        snake['x'].append(x)
+        snake['y'].append(y)
+    snake['head'] = SNAKE_LENGTH - 1
+    snake['len']  = SNAKE_LENGTH
+    snake['vx'] = 0
+    snake['vy'] = 0
+
+def dirSnake(dx, dy):
+    snake['vx'] = dx
+    snake['vy'] = dy
+
+def moveSnake():
+    h = snake['head']
+    x = snake['x'][h]
+    y = snake['y'][h]
+    h = (h + 1) % snake['len']
+    snake['x'][h] = x + snake['vx']
+    snake['y'][h] = y + snake['vy']
+    snake['head'] = h
+
+# ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def draw():
+    clearScreen()
+    drawWalls()
+    drawSnake()
+
+def clearScreen():
+    display.clear(COLOR_BG)
+
+def drawWalls():
+    display.setColor(COLOR_WALL)
+    display.drawRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+
+def drawSnake():
+    display.setColor(COLOR_SNAKE)
+    n = snake['len']
+    for i in range(n):
+        x = snake['x'][i]
+        y = snake['y'][i]
+        display.fillRect(OX + x * SNAKE_SIZE, OY + y * SNAKE_SIZE, SNAKE_SIZE, SNAKE_SIZE)
+
+# ----------------------------------------------------------
+# Initialization
+# ----------------------------------------------------------
+
+game = {
+    'mode': MODE_START
+}
+
+snake = {
+    'x':    [],
+    'y':    [],
+    'head': 0,
+    'len':  0,
+    'vx':   0,
+    'vy':   0
+}
+
+# ----------------------------------------------------------
+# Main loop
+# ----------------------------------------------------------
+
+while True:
+    waitForUpdate()
+    tick()
+</code></pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Mise en place 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Modélisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Contrôle et affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Imposer des règles 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Marquer des points 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Optimisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           8 
+         </div> 
+         <div class="title ml-3">
+           Finitions 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Mise en place 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Modélisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Contrôle et affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Imposer des règles 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Marquer des points 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Optimisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          8 
+        </div> 
+        <div class="title ml-3">
+          Finitions 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

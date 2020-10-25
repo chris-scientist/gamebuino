@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/learn-to-code-a-snake-game-with-python.html"> Snake (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Imposer des règles </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Imposer des règles </h1> 
+        <h5> Étape 4 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Contraindre l'espace de jeu.<br> Détecter quand le serpent se mord la queue.<br> Gestion de l'apparition des pommes sur la scène de jeu.<br> Détecter quand le serpent avale une pomme.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h3>Fermer l'enceinte du terrain</h3> 
+        <p>On va commencer par enfermer le serpent et faire en sorte que, s'il heurte un des murs de l'enceinte, le jeu redémarre instantanément. On s'occupera plus tard de gérer la fin de la partie proprement.</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def didSnakeHitTheWall():
+    h = snake['head']
+    x = snake['x'][h]
+    y = snake['y'][h]
+    return x &lt; 0 or x == COLS or y &lt; 0 or y == ROWS
+</code></pre> 
+        <p>La fonction <code>didSnakeHitTheWall()</code> est très simple&nbsp;: elle compare simplement les coordonnées de la tête du serpent aux extrémités de la grille. Si le serpent franchit l'une de ces limites, alors la fonction renvoie la valeur <code>True</code>, sinon elle renvoie <code>False</code>.</p> 
+        <p>On peut immédiatement l'intégrer à l'ordonnancement des tâches&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if didSnakeHitTheWall():
+            game['mode'] = MODE_START
+
+    draw()
+</code></pre> 
+        <p>Tu vois que, si la fonction <code>didSnakeHitTheWall()</code> renvoie la valeur <code>True</code>, le jeu rebascule en phase <code>MODE_START</code>.</p> 
+        <p>Testons ça tout de suite&nbsp;!</p> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/5-demo-walls-640x512.gif" alt="Démo" style="max-width:100%"> 
+        </div> 
+        <h3>Quand le serpent se mord la queue</h3> 
+        <p>Pour détecter que le serpent se mord la queue, il va falloir comparer la position courante de la tête avec toutes celles qu'elle a occupées aux instants antérieurs mémorisés dans les listes <code>snake['x']</code> et <code>snake['y']</code>. On va donc créer une fonction <code>didSnakeBiteItsTail()</code> chargée d'effectuer ces comparaisons&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def didSnakeBiteItsTail():
+    h = snake['head']
+    n = snake['len']
+    x = snake['x'][h]
+    y = snake['y'][h]
+    i = (h + 1) % n
+    for _ in range(n-1):
+        if snake['x'][i] == x and snake['y'][i] == y:
+            return True
+        i = (i + 1) % n
+    return False
+</code></pre> 
+        <p>On commence par récupérer les coordonnées de la tête du serpent. Puis on décale la tête de lecture d'un cran pour se positionner sur les coordonnées du dernier tronçon de la queue du serpent (donc la position la plus ancienne de la tête)&nbsp;:</p> 
+        <pre><code class="language-python">h = snake['head']
+n = snake['len']
+x = snake['x'][h]
+y = snake['y'][h]
+i = (h + 1) % n
+</code></pre> 
+        <p>À partir de là, on va examiner chaque tronçon en faisant progresser la tête de lecture vers la tête du serpent. Dès qu'on détecte qu'un tronçon occupe la même position que la tête du serpent, la valeur <code>True</code> est retournée. Si rien n'a été détecté, la fonction finit par retourner la valeur <code>False</code>&nbsp;:</p> 
+        <pre><code class="language-python">for _ in range(n-1):
+    if snake['x'][i] == x and snake['y'][i] == y:
+        return True
+    i = (i + 1) % n
+return False
+</code></pre> 
+        <p>On peut maintenant intégrer cette nouvelle condition dans la gestion des phases du jeu&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if didSnakeBiteItsTail() or didSnakeHitTheWall():
+            game['mode'] = MODE_START
+
+    draw()
+</code></pre> 
+        <p>Et pour qu'on puisse effectuer un test plus facilement, on va allonger la queue du serpent&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+SNAKE_LENGTH = 15
+</code></pre> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/5-demo-tail-640x512.gif" alt="Démo" style="max-width:100%"> 
+        </div> 
+        <p>Tu vois que la partie est relancée dès lors que le serpent&nbsp;:</p> 
+        <ul> 
+         <li>se mord la queue,</li> 
+         <li>rebrousse chemin,</li> 
+         <li>ou heurte un mur.</li> 
+        </ul> 
+        <p>Bien, une fois que t'auras terminé tes tests, n'oublie pas de réaffecter la valeur <code>4</code> à la variable globale qui représente la longueur de la queue par défaut&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+SNAKE_LENGTH = 4
+</code></pre> 
+        <h3>Le fruit défendu</h3> 
+        <p>Allez, on va maintenant introduire la gestion des pommes convoitées par le serpent. En fait, il est inutile d'en créer plusieurs. On utilisera toujours la même&nbsp;: il suffira de la repositionner sur le terrain après que le serpent l'ait avalée.</p> 
+        <p>Pour modéliser la pomme, rien de plus simple&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Initialization
+# ----------------------------------------------------------
+
+apple = { 'x': 0, 'y': 0 }
+</code></pre> 
+        <p>On va ensuite définir une fonction chargée de tirer des coordonnées au hasard pour placer la pomme alétoirement sur le terrain. Pour pouvoir tirer des nombres au hasard avec Python, il existe plusieurs fonctions qui te permettent de le faire. On utilisera ici la fonction <code>random.randint</code> définie par la bibliothèque <code>random</code>&nbsp;:</p> 
+        <pre><code class="language-python">random.randint(a, b)
+</code></pre> 
+        <p>Cette fonction retourne un entier aléatoire dans l'intervalle <code>[a,b]</code>. Et pour pouvoir l'utiliser, il va falloir l'importer dans notre script, à partir de la bibliothèque <code>random</code>. Donc, après la ligne d'import des éléments de la bibliothèque <code>gamebuino_meta</code>, ajoute la ligne correspondant à l'import de <code>randint</code>&nbsp;:</p> 
+        <pre><code class="language-python">from gamebuino_meta import waitForUpdate, display, color, buttons
+from random import randint
+</code></pre> 
+        <p>Pour positionner aléatoirement la pomme sur le terrain, on va créer une fonction spécifique&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def spawnApple():
+    apple['x'] = randint(0, COLS - 1)
+    apple['y'] = randint(0, ROWS - 1)
+</code></pre> 
+        <p>Rien de suprenant, on affecte simplement des valeurs aléatoires aux coordonnées de la pomme sur la grille.</p> 
+        <p>Ensuite, il va falloir détecter la situation où le serpent avale la pomme&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def didSnakeEatApple():
+    h = snake['head']
+    return snake['x'][h] == apple['x'] and snake['y'][h] == apple['y']
+</code></pre> 
+        <p>On compare simplement la position de la tête du serpent avec celle de la pomme.</p> 
+        <p>Maintenant il faut intégrer ces deux routines dans la gestion des différentes phases du jeu, au niveau de l'ordonnanceur&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        spawnApple()
+        game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if didSnakeEatApple():
+            spawnApple()
+        if didSnakeBiteItsTail() or didSnakeHitTheWall():
+            game['mode'] = MODE_START
+
+    draw()
+</code></pre> 
+        <p>Dès que la pomme est avalée par le serpent, elle est immédiatement repositionnée aléatoirement sur le terrain comme une nouvelle pomme toute fraîche&nbsp;:</p> 
+        <pre><code class="language-python">if didSnakeEatApple():
+    spawnApple()
+</code></pre> 
+        <p>Pour finir, il nous reste à faire une dernière chose&nbsp;: créer la routine d'affichage de la pomme et ajouter un appel à cette routine dans la fonction chargée du rendu graphique de la scène de jeu.</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def draw():
+    clearScreen()
+    drawWalls()
+    drawSnake()
+    drawApple()
+
+def drawApple():
+    display.setColor(COLOR_APPLE)
+    x = apple['x']
+    y = apple['y']
+    display.fillRect(OX + x * SNAKE_SIZE, OY + y * SNAKE_SIZE, SNAKE_SIZE, SNAKE_SIZE)
+</code></pre> 
+        <p>Il faut donc définir une nouvelle variable globale pour la couleur de la pomme&nbsp;:</p> 
+        <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+COLOR_APPLE = 0x07f0
+</code></pre> 
+        <p>Allez&nbsp;!... Voyons un peu ce que ça donne&nbsp;:</p> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/5-demo-apple-640x512.gif" alt="Démo" style="max-width:100%"> 
+        </div> 
+        <p>Bon... ok, on ne gère pas encore complètement ce qui est censé se passer au moment où le serpent avale la pomme (sa queue est censée s'allonger)... mais en dehors de ça... comment analyses-tu ce qui se passe ici&nbsp;? Pourquoi la pomme change continuellement de position tant que le serpent n'est pas mis en mouvement&nbsp;?</p> 
+        <p>Pose-toi un peu et réfléchis...&nbsp;&nbsp;<i class="far fa-smile-wink"></i></p> 
+        <details> <summary>J'donne ma langue au chat...</summary> 
+         <div> 
+          <p>Ce phénomène est tout à fait normal !... Souviens toi qu'on a ajouté dans l'ordonnanceur la détection de la situation où le serpent se mord la queue&nbsp;:</p> 
+          <pre><code class="language-python">if didSnakeBiteItsTail() or didSnakeHitTheWall():
+    game['mode'] = MODE_START
+</code></pre> 
+          <p>Or... lorsque le jeu démarre, le serpent est enroulé sur lui-même au centre de la grille... autrement dit sa tête occupe la même cellule que tous les tronçons de sa queue&nbsp;!</p> 
+          <p>Donc qu'est-ce qui se passe&nbsp;? La phase de jeu est réinitialisée à <code>MODE_START</code>... donc&nbsp;? Et ben forcément le jeu redémarre :</p> 
+          <pre><code class="language-python">if game['mode'] == MODE_START:
+        resetSnake()
+        spawnApple()
+        game['mode'] = MODE_PLAY
+</code></pre> 
+          <p>Le serpent est réinitialisé et la pomme repositionnée aléatoirement sur le terrain. Puis la phase de jeu passe à <code>MODE_PLAY</code>... et qu'est-ce qui se passe ? Et ben ça recommence, puisque le serpent est toujours au centre la grille, enroulé sur lui-même...</p> 
+          <p>Voilà pourquoi la pomme semble changer de position continuellement... en fait, c'est parce-que le jeu est sans cesse relancé tant que le serpent ne bouge pas&nbsp;!&nbsp;&nbsp;<i class="far fa-tired"></i></p> 
+          <p>Comment peut-on se sortir de cette situation&nbsp;?</p> 
+          <p>Et ben il suffit d'introduire une phase de jeu intermédiaire entre <code>MODE_START</code> et <code>MODE_PLAY</code> dans laquelle on attend que le serpent bouge et pendant laquelle <strong>on n'effectue pas</strong> le test <code>didSnakeBiteItsTail()</code>&nbsp;! D'ailleurs on n'a pas besoin non plus d'effectuer les tests <code>didSnakeHitTheWall()</code> et <code>didSnakeEatApple()</code>...</p> 
+          <p>Ok, donc définissons une nouvelle variable globale pour décrire cette nouvelle phase de jeu&nbsp;:</p> 
+          <pre><code class="language-python"># ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+MODE_START = 0
+MODE_READY = 1
+MODE_PLAY  = 2
+</code></pre> 
+          <p>De cette manière, on peut modifier notre ordonnanceur et débloquer la situation&nbsp;:</p> 
+          <pre><code class="language-python"># ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        spawnApple()
+        game['mode'] = MODE_READY
+    elif game['mode'] == MODE_READY:
+        handleButtons()
+        moveSnake()
+        if snakeHasMoved():
+            game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if didSnakeEatApple():
+            spawnApple()
+        if didSnakeBiteItsTail() or didSnakeHitTheWall():
+            game['mode'] = MODE_START
+
+    draw()
+</code></pre> 
+          <p>Ici la phase de jeu démarre avec <code>MODE_START</code> puis passe à <code>MODE_READY</code> dès que le serpent a été réinitialisé et que la pomme a été positionnée sur le terrain&nbsp;:</p> 
+          <pre><code class="language-python">if game['mode'] == MODE_START:
+    resetSnake()
+    spawnApple()
+    game['mode'] = MODE_READY
+</code></pre> 
+          <p>En entrant dans la phase <code>MODE_READY</code>, on y reste tant que le serpent n'est pas mis en mouvement&nbsp;:</p> 
+          <pre><code class="language-python">elif game['mode'] == MODE_READY:
+    handleButtons()
+    moveSnake()
+    if snakeHasMoved():
+        game['mode'] = MODE_PLAY
+</code></pre> 
+          <p>Cette situation est détectée par la fonction <code>snakeHasMoved()</code> qu'il nous faut implémenter&nbsp;:</p> 
+          <pre><code class="language-python"># ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def snakeHasMoved():
+    return snake['vx'] or snake['vy']
+</code></pre> 
+          <p>Tant que la vitesse est nulle, la fonction renvoie <code>False</code>. Mais dès que l'une des composantes de la vitesse est non nulle, alors la fonction renvoie <code>True</code>.</p> 
+          <p>De cette manière, au niveau de l'ordonnanceur, la phase de jeu passe à <code>MODE_PLAY</code> et le tour est joué&nbsp;:</p> 
+          <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+           <img src="../assets/5-demo-apple-fixed-640x512.gif" alt="Démo" style="max-width:100%"> 
+          </div> 
+          <p>Voilà, tu viens de terminer cette étape et tu vas pouvoir passer à la suivante. On va s'occuper de déclencher l'allongement de la queue du serpent à chaque fois qu'il avale une pomme. Et on en profitera également pour introduire la gestion du score effectué par le joueur.</p> 
+          <p>Voici le code complet du script <code>code.py</code> qui rassemble tout ce que nous avons implémenté depuis le début de l'atelier&nbsp;:</p> 
+          <pre><code class="language-python">from gamebuino_meta import waitForUpdate, display, color, buttons
+from random import randint
+
+# ----------------------------------------------------------
+# Global variables
+# ----------------------------------------------------------
+
+SCREEN_WIDTH  = 80
+SCREEN_HEIGHT = 64
+SNAKE_SIZE    = 2
+SNAKE_LENGTH  = 4
+COLS          = (SCREEN_WIDTH  - 4) // SNAKE_SIZE
+ROWS          = (SCREEN_HEIGHT - 4) // SNAKE_SIZE
+OX            = (SCREEN_WIDTH  - COLS * SNAKE_SIZE) // 2
+OY            = (SCREEN_HEIGHT - ROWS * SNAKE_SIZE) // 2
+COLOR_BG      = 0x69c0
+COLOR_WALL    = 0xed40
+COLOR_SNAKE   = 0xfd40
+COLOR_APPLE   = 0x07f0
+MODE_START    = 0
+MODE_READY    = 1
+MODE_PLAY     = 2
+
+# ----------------------------------------------------------
+# Game management
+# ----------------------------------------------------------
+
+def tick():
+    if game['mode'] == MODE_START:
+        resetSnake()
+        spawnApple()
+        game['mode'] = MODE_READY
+    elif game['mode'] == MODE_READY:
+        handleButtons()
+        moveSnake()
+        if snakeHasMoved():
+            game['mode'] = MODE_PLAY
+    elif game['mode'] == MODE_PLAY:
+        handleButtons()
+        moveSnake()
+        if didSnakeEatApple():
+            spawnApple()
+        if didSnakeBiteItsTail() or didSnakeHitTheWall():
+            game['mode'] = MODE_START
+
+    draw()
+
+def spawnApple():
+    apple['x'] = randint(0, COLS - 1)
+    apple['y'] = randint(0, ROWS - 1)
+
+def handleButtons():
+    if buttons.pressed(buttons.LEFT):
+        dirSnake(-1, 0)
+    elif buttons.pressed(buttons.RIGHT):
+        dirSnake(1, 0)
+    elif buttons.pressed(buttons.UP):
+        dirSnake(0, -1)
+    elif buttons.pressed(buttons.DOWN):
+        dirSnake(0, 1)
+
+# ----------------------------------------------------------
+# Snake management
+# ----------------------------------------------------------
+
+def resetSnake():
+    x = COLS // 2
+    y = ROWS // 2
+    snake['x'] = []
+    snake['y'] = []
+    for _ in range(SNAKE_LENGTH):
+        snake['x'].append(x)
+        snake['y'].append(y)
+    snake['head'] = SNAKE_LENGTH - 1
+    snake['len']  = SNAKE_LENGTH
+    snake['vx'] = 0
+    snake['vy'] = 0
+
+def dirSnake(dx, dy):
+    snake['vx'] = dx
+    snake['vy'] = dy
+
+def moveSnake():
+    h = snake['head']
+    x = snake['x'][h]
+    y = snake['y'][h]
+    h = (h + 1) % snake['len']
+    snake['x'][h] = x + snake['vx']
+    snake['y'][h] = y + snake['vy']
+    snake['head'] = h
+
+def snakeHasMoved():
+    return snake['vx'] or snake['vy']
+
+def didSnakeEatApple():
+    h = snake['head']
+    return snake['x'][h] == apple['x'] and snake['y'][h] == apple['y']
+
+def didSnakeBiteItsTail():
+    h = snake['head']
+    n = snake['len']
+    x = snake['x'][h]
+    y = snake['y'][h]
+    i = (h + 1) % n
+    for _ in range(n-1):
+        if snake['x'][i] == x and snake['y'][i] == y:
+            return True
+        i = (i + 1) % n
+    return False
+
+def didSnakeHitTheWall():
+    h = snake['head']
+    x = snake['x'][h]
+    y = snake['y'][h]
+    return x &lt; 0 or x == COLS or y &lt; 0 or y == ROWS
+
+# ----------------------------------------------------------
+# Graphic display
+# ----------------------------------------------------------
+
+def draw():
+    clearScreen()
+    drawWalls()
+    drawSnake()
+    drawApple()
+
+def clearScreen():
+    display.clear(COLOR_BG)
+
+def drawWalls():
+    display.setColor(COLOR_WALL)
+    display.drawRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+
+def drawSnake():
+    display.setColor(COLOR_SNAKE)
+    n = snake['len']
+    for i in range(n):
+        x = snake['x'][i]
+        y = snake['y'][i]
+        display.fillRect(OX + x * SNAKE_SIZE, OY + y * SNAKE_SIZE, SNAKE_SIZE, SNAKE_SIZE)
+
+def drawApple():
+    display.setColor(COLOR_APPLE)
+    x = apple['x']
+    y = apple['y']
+    display.fillRect(OX + x * SNAKE_SIZE, OY + y * SNAKE_SIZE, SNAKE_SIZE, SNAKE_SIZE)
+
+# ----------------------------------------------------------
+# Initialization
+# ----------------------------------------------------------
+
+game = {
+    'mode': MODE_START
+}
+
+snake = {
+    'x':    [],
+    'y':    [],
+    'head': 0,
+    'len':  0,
+    'vx':   0,
+    'vy':   0
+}
+
+apple = { 'x': 0, 'y': 0 }
+
+# ----------------------------------------------------------
+# Main loop
+# ----------------------------------------------------------
+
+while True:
+    waitForUpdate()
+    tick()
+</code></pre> 
+         </div> 
+        </details> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Mise en place 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Modélisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Contrôle et affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Imposer des règles 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Marquer des points 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Optimisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           8 
+         </div> 
+         <div class="title ml-3">
+           Finitions 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Mise en place 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Modélisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Contrôle et affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Imposer des règles 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Marquer des points 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Optimisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          8 
+        </div> 
+        <div class="title ml-3">
+          Finitions 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

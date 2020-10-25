@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/learn-to-code-a-snake-game-with-python.html"> Snake (Python) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Introduction </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Introduction </h1> 
+        <h5> Étape 0 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Flashback sur l'histoire du jeu Snake.<br> Démonstration de ce qu'on va réaliser dans le cadre de cet atelier.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h3>D'où vient le jeu&nbsp;Snake&nbsp;?</h3> 
+        <p>Le jeu d'arcade Blockade (1976) est probablement celui qui a inspiré, à l'origine, les multiples variantes du jeu Snake qu'on connaît aujourd'hui. On le retrouve également dans le célèbre film Tron (1982) des studios Walt Disney.</p> 
+        <table style="width:100%;margin:1.5em 0;"> 
+         <tbody> 
+          <tr> 
+           <td style="position:relative;height:0;padding-bottom:28.125%;border:0;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;box-shadow:0 4px 8px #aaa;" src="https://www.youtube.com/embed/5v-0CwiabZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </td> 
+           <td style="border:0;width:10px;"></td> 
+           <td style="position:relative;height:0;padding-bottom:28.125%;border:0;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;box-shadow:0 4px 8px #aaa;" src="https://www.youtube.com/embed/-BZxGhNdz1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <p>La société Nokia est célèbre pour avoir embarqué le jeu Snake sur la plupart de ses téléphones depuis son modèle Nokia 6110, sorti en 1997.</p> 
+        <div style="position:relative;height:0;margin:1.5em 0;padding-bottom:56.25%;"> <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;box-shadow:0 4px 8px #aaa;" src="https://www.youtube.com/embed/d3ggLzatg9Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        </div> 
+        <p>Le principe du jeu est très simple&nbsp;: le joueur dirige un serpent dans un espace clos, à la recherche de pommes pour se nourrir. Les pommes apparaissent aléatoirement sur l'écran et à chaque fois que le serpent avale une pomme, sa queue s'allonge... Au fur et à mesure que le jeu progresse, la queue s'allonge de plus en plus et les déplacements du serpent sont de plus en plus limités... car il ne doit jamais se mordre la queue, ni heurter un des murs de l'enceinte&nbsp;!</p> 
+        <p>Snake a traversé les âges du jeu vidéo et reste, encore aujourd'hui, un grand classique indémodable que tout apprenti codeur s'est un jour demandé comment programmer. Manifestement, ce jour est arrivé pour toi&nbsp;!&nbsp;&nbsp;<i class="far fa-smile-wink"></i></p> 
+        <p>Voilà une petite démo du jeu qu'on va réaliser ensemble sur la META&nbsp;:</p> 
+        <div style="max-width:100%;width:320px;height:256px;margin:1.5em auto;box-shadow:0 4px 8px #0006;"> 
+         <img src="../assets/1-demo-640x512.gif" alt="Démo du jeu Snake" style="max-width:100%"> 
+        </div> 
+        <p>T'es prêt&nbsp;?... Allez, c'est parti&nbsp;! Tu peux passer à l'étape suivante&nbsp;!</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Introduction 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Mise en place 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Modélisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Contrôle et affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           Imposer des règles 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           6 
+         </div> 
+         <div class="title ml-3">
+           Marquer des points 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           7 
+         </div> 
+         <div class="title ml-3">
+           Optimisation 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           8 
+         </div> 
+         <div class="title ml-3">
+           Finitions 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/overview.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Introduction 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/setting-up.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Mise en place 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/modeling.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Modélisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/controls-and-display.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Contrôle et affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/imposing-rules.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          Imposer des règles 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/score-points.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          6 
+        </div> 
+        <div class="title ml-3">
+          Marquer des points 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/optimization.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          7 
+        </div> 
+        <div class="title ml-3">
+          Optimisation 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/finishes.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          8 
+        </div> 
+        <div class="title ml-3">
+          Finitions 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/partagez-votre-projet-sur-github-1.html"> Partagez votre projet sur GitHub </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Les bases </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Les bases </h1> 
+        <h5> Étape 1 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Cette partie a pour objectif d'expliquer <strong>comment partager son projet sur GitHub</strong>. Evidement il existe d'autres plateformes pour partager un projet, pour n'en citez qu'une on peut évoquer GitLab, mais ce tutoriel explique comment partager via GitHub.</p> 
+        <p>Cette partie est illustré pour un utilisateur sous Windows.</p> 
+        <h3>Au sujet de Linux et Mac OS</h3> 
+        <p>Seul le client change pour ces système.</p> 
+        <p>Pour Linux et Mac OS la commande a utilisé est <code>git</code> dans la console.</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <h1>Création du repository</h1> 
+        <p>Le repository ? Il s'agit d'un répertoire avec des méta-données qui vous permet de faire le lien entre votre ordinateur et GitHub. En français, on parle de dépôt.</p> 
+        <p>Nous allons voir ici comment créer un repository sur GitHub.</p> 
+        <ol> 
+         <li>Rendez-vous sur votre compte GitHub (après authentification)</li> 
+         <li>Allez dans (1) <strong>Repositories</strong>, puis (2) <strong>New</strong> (comme le montre la capture ci-dessous)</li> 
+        </ol> 
+        <p><img src="../assets/01_repositories_v1.0.jpg" alt="Repositories" style="max-width:100%"></p> 
+        <ol start="3"> 
+         <li>Sur la page suivante complétez les informations suivantes (comme le montre la capture ci-dessous) :</li> 
+        </ol> 
+        <ul> 
+         <li>(1) Donnez un nom à votre repository.</li> 
+         <li>(2) Ajoutez une brève description (facultatif).</li> 
+         <li>(3) Choisissez la visibilité de votre repository : public est la meilleure option si vous souhaitez partager votre projet avec le monde entier.</li> 
+         <li>(4) Choisissez la licence de votre projet : ici GPL v3.0 (plus de détails un peu plus loin).</li> 
+         <li>(5) Enfin, validez la création du repository.</li> 
+        </ul> 
+        <p><img src="../assets/02_creation_v1.0.jpg" alt="Création repository" style="max-width:100%"></p> 
+        <h2>Quelle licence choisir ?</h2> 
+        <p>Je ne vais pas vous présenter l'ensemble des licences car il en existe de nombreuse.</p> 
+        <p>Sachez simplement que la GPL v3.0 :</p> 
+        <ul> 
+         <li>Autorise une utilisation commerciale de votre projet.</li> 
+         <li>Autorise les modification de votre projet (en dehors de votre repository).</li> 
+         <li>Autorise la distribution de votre projet.</li> 
+         <li>Etc.</li> 
+        </ul> 
+        <h1>Gestion des sources</h1> 
+        <p>Pour parler avec les serveurs GitHub : récupérer votre repository en local, envoyer vos fichiers sur GitHub, etc ; nous avons besoin pour cela d'un client Git. Il en existe une multitude et j'ai fais le choix d'utiliser git bash (je parle ici d'un client Windows), vous pouvez <span>télécharger git bash</span> en suivant le lien et l'installer.</p> 
+        <h2>Récupérer le repository</h2> 
+        <p>Dans un premier temps, il vous faut récupérer votre repository sur votre machine, cette étape est à faire une fois à l'initialisation de votre projet.</p> 
+        <p>Dans ce but copiez l'adresse du repository en suivant les étapes indiquées sur la capture ci-dessous :</p> 
+        <p><img src="../assets/03_pre_clone_v1.0.jpg" alt="Copier l'adresse du repository" style="max-width:100%"></p> 
+        <p>Dans votre explorateur de fichiers ouvrez git bash via un clic droit (comme le montre la capture ci-dessous) :</p> 
+        <p><img src="../assets/04_ouvrir_bash_v1.0.jpg" alt="Ouvrir git bash" style="max-width:100%"></p> 
+        <p>Enfin récupérer votre repository en écrivant <strong>git clone adresse-du-repository</strong> :</p> 
+        <p><img src="../assets/05_clone_v1.0.jpg" alt="Récupérer le repository" style="max-width:100%"></p> 
+        <h2>Envoyez vos fichiers et répertoires sur GitHub</h2> 
+        <p>Dans un second temps, voyons comment envoyer ses fichiers et ses répertoires sur GitHub, cette étape est a répété autant de fois que nécessaire. Exemple d'application :</p> 
+        <ul> 
+         <li>Vous créer la v1.0 de votre projet.</li> 
+         <li> <strong>Envoyez la sur GitHub, ceci en suivant cette étape</strong>.</li> 
+         <li>Vous apportez une modification à votre projet qui est alors en v1.1.</li> 
+         <li> <strong>Envoyez la v1.1 sur GitHub, ceci en suivant cette étape</strong>.</li> 
+        </ul> 
+        <p>Dans le répertoire que vous venez de récupérer, ajoutez votre projet autrement dit ajoutez votre contenu, ici : j'ai un répertoire nommé <em>Tutoriels</em> et un fichier <em>README.MD</em>.</p> 
+        <p><img src="../assets/06_creation_contenu_v1.0.jpg" alt="Ajoutez votre projet" style="max-width:100%"></p> 
+        <p>Retournez dans git bash, déplacez vous dans le repository via <strong>cd nom-du-repository</strong> (cd signifie "change directory" autrement dit "changer de répertoire") :</p> 
+        <p><img src="../assets/07_deplacer_v1.0.jpg" alt="Déplacez vous dans le repository" style="max-width:100%"></p> 
+        <p>Pour envoyer vos fichiers/répertoires sur GitHub il faut suivre plusieurs étapes :</p> 
+        <ul> 
+         <li> <strong>git status</strong> : permet de visualiser quel est l'état du repository.</li> 
+         <li> <strong>git add fichiers repertoires</strong> : permet d'indiquer que ces fichiers/répertoires doivent être ajouter au repository.</li> 
+         <li> <strong>git commit -m "Un commentaire"</strong> : permet de valider le ou les <em>git add</em> effectué avant.</li> 
+         <li> <strong>git push</strong> : permet d'envoyer vos commits en attentes sur GitHub (demande votre login dans la console puis votre mot de passe dans une fenêtre, voir captures).</li> 
+        </ul> 
+        <p>Vous pouvez faire un <em>git status</em> après chacune des étapes.</p> 
+        <p><img src="../assets/08_gestion_source_v1.0.jpg" alt="Commandes pour envoyer vos fichiers/répertoires sur GitHub" style="max-width:100%"></p> 
+        <p>Voici à quoi ressemble la fenêtre demandant votre mot de passe :</p> 
+        <p><img src="../assets/09_password_v0.0.jpg" alt="Mot de passe requis" style="max-width:100%"></p> 
+        <p>Petite astuce : si vous voulez ajouter tous les fichiers en attente vous pouvez tapez <strong>git add .</strong>.</p> 
+        <p><strong>Revenons sur le fichier README.MD</strong></p> 
+        <p>Il s'agit d'un fichier qu'il est conseillé d'ajouter, en effet ce fichier est sensé décrire votre projet. La syntaxe de ce fichier est en MarkDown.</p> 
+        <h1>CONCLUSION</h1> 
+        <p>Vous avez désormais le kit de survie pour partager vos projets sur GitHub.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/les-bases-1.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Les bases 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/les-tags.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Les tags 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/les-branches.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Les branches 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/les-bases-1.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Les bases 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/les-tags.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Les tags 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/les-branches.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Les branches 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>

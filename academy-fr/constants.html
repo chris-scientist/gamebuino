@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="fr">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+  <link href="../css/animate.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/generic.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.core.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/alertify.default.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/select2.min.css" rel="stylesheet" type="text/css"> 
+  <link href="../css/app.css" rel="stylesheet" type="text/css"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <script src="../js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="../js/alertify.min.js" type="text/javascript" async></script> 
+  <script src="../js/modal.js" type="text/javascript" async></script> 
+  <script src="../js/popupConfirm.js" type="text/javascript" async></script> 
+  <script src="../js/select2.min.js" type="text/javascript" async></script> 
+  <script src="../js/imagesloaded.pkgd.min.js" type="text/javascript" async></script> 
+  <script src="../js/wow.min.js" type="text/javascript" async></script> 
+  <script src="../js/app.js" type="text/javascript" async></script> 
+  <script id="js_highlight" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" async></script> 
+  <script>js_highlight.addEventListener('load',function(){$('div.code, pre').each(function(i,block){hljs.highlightBlock(block);});});</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <div class="topbar-container w-100 m-0"> 
+   <nav class="primary-navbar"> 
+    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    </div> 
+    <ul class="nav nav-pills"> 
+     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Home of Academy (FR)</a></li> 
+    </ul> 
+   </nav> 
+   <div class="container" id="main-content">
+    <div class="container"> 
+     <div class="d-flex align-items-center"> <span> Académie </span> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <a href="/gamebuino/academy-fr/tap-tap-toc.html"> Tap Tap (C++ 3/5) </a> 
+      <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
+      </div> <span> Les constantes </span> 
+     </div> 
+    </div> 
+    <div class="row"> 
+     <div class="col-md-8"> 
+      <div class="d-flex justify-content-between"> 
+       <div> 
+        <h1> Les constantes </h1> 
+        <h5> Étape 2 </h5> 
+       </div> 
+       <div> <span class="open-modal btn btn-complete btn-secondary"> <i class="fal fa-check"></i> Étape terminée ? </span> 
+       </div> 
+      </div> 
+      <div class="mt-5 white-container"> 
+       <div class="lesson-introduction"> 
+        <p>Comme pour le Pong, il vaut mieux attaquer le jeu en créant une première version qui contient un strict minimum (sa structure) , puis se baser dessus pour ajouter le reste. Nous ajouterons les variables que nous avons déjà introduit dans les ateliers précédents puis utiliserons un nouveau type de stockage en mémoire: les constantes</p> 
+       </div> 
+       <div class="lesson-content mt-5"> 
+        <p>Pour le jeu de Pong, nous avions d'abord créé un jeu avec une raquette et une balle. Une fois que c'était fini, vous aviez ajouté une deuxième raquette et un score. Comme pour le Pong, il vaut mieux attaquer le jeu en créant une première version qui contient le strict minimum, puis se baser dessus pour faire le reste.</p> 
+        <p>Ici, nous allons donc commencer par créer une variante plus simple. La séquence ne s'affichera pas, c'est-à-dire que nous avons juste à gérer un seul bloc, comme ceci :</p> 
+        <p><img src="../assets/a75885ba6aec90e77be46cb46fe0919ce2da11e5.gif" alt="" style="max-width:100%"></p> 
+        <p>Si le rectangle est sur la gauche, et que le joueur appuie sur la flèche de gauche, il gagne des points et un nouveau rectangle apparait. La logique est analogue si le rectangle est à droite. Si jamais il se trompe, son score est remis à zéro. Et enfin, pour mettre un peu de pression, le score diminue progressivement</p> 
+        <h2>Ecrivons la structure de notre programme</h2> 
+        <p>Le jeu doit donc avoir une manière de savoir où est le rectangle (que l'on appellera brique dorénavant), et voir si le joueur a appuyé sur la bonne flèche. Il faut d'abord déclarer toutes ces variables en les ajoutant à la structure que nous avions à la fin de l'étape précédente:</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+int brique;  // Position de la brique. Si elle vaut 1, la brique est à gauche. Si elle vaut 2, la brique est à droite
+int fleche;  // 1 flèche de gauche, 2 flèche de droite, 0 pas de flèches (en attente du joueur)
+int score = 0;
+
+
+void setup() {
+    gb.begin();
+    brique = random(1, 3);  // 50% gauche, 50% droite
+    fleche = 0;
+}
+
+void loop() {
+    while(!gb.update());
+
+    // ENTREES //
+
+
+    // MISE A JOUR //
+
+
+    // AFFICHAGE //
+    gb.display.clear();
+}
+</code></pre> 
+        <p>Ici, nous avons juste déclaré les trois variables qu'il nous faut:</p> 
+        <ul> 
+         <li> <code>brique</code> qui est une variable de type <strong>entier</strong> valant soit 1, soit 2. S'il vaut 1, alors on considère que la brique est à droite. Autrement, s'il vaut 2 alors on considère que la brique est à gauche.</li> 
+         <li> <code>fleche</code> est aussi un <strong>entier</strong> et, similairement à <code>brique</code>, s'il vaut 1, on dira que la flèche gauche est appuyée par le joueur. Si <code>fleche</code> vaut 2, cela correspond à la flèche de droite. Et enfin si aucune flèche n'est appuyée, notre variable vaudra 0.</li> 
+         <li> <code>score</code> est aussi un <strong>entier</strong> qui nous servira à stocker le score obtenu.</li> 
+        </ul> 
+        <h2>Les Constantes</h2> 
+        <p><em>Pouah</em> ! Ce n'est pas très facile à ingérer tout ça... Se rappeler que 1 correspond à gauche, que 2 correspond à la droite, ... et là, nous avons que 2 directions à prendre en compte ! Comment faire pour que ce soit lisible sans trop se creuser la tête ? Avec des <strong>constantes</strong> évidement !</p> 
+        <p>Une <strong>constante</strong> est comme une variable, sauf qu'elle ne peut pas changer de valeur au cours du programme (d'où le nom). Une <strong>constante</strong> est simplement un nom qu'on donne à une valeur et c'est très utile dans les situations comme la nôtre : quand on utilise des valeurs arbitraires. Ici on utilise 1 pour designer la gauche, mais on aurait aussi pu utiliser -382 à la place. Sans utiliser de <strong>constantes</strong> on écrirait <code>brique = 1;</code> pour dire "la brique est à gauche". Mais avec une <strong>constante</strong> on peut écrire <code>brique = GAUCHE;</code> ! Bien mieux non ? Même plus besoin de commentaires pour expliquer ce que fait cette instruction !</p> 
+        <p>Alors, comment créons-nous des constantes ? Pour déclarer une constante, on fait comme pour une variable en ajoutant le mot clé <code>const</code> avant de déclarer le type :</p> 
+        <p><code>const int GAUCHE = 1;</code></p> 
+        <p>Contrairement aux variables, il est obligatoire d'affecter une valeur aux constantes lors de leurs déclarations. Simplement parce qu'après leur déclaration, leur valeur ne pourra plus changer.</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Constantes
+const int GAUCHE = 1;
+const int DROITE = 2;
+const int SANS_DIRECTION = 3;
+
+int brique;  // Position de la brique. Soit GAUCHE, soit DROITE
+int fleche;  // Correspond à la flèche appuyé par l'utilisateur. Soit GAUCHE, soit DROITE, soit SANS_DIRECTION
+int score = 0;
+
+void setup() {
+    gb.begin();
+    brique = random(GAUCHE, DROITE + 1);  // +1 parce-que le deuxième paramètre n'est pas dans l'intervalle : random(1, 3) =&gt; 1 ou 2 (pas 3)
+    fleche = SANS_DIRECTION;
+}
+
+void loop() {
+    // loop...
+}
+</code></pre> 
+        <p>Et voilà, nous avons déclaré quelques constantes très utiles :D La brique est soit à gauche, soit à droite. La variable <code>fleche</code> est, elle, à gauche, à droite, ou sans direction. Bien plus compréhensible n'est-ce pas ?</p> 
+        <blockquote> 
+         <p>Si vous lisez le code d'un jeu créé par quelqu'un d'autre, il est possible qu'il n'utilise pas la structure que l'on vient de voir pour déclarer ses constantes. Certains utilisent <code>#define GAUCHE 1</code>. Ceci revient quasiment à faire <code>const int GAUCHE = 1;</code>. Les différences ne sont pas importantes à notre niveau mais nous vous conseillons d'utiliser <code>const</code> qui est permet plus facilement de localiser les bugs éventuels lorsque vous obtenez une erreur de compilation. Nous utiliserons exclusivement des <code>const</code> dans nos ateliers.</p> 
+        </blockquote> 
+        <p>On peut ensuite facilement implémenter la gestion des entrées et faire l'affichage comme ceci :</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Constantes
+const int GAUCHE = 1;
+const int DROITE = 2;
+const int SANS_DIRECTION = 3;
+
+int brique;  // Position de la brique. Soit GAUCHE, soit DROITE
+int fleche = SANS_DIRECTION;  // Correspond à la flèche appuyé par l'utilisateur. Soit GAUCHE, soit DROITE, soit SANS_DIRECTION
+int score = 0;
+
+void setup() {
+    gb.begin();
+    brique = random(GAUCHE, DROITE + 1);  // +1 parce-que le deuxième paramètre n'est pas dans l'intervalle : random(1, 3) =&gt; 1 ou 2 (pas 3)
+    fleche = SANS_DIRECTION;
+}
+
+void loop() {
+    while(!gb.update());
+
+    // ENTREES //
+    if (gb.buttons.released(BUTTON_LEFT)) {
+        fleche = GAUCHE;
+    }
+    else if (gb.buttons.released(BUTTON_RIGHT)) {
+        fleche = DROITE;
+    }
+
+    // MISE A JOUR //
+
+
+    // AFFICHAGE //
+    gb.display.clear();
+
+    if (brique == GAUCHE) {
+        gb.display.fillRect(20, 40, 20, 10);
+    } 
+    else {  // DROITE
+        gb.display.fillRect(40, 40, 20, 10);
+    }
+
+    // Score
+    gb.display.print(score);
+}
+</code></pre> 
+        <p>Notre version simplifiée du jeu est presque finie, il nous reste juste à ajouter la logique de jeu.</p> 
+        <p>Petit rappel de ce que nous voulons faire :</p> 
+        <ul> 
+         <li>Si le joueur n'a pas appuyé sur une flèche, ne rien faire</li> 
+         <li>Sinon, si la flèche en question correspond au côté de la brique, ajouter 15 points au score et créer une nouvelle brique.</li> 
+         <li>Sinon, remettre le score à zéro</li> 
+        </ul> 
+        <p>Ici nous avons donc trois possibilités à chaque image, mais la première condition nous dit de ne rien faire si elle est vraie. On peut la modifier un peu pour obtenir :</p> 
+        <ul> 
+         <li>Si le joueur a appuyé sur une flèche :</li> 
+         <li>Si la flèche en question correspond au côté de la brique, ajouter 15 points au score et créer une nouvelle brique.</li> 
+         <li>Sinon, remettre le score à zéro</li> 
+        </ul> 
+        <p>Ce qui nous donne le code suivant :</p> 
+        <pre><code>#include &lt;Gamebuino-Meta.h&gt;
+
+// Constantes //
+
+// Mettre ici les déclarations des constantes et des variables //
+
+void setup() {
+    // Mettre ici le contenu de la procédure setup //
+}
+
+void loop() {
+    // ENTREES //
+    // ...
+
+    // MISE A JOUR //
+    // Doucement baisser le score
+    if (score &gt; 0) {
+        score -= 1;
+    }
+
+    // Est-ce que le joueur a appuyé sur une flèche ?
+    if (fleche != SANS_DIRECTION) {
+        if (brique == fleche) {  // Bonne flèche
+            score += 15;
+            brique = random(GAUCHE, DROITE + 1);
+        }
+        else {
+            // Perdu :(
+            score = 0;
+        }
+
+        fleche = SANS_DIRECTION;  // L'entrée utilisateur a été prise en compte
+    }
+
+    // AFFICHAGE //
+    // ...
+}
+</code></pre> 
+        <p>J'ai aussi ajouté un système qui diminue progressivement le score :<code>score -= 1;</code>. L'opérateur <code>x -= y</code> est un raccourci de <code>x = x - y</code>. Ce raccourci existe pour presque tous les opérateurs et est très pratique :</p> 
+        <ul> 
+         <li> <code>+=</code> </li> 
+         <li> <code>-=</code> </li> 
+         <li> <code>*=</code> </li> 
+         <li> <code>/=</code> </li> 
+         <li>et d'autres encore...</li> 
+        </ul> 
+        <p>Je l'utilise aussi pour augmenter le score lorsque le joueur appuie sur la bonne flèche : <code>score += 15;</code>. A la fin du premier bloc <code>if</code>, ne pas oublier de réinitialiser <code>fleche</code>, sinon la Gamebuino pensera que le joueur est constamment en train d'appuyer sur une flèche !</p> 
+        <p>Notre petit jeu est fini ! Vous pouvez le téléverser (si vous ne l'avez toujours pas fait) et y jouer avant de passer à la suite.</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-4 d-none d-md-block"> 
+      <ul class="workshop-summary-mini"> 
+       <li class=""> <a href="/gamebuino/academy-fr/tap-tap-how-fast-can-you-tap.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           1 
+         </div> 
+         <div class="title ml-3">
+           Tap Tap, à quelle vitesse peux-tu taper ? 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/inputs-update-draw.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           2 
+         </div> 
+         <div class="title ml-3">
+           Les 3 parties de la boucle principales: Entrées, Mise à jour, Affichage 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/constants.html" class="d-flex align-items-center  active  "> 
+         <div class="circle">
+           3 
+         </div> 
+         <div class="title ml-3">
+           Les constantes 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/arrays.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           4 
+         </div> 
+         <div class="title ml-3">
+           Les tableaux 
+         </div> </a></li> 
+       <li class=""> <a href="/gamebuino/academy-fr/it-s-your-turn.html" class="d-flex align-items-center  "> 
+         <div class="circle">
+           5 
+         </div> 
+         <div class="title ml-3">
+           À vous de jouer ! 
+         </div> </a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="d-block d-md-none" style="margin-top:8rem"> 
+     <h4 class="mb-4">Étapes</h4> 
+     <ul class="workshop-summary-mini"> 
+      <li class=""> <a href="/gamebuino/academy-fr/tap-tap-how-fast-can-you-tap.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          1 
+        </div> 
+        <div class="title ml-3">
+          Tap Tap, à quelle vitesse peux-tu taper ? 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/inputs-update-draw.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          2 
+        </div> 
+        <div class="title ml-3">
+          Les 3 parties de la boucle principales: Entrées, Mise à jour, Affichage 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/constants.html" class="d-flex align-items-center  active  "> 
+        <div class="circle">
+          3 
+        </div> 
+        <div class="title ml-3">
+          Les constantes 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/arrays.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          4 
+        </div> 
+        <div class="title ml-3">
+          Les tableaux 
+        </div> </a></li> 
+      <li class=""> <a href="/gamebuino/academy-fr/it-s-your-turn.html" class="d-flex align-items-center  "> 
+        <div class="circle">
+          5 
+        </div> 
+        <div class="title ml-3">
+          À vous de jouer ! 
+        </div> </a></li> 
+     </ul> 
+    </div>
+   </div> 
+   <footer id="footer"> 
+    <div class="container"> 
+     <div class="reinsurance"> 
+      <div class="row align-items-center"> 
+       <div class="col-sm-3"> 
+        <p class="text-left"></p> 
+       </div> 
+       <div class="col-sm-6"> 
+        <p class="text-center">Academy saved on October 8, 2020</p> 
+       </div> 
+       <div class="col-sm-3"> 
+        <p class="text-right"></p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="row"> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-20"><h5 style="color:white;">Exported by :</h5></li> 
+        <li> <a href="https://chris-scientist.github.io">chris-scientist</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <ul class=""> 
+        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+       </ul> 
+      </div> 
+      <div class="col-sm-4 margeur-50"> 
+       <h6 class="footer-h6">Exported from official website</h6> 
+      </div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+ </body>
+</html>
