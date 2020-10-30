@@ -2,7 +2,7 @@
 <html lang="fr">
  <head> 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-  <title>Apprendre à coder un jeu vidéo - Gamebuino</title> 
+  <title>Nos premières briques - Gamebuino</title> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600,700,800|Roboto+Mono:300,400,700" rel="stylesheet"> 
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> 
@@ -157,6 +157,7 @@ gb.display.fillRect(briqueX, briqueY, BRIQUE_LARGEUR, BRIQUE_HAUTEUR);
         <p>Pour en revenir au calcul de nos briques, nous pouvons directement définir la position Y des briques. Vu qu'elles sont toutes alignées, on peut simplement leur donner une hauteur de 10 (plus tard, quand nous ajouterons d'autres briques, cette valeur changera). Pour <code>briqueX</code>, il faut pouvoir déterminer sa position en fonction de son indice dans notre tableau. Dans mon code, l'indice s'appelle <code>x</code>. Donc quand <code>x</code> vaut 0, on veut que la brique s'affiche tout à gauche. La brique d'après s'affiche à sa droite, avec un espace de deux pixels, etc. Dans ce cas <code>briqueX = x * (BRIQUE_LARGEUR + 2);</code>. Dans mon code, j'ai ajouté 1 à la position de toutes les briques pour que la première brique ne soit pas collée au bord de l'écran.</p> 
         <p>Dernière chose à propos de ces deux fichiers. J'utilise le mot clé <code>continue</code> au début de mes boucles. <code>Continue</code> force la boucle ignorer le reste de son code. En termes plus concrets, <code>continue</code> passe à l'indice suivant. Je l'appelle quand il n'y a pas de brique (i.e. <code>brique[x] = 0</code>), car c'est inutile de calculer la position d'une brique inexistante ;)</p> 
         <p>Et voilà, nous avons complété notre casse-briques ! Mais il n'a qu'une seule rangée de briques... Que dites-vous d'améliorer ça dans la prochaine étape ?</p> 
+        <p><a href="/gamebuino/academy-fr/des-trucs-dans-des-trucs.html" title="Des trucs dans des trucs" class="btn btn-primary btn-lg"> Etape suivante <i class="fa fa-arrow-right"></i></a></p>
        </div> 
       </div> 
      </div> 
