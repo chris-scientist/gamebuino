@@ -13,6 +13,7 @@ ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:befor
 	border-radius: 2px;
 }
 #main-content .lesson p,
+#main-content .white-container h1,
 #main-content .white-container h2,
 #main-content .white-container p,
 #main-content .white-container ul li,
