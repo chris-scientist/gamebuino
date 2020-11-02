@@ -18,7 +18,11 @@ permalink: /why-this-website/
 			</p>
 			<h2>Goal</h2>
 			<p>
-				Having no answer to my email sent on 18/09/2020 to the address : hello &lt;at&gt; gamebuino &lt;dot&gt; com, I decided to publish my backup. The objective of this site is to make available the necessary resources for the developments on Gamebuino META. For all requests, please look at the <a href="/gamebuino/contact/" >contact page</a>.
+				The objective of this site is to make available the necessary resources for the developments on Gamebuino META. For all requests, please look at the <a href="/gamebuino/contact/" >contact page</a>.
+			</p>
+			<h2>Acknowledgements</h2>
+			<p>
+				I thank Aurélien Rodot for authorizing me to put this site online.
 			</p>
 		</div>
 	</div>
