@@ -23,7 +23,7 @@ permalink: /
  <div class="col-md-6 col-lg-4"> 
   <div class="workshop-thumb">
    <div class="content d-flex flex-column justify-content-between"> 
-    <div class="image" style="background-image:url(../assets/AcademyFr_Capture.jpg)"></div> 
+    <div class="image" style="background-image:url(./assets/AcademyFr_Capture.jpg)"></div> 
     <div class="text"> 
      <h5> Académie (version française)</h5>
     </div> 
@@ -35,7 +35,7 @@ permalink: /
  <div class="col-md-6 col-lg-4"> 
   <div class="workshop-thumb">
    <div class="content d-flex flex-column justify-content-between"> 
-    <div class="image" style="background-image:url(../assets/AcademyEn_Capture.jpg)"></div> 
+    <div class="image" style="background-image:url(./assets/AcademyEn_Capture.jpg)"></div> 
     <div class="text"> 
      <h5> Academy (english version)</h5>
     </div> 
@@ -47,7 +47,7 @@ permalink: /
  <div class="col-md-6 col-lg-4"> 
   <div class="workshop-thumb">
    <div class="content d-flex flex-column justify-content-between"> 
-    <div class="image" style="background-image:url(../assets/ApiReference_Capture.jpg)"></div> 
+    <div class="image" style="background-image:url(./assets/ApiReference_Capture.jpg)"></div> 
     <div class="text"> 
      <h5> Meta API Reference</h5>
     </div> 
@@ -65,7 +65,7 @@ permalink: /
  <div class="col-md-6 col-lg-4"> 
   <div class="workshop-thumb">
    <div class="content d-flex flex-column justify-content-between"> 
-    <div class="image" style="background-image:url(../assets/TCU_Capture.jpg)"></div> 
+    <div class="image" style="background-image:url(./assets/TCU_Capture.jpg)"></div> 
     <div class="text"> 
      <h5> Transcodeur C++ universel / Transcodeur d'Images Polyvalent</h5>
     </div> 
