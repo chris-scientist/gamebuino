@@ -16,7 +16,7 @@ permalink: /
 <h2> Main Ressources / Ressources Principales </h2> 
 <p>
 	Academy content :<br />
-	Workshops counter : 9<br />
+	Workshops counter : 12<br />
 	Stand-alone counter : 7
 </p> 
 <div class="row mt-4 align-items-center"> 
