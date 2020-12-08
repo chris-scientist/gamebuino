@@ -65,6 +65,18 @@ permalink: /
  <div class="col-md-6 col-lg-4"> 
   <div class="workshop-thumb">
    <div class="content d-flex flex-column justify-content-between"> 
+    <div class="image" style="background-image:url(./assets/Emulateur.jpg)"></div> 
+    <div class="text"> 
+     <h5> Emulator / Emulateur</h5>
+    </div> 
+   </div> 
+   <div class="button d-flex align-items-center justify-content-center"> <span class="btn btn-secondary"> Go to</span> 
+   </div><a href="http://games.aoneill.com/meta-emulator/#" class="link"></a> 
+  </div> 
+ </div> 
+ <div class="col-md-6 col-lg-4"> 
+  <div class="workshop-thumb">
+   <div class="content d-flex flex-column justify-content-between"> 
     <div class="image" style="background-image:url(./assets/TCU_Capture.jpg)"></div> 
     <div class="text"> 
      <h5> Transcodeur C++ universel / Transcodeur d'Images Polyvalent</h5>
