@@ -6,6 +6,9 @@ permalink: /
 
 <div class="container"> 
 	<h1>Home for {{ site.title }}</h1> 
+  <p style="background: red;color: white;border-radius:5px;padding:5px;">
+    The official website is back online ! Click on the following link to access it :&nbsp;<a href="https://gamebuino.com/" style="color:white">https://gamebuino.com/</a>
+  </p>
 	<p>
 		Welcome on Gamebuino META backup website !
 	</p> 
