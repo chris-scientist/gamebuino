@@ -18,7 +18,7 @@ permalink: /why-this-website/
 			</p>
 			<h2>Goal</h2>
 			<p>
-				The objective of this site is to make available the necessary resources for the developments on Gamebuino META. For all requests, please look at the <a href="/gamebuino/contact/" >contact page</a>.
+				The objective of this site is to make available the necessary resources for the developments on Gamebuino META. For all requests, please look at the <a href="/contact/" >contact page</a>.
 			</p>
 			<h2>Acknowledgements</h2>
 			<p>

@@ -33,18 +33,18 @@
  <body> 
   <div class="topbar-container w-100 m-0"> 
    <nav class="primary-navbar"> 
-    <div id="root-logo"> <a href="/gamebuino/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
+    <div id="root-logo"> <a href="/"> <img width="233" src="../assets/gamebuino-logo-white.svg" alt="Gamebuino" class="logo-white"> </a> 
     </div> 
     <ul class="nav nav-pills"> 
-     <li class="text-uppercase"> <a href="/gamebuino/meta-api-reference-en/"> META API Reference</a></li> 
-     <li class="text-uppercase"> <a href="/gamebuino/academy-fr/"> Academy (FR)</a></li> 
+     <li class="text-uppercase"> <a href="/meta-api-reference-en/"> META API Reference</a></li> 
+     <li class="text-uppercase"> <a href="/academy-fr/"> Academy (FR)</a></li> 
     </ul> 
    </nav> 
    <div class="container" id="main-content">
     <div class="container"> 
-     <div class="d-flex align-items-center"> <a href="/gamebuino/academy-fr/" > Académie </a> 
+     <div class="d-flex align-items-center"> <a href="/academy-fr/" > Académie </a> 
       <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
-      </div> <a href="/gamebuino/academy-fr/casse-briques.html"> Cassebriques (C++ 5/5) </a> 
+      </div> <a href="/academy-fr/casse-briques.html"> Cassebriques (C++ 5/5) </a> 
       <div class="ml-3 mr-3"> <i class="fal fa-angle-right"></i> 
       </div> <span> Nos premières briques </span> 
      </div> 
@@ -158,41 +158,41 @@ gb.display.fillRect(briqueX, briqueY, BRIQUE_LARGEUR, BRIQUE_HAUTEUR);
         <p>Pour en revenir au calcul de nos briques, nous pouvons directement définir la position Y des briques. Vu qu'elles sont toutes alignées, on peut simplement leur donner une hauteur de 10 (plus tard, quand nous ajouterons d'autres briques, cette valeur changera). Pour <code>briqueX</code>, il faut pouvoir déterminer sa position en fonction de son indice dans notre tableau. Dans mon code, l'indice s'appelle <code>x</code>. Donc quand <code>x</code> vaut 0, on veut que la brique s'affiche tout à gauche. La brique d'après s'affiche à sa droite, avec un espace de deux pixels, etc. Dans ce cas <code>briqueX = x * (BRIQUE_LARGEUR + 2);</code>. Dans mon code, j'ai ajouté 1 à la position de toutes les briques pour que la première brique ne soit pas collée au bord de l'écran.</p> 
         <p>Dernière chose à propos de ces deux fichiers. J'utilise le mot clé <code>continue</code> au début de mes boucles. <code>Continue</code> force la boucle ignorer le reste de son code. En termes plus concrets, <code>continue</code> passe à l'indice suivant. Je l'appelle quand il n'y a pas de brique (i.e. <code>brique[x] = 0</code>), car c'est inutile de calculer la position d'une brique inexistante ;)</p> 
         <p>Et voilà, nous avons complété notre casse-briques ! Mais il n'a qu'une seule rangée de briques... Que dites-vous d'améliorer ça dans la prochaine étape ?</p> 
-        <p><a href="/gamebuino/academy-fr/des-trucs-dans-des-trucs.html" title="Des trucs dans des trucs" class="btn btn-primary btn-lg"> Etape suivante <i class="fa fa-arrow-right"></i></a></p>
+        <p><a href="/academy-fr/des-trucs-dans-des-trucs.html" title="Des trucs dans des trucs" class="btn btn-primary btn-lg"> Etape suivante <i class="fa fa-arrow-right"></i></a></p>
        </div> 
       </div> 
      </div> 
      <div class="col-md-4 d-none d-md-block"> 
       <ul class="workshop-summary-mini"> 
-       <li class=""> <a href="/gamebuino/academy-fr/premiere-etape-titre-a-trouver.html" class="d-flex align-items-center  "> 
+       <li class=""> <a href="/academy-fr/premiere-etape-titre-a-trouver.html" class="d-flex align-items-center  "> 
          <div class="circle">
            1 
          </div> 
          <div class="title ml-3">
            Introduction - Commençons à faire ce que l'on a déjà appris... 
          </div> </a></li> 
-       <li class=""> <a href="/gamebuino/academy-fr/nos-premieres-briques.html" class="d-flex align-items-center  active  "> 
+       <li class=""> <a href="/academy-fr/nos-premieres-briques.html" class="d-flex align-items-center  active  "> 
          <div class="circle">
            2 
          </div> 
          <div class="title ml-3">
            Nos premières briques 
          </div> </a></li> 
-       <li class=""> <a href="/gamebuino/academy-fr/des-trucs-dans-des-trucs.html" class="d-flex align-items-center  "> 
+       <li class=""> <a href="/academy-fr/des-trucs-dans-des-trucs.html" class="d-flex align-items-center  "> 
          <div class="circle">
            3 
          </div> 
          <div class="title ml-3">
            Des trucs dans des trucs 
          </div> </a></li> 
-       <li class=""> <a href="/gamebuino/academy-fr/arc-en-ciel.html" class="d-flex align-items-center  "> 
+       <li class=""> <a href="/academy-fr/arc-en-ciel.html" class="d-flex align-items-center  "> 
          <div class="circle">
            4 
          </div> 
          <div class="title ml-3">
            Arc-En-Ciel 
          </div> </a></li> 
-       <li class=""> <a href="/gamebuino/academy-fr/a-vous-de-jouer.html" class="d-flex align-items-center  "> 
+       <li class=""> <a href="/academy-fr/a-vous-de-jouer.html" class="d-flex align-items-center  "> 
          <div class="circle">
            5 
          </div> 
@@ -205,35 +205,35 @@ gb.display.fillRect(briqueX, briqueY, BRIQUE_LARGEUR, BRIQUE_HAUTEUR);
     <div class="d-block d-md-none" style="margin-top:8rem"> 
      <h4 class="mb-4">Étapes</h4> 
      <ul class="workshop-summary-mini"> 
-      <li class=""> <a href="/gamebuino/academy-fr/premiere-etape-titre-a-trouver.html" class="d-flex align-items-center  "> 
+      <li class=""> <a href="/academy-fr/premiere-etape-titre-a-trouver.html" class="d-flex align-items-center  "> 
         <div class="circle">
           1 
         </div> 
         <div class="title ml-3">
           Introduction - Commençons à faire ce que l'on a déjà appris... 
         </div> </a></li> 
-      <li class=""> <a href="/gamebuino/academy-fr/nos-premieres-briques.html" class="d-flex align-items-center  active  "> 
+      <li class=""> <a href="/academy-fr/nos-premieres-briques.html" class="d-flex align-items-center  active  "> 
         <div class="circle">
           2 
         </div> 
         <div class="title ml-3">
           Nos premières briques 
         </div> </a></li> 
-      <li class=""> <a href="/gamebuino/academy-fr/des-trucs-dans-des-trucs.html" class="d-flex align-items-center  "> 
+      <li class=""> <a href="/academy-fr/des-trucs-dans-des-trucs.html" class="d-flex align-items-center  "> 
         <div class="circle">
           3 
         </div> 
         <div class="title ml-3">
           Des trucs dans des trucs 
         </div> </a></li> 
-      <li class=""> <a href="/gamebuino/academy-fr/arc-en-ciel.html" class="d-flex align-items-center  "> 
+      <li class=""> <a href="/academy-fr/arc-en-ciel.html" class="d-flex align-items-center  "> 
         <div class="circle">
           4 
         </div> 
         <div class="title ml-3">
           Arc-En-Ciel 
         </div> </a></li> 
-      <li class=""> <a href="/gamebuino/academy-fr/a-vous-de-jouer.html" class="d-flex align-items-center  "> 
+      <li class=""> <a href="/academy-fr/a-vous-de-jouer.html" class="d-flex align-items-center  "> 
         <div class="circle">
           5 
         </div> 
@@ -267,8 +267,8 @@ gb.display.fillRect(briqueX, briqueY, BRIQUE_LARGEUR, BRIQUE_HAUTEUR);
       </div> 
       <div class="col-sm-4 margeur-50"> 
        <ul class=""> 
-        <li class="margeur-10"> <a href="/gamebuino/why-this-website/">Why this website ?</a></li> 
-        <li class="margeur-10"> <a href="/gamebuino/contact/">Contact</a></li> 
+        <li class="margeur-10"> <a href="/why-this-website/">Why this website ?</a></li> 
+        <li class="margeur-10"> <a href="/contact/">Contact</a></li> 
        </ul> 
       </div> 
       <div class="col-sm-4 margeur-50"> 
