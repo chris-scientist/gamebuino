@@ -3,7 +3,7 @@ title: Backup of Gamebuino Website
 description: >-
   API Reference of Gamebuino META
 baseurl: ""
-url: "https://chris-scientist.github.io/gamebuino"
+url: "https://gb-legacy.cthubert.fr"
 
 # Build settings
 markdown: kramdown
